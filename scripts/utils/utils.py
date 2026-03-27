@@ -618,6 +618,61 @@ def saf_equals(
         raise ValueError(f"Unknown mode: {setting}")
 
 
+def saf_equals_with_distance(
+        dom1,
+        dom2,
+        classification_model,
+        embedding_model,
+        tokenizer,
+        processor,
+        embedding_type,
+        setting,
+        device,
+        chunk_size,
+        dimension,
+        overlap,
+        threshold,
+):
+    """
+    Similar to saf_equals, but returns both the prediction and the distance/probability.
+    Returns: (prediction: int, distance: float)
+    """
+    emb1 = get_embedding(dom1, embedding_model, tokenizer, processor, embedding_type, chunk_size, dimension, overlap, device)
+    emb2 = get_embedding(dom2, embedding_model, tokenizer, processor, embedding_type, chunk_size, dimension, overlap, device)
+
+    if setting == "contrastive":
+        # Contrastive(BCE) approach
+        outputs = classification_model(emb1, emb2)
+        logits = outputs["logits"].squeeze(1)  # shape [1]
+        probs = torch.sigmoid(logits)
+        prob_value = probs.item()
+        print(f"[Info] BCE probability : {prob_value}")
+        preds = (probs > threshold).float()
+
+        # Convert probability to distance: high prob (similar) -> low distance
+        # distance = 1 - probability so that:
+        #   prob=1.0 (very similar) -> distance=0.0
+        #   prob=0.0 (very different) -> distance=1.0
+        distance_value = 1.0 - prob_value
+
+        return int(preds.item()), distance_value
+
+    elif setting == "triplet":
+        # Triplet-based approach => compute distance
+        out1 = classification_model.forward_once(emb1)
+        out2 = classification_model.forward_once(emb2)
+
+        distance = F.pairwise_distance(out1, out2)  # shape [1]
+        distance_value = distance.item()
+        print(f"[Info] Triplet distance : {distance_value}")
+        # If distance <= threshold => duplicates
+        pred = 1 if distance_value <= threshold else 0
+        return pred, distance_value
+
+    else:
+        raise ValueError(f"Unknown mode: {setting}")
+
+
 # Report for rq4
 def print_report(app_time, baseline, representation):
     """

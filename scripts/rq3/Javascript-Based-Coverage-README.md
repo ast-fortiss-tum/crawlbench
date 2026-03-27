@@ -66,11 +66,9 @@ Check the URL and settings in:
 
 ```bash
 mkdir dante/applications/«APPLICATION»
-mv out/* dante/applications/«APPLICATION»
-mv dante/applications/«APPLICATION»/localhost/crawl0 \
-   dante/applications/«APPLICATION»/localhost/crawl-with-inputs
-mv ~/Desktop/selenium-actions \
-   dante/applications/«APPLICATION»/selenium-actions-«APPLICATION»-«STRATEGY».txt
+mv crawljax/out/* dante/applications/«APPLICATION»
+mv dante/applications/«APPLICATION»/localhost/crawl0 dante/applications/«APPLICATION»/localhost/crawl-with-inputs
+mv ~/Desktop/selenium-actions dante/applications/«APPLICATION»/selenium-actions-«APPLICATION»-«STRATEGY».txt
 ```
 
 3.5 **Clean up** – stop and delete the Docker container.

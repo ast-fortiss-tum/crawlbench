@@ -10,7 +10,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 sys.path.append(str(pathlib.Path(__file__).resolve().parents[2]))
 
-from scripts.utils.utils import fix_json_crawling, get_model, initialize_device, saf_equals, set_all_seeds
+from scripts.utils.utils import fix_json_crawling, get_model, initialize_device, saf_equals, saf_equals_with_distance, set_all_seeds
 
 base_path    = os.getcwd()
 doc2vec_path     = f"/{base_path}/resources/embedding-models/content_tags_model_train_setsize300epoch50.doc2vec.model"
@@ -193,7 +193,7 @@ configurations = [
         'overlap': 0,
         'chunk_limit': 2,
         'doc2vec_path': None,
-        'lr': 0,
+        'lr': 2e-05,
         'epochs': 10,
         'wd': 0.01,
         'bs': 128,
@@ -249,10 +249,10 @@ configurations = [
         'overlap': 0,
         'chunk_limit': 2,
         'doc2vec_path': None,
-        'lr': 2e-05,
-        'epochs': 15,
+        'lr': 5e-06,
+        'epochs': 30,
         'wd': 0.01,
-        'bs': 128,
+        'bs': 64,
     },
     {
         'model_name': "microsoft/markuplm-base",
@@ -269,9 +269,34 @@ configurations = [
         'bs': 128,
     },
 ]
-title            = "acrossapp_modernbert" # <acrossapp or withinapp>_<doc2vec or bert or modernbert or markuplm>
-appname          = "petclinic" # appname is treated as within app -> target app and across app -> test app
-setting          = "triplet" # contrastive or triplet
+
+# Parse command-line arguments (if provided)
+import argparse
+parser = argparse.ArgumentParser(description='Run SAF-SNN Flask server')
+parser.add_argument('--appname', type=str, default=None, help='Application name (addressbook, claroline, ppma, mrbs, mantisbt, dimeshift, pagekit, phoenix, petclinic)')
+parser.add_argument('--title', type=str, default=None, help='Model title (e.g., acrossapp_modernbert, withinapp_doc2vec)')
+parser.add_argument('--setting', type=str, default=None, choices=['contrastive', 'triplet'], help='Setting type (contrastive or triplet)')
+parser.add_argument('--port', type=int, default=None, help='Port number for Flask server (default: auto-assigned based on app)')
+args = parser.parse_args()
+
+# Port mapping for Siamese SAF services (5001-5009)
+app_to_port = {
+    'mantisbt': 5001,
+    'mrbs': 5002,
+    'ppma': 5003,
+    'addressbook': 5004,
+    'claroline': 5005,
+    'dimeshift': 5006,
+    'pagekit': 5007,
+    'phoenix': 5008,
+    'petclinic': 5009,
+}
+
+# Use command-line args if provided, otherwise use defaults from file
+title            = args.title if args.title else "acrossapp_modernbert" # <acrossapp or withinapp>_<doc2vec or bert or modernbert or markuplm>
+appname          = args.appname if args.appname else "mantisbt" # appname is treated as within app -> target app and across app -> test app
+setting          = args.setting if args.setting else "contrastive" # contrastive or triplet
+port             = args.port if args.port else app_to_port.get(appname, 5000) # Auto-assign port based on app
 
 current_configs   = [config for config in configurations if config['title'] == title]
 current_config    = current_configs[0] if (current_configs[0]['setting'] == 'contrastive' and setting == 'contrastive') else current_configs[1]
@@ -382,9 +407,56 @@ def equals_route():
     print(f"[Info] url1 : {url1}, url2 : {url2}, results -> {result}")
     return result
 
+@app.route('/equals_with_distance', methods=('GET', 'POST'))
+def equals_with_distance_route():
+    content_type = request.headers.get('Content-Type')
+    if content_type == 'application/json' or content_type == 'application/json; utf-8':
+        fixed_json = fix_json_crawling(request.data.decode('utf-8'))
+        if fixed_json == "Error decoding JSON":
+            print("Exiting due to JSON error")
+            exit(1)
+        data = json.loads(fixed_json)
+    else:
+        return 'Content-Type not supported!'
+
+    parametersJava = data
+
+    dom1 = parametersJava['dom1']
+    dom2 = parametersJava['dom2']
+    url1 = parametersJava['url1']
+    url2 = parametersJava['url2']
+
+    # compute equality of DOM objects and get distance
+    prediction, distance = saf_equals_with_distance(
+        dom1=dom1,
+        dom2=dom2,
+        classification_model=classification_model,
+        embedding_model=embedding_model,
+        processor=processor,
+        tokenizer=tokenizer,
+        embedding_type=embedding_type,
+        setting=setting,
+        device=device,
+        chunk_size=chunk_size,
+        dimension=dimensions,
+        overlap=overlap,
+        threshold=0.5
+    )
+
+    equals_result = "true" if prediction == 1 else "false"
+    increase_no_of_inferences()
+
+    print(f"[Info] url1 : {url1}, url2 : {url2}, equals -> {equals_result}, distance -> {distance}")
+
+    response = {
+        "equals": equals_result,
+        "distance": distance
+    }
+    return jsonify(response)
+
 @app.route('/', methods=['GET'])
 def index():
-    return jsonify({"status": "OK", "message": "Service is up and running. Call /equals for SAF service"})
+    return jsonify({"status": "OK", "message": "Service is up and running. Call /equals for SAF service or /equals_with_distance for extended service"})
 
 if __name__ == "__main__":
     seed = 42
@@ -392,4 +464,26 @@ if __name__ == "__main__":
     device = initialize_device()
     classification_model, embedding_model, tokenizer, processor = load_model_and_tokenizer(embedding_type, model_name)
     print(f"******* We are using the model: {appname} - {title} - {setting} *******")
-    app.run(debug=False)
+    print(f"******* Flask server starting on port {port} *******")
+    
+    # Try to start the server with error handling
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            app.run(debug=False, host='0.0.0.0', port=port, use_reloader=False)
+            break  # If successful, break out of retry loop
+        except OSError as e:
+            if "Address already in use" in str(e) or "address already in use" in str(e).lower():
+                if attempt < max_retries - 1:
+                    print(f"[Warning] Port {port} is in use, retrying in 5 seconds (attempt {attempt + 1}/{max_retries})...")
+                    import time
+                    time.sleep(5)
+                else:
+                    print(f"[Error] Port {port} is still in use after {max_retries} attempts. Exiting.")
+                    sys.exit(1)
+            else:
+                print(f"[Error] Failed to start Flask server: {e}")
+                sys.exit(1)
+        except Exception as e:
+            print(f"[Error] Unexpected error starting Flask server: {e}")
+            sys.exit(1)

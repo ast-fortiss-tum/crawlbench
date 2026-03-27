@@ -55,14 +55,14 @@ if __name__ == "__main__":
     margin        = 1.0
 
     #for bert-base uncomment below
-    model_name    = "bert-base-uncased"
-    chunk_size    = 512
-    title         = "acrossapp_bert"
+    # model_name    = "bert-base-uncased"
+    # chunk_size    = 512
+    # title         = "acrossapp_bert"
 
     #for bert-base uncomment below
-    # title         = "acrossapp_modernbert"
-    # model_name = "answerdotai/ModernBERT-base"
-    # chunk_size = 8192
+    title         = "acrossapp_modernbert"
+    model_name = "answerdotai/ModernBERT-base"
+    chunk_size = 8192
 
     results = []
     create_folders_if_not_exist([model_dir, emb_dir, results_dir])

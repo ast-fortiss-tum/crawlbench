@@ -63,7 +63,7 @@ if __name__ == '__main__':
     filename    = ''
     base_path   = os.getcwd()
 
-    embedding_type = ['content_tags', 'DOM_RTED', 'VISUAL_PDiff']
+    embedding_type = ['DOM_RTED', 'VISUAL_PDiff']
     apps           = ['addressbook', 'claroline', 'ppma', 'mrbs', 'mantisbt', 'dimeshift', 'pagekit', 'phoenix', 'petclinic']
 
     baseline_model_dir = f"{base_path}/baseline-models"
