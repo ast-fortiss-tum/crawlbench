@@ -29,13 +29,18 @@ DANTE_ROOT="$PROJECT_ROOT/ICST20-submission-material-DANTE/dante"
 CRAWLJAX_ROOT="$PROJECT_ROOT/ICST20-submission-material-DANTE/crawljax"
 TEMP_DIR="$PROJECT_ROOT/.temp"
 mkdir -p "$TEMP_DIR"
+
+# Results and Logs Configuration
+RESULTS_BASE_DIR="$PROJECT_ROOT/results/crawlbench"
+mkdir -p "$RESULTS_BASE_DIR"
+
 SAFS=("dynamic-rted" "dynamic-pdiff" "dynamic-consensus")
 TRAVERSALS=("bfs" "dfs" "most_actions_first" "priority_bfs")
 MAX_RUNTIME=120  # minutes
 CRAWL_WAIT_TIME=$((MAX_RUNTIME * 120 + 120))  # Runtime + 2 min buffer (in seconds)
 
 # Create results directory
-RESULTS_DIR="$PROJECT_ROOT/results/rq3-js-coverage"
+RESULTS_DIR="$RESULTS_BASE_DIR"
 mkdir -p "$RESULTS_DIR"
 
 # Function to log messages
@@ -234,27 +239,29 @@ start_single_saf_backend() {
 
     log "Starting SAF backend service: $saf_type for $app"
 
+    local saf_log="$RESULTS_BASE_DIR/saf-${saf_type}-${app}.log"
+
     if [ "$saf_type" == "siamese" ]; then
         # Start Siamese SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/crawl-bench/run-saf-snn.sh "$app" > "saf-${saf_type}-${app}.log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-snn.sh "$app" > "$saf_log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
-        log "Siamese SAF backend started (PID: $SAF_PID)"
+        log "Siamese SAF backend started (PID: $SAF_PID, Log: $saf_log)"
     elif [ "$saf_type" == "rted" ]; then
         # Start RTED baseline SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/crawl-bench/run-saf-baseline.sh "$app" DOM_RTED acrossapp > "saf-${saf_type}-${app}.log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-baseline.sh "$app" DOM_RTED acrossapp > "$saf_log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
-        log "RTED SAF backend started (PID: $SAF_PID)"
+        log "RTED SAF backend started (PID: $SAF_PID, Log: $saf_log)"
     elif [ "$saf_type" == "pdiff" ]; then
         # Start PDiff baseline SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/crawl-bench/run-saf-baseline.sh "$app" VISUAL_PDiff acrossapp > "saf-${saf_type}-${app}.log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-baseline.sh "$app" VISUAL_PDiff acrossapp > "$saf_log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
-        log "PDiff SAF backend started (PID: $SAF_PID)"
+        log "PDiff SAF backend started (PID: $SAF_PID, Log: $saf_log)"
     fi
 
     # Wait for SAF service to be ready and verify it started
@@ -269,7 +276,7 @@ start_single_saf_backend() {
         else
             log_error "SAF backend service process died after starting (PID: $pid)"
             # Show last 20 lines of the log
-            tail -20 "$PROJECT_ROOT/saf-${saf_type}-${app}.log"
+            tail -20 "$saf_log"
             return 1
         fi
     else
@@ -543,7 +550,7 @@ ensure_crawljax_built() {
     # fi
 
     # # Clean and build entire project
-    # mvn clean install -DskipTests >> "$PROJECT_ROOT/maven-js-build.log" 2>&1
+    # mvn clean install -DskipTests >> "$RESULTS_BASE_DIR/maven-js-build.log" 2>&1
 
     # if [ $? -ne 0 ]; then
     #     log_error "Failed to build Crawljax project"
@@ -595,9 +602,10 @@ run_crawljax() {
     fi
 
     # Run crawljax with timeout
-    local crawl_log="$PROJECT_ROOT/crawl-${run_id}.log"
+    local crawl_log="$RESULTS_BASE_DIR/crawl-${run_id}.log"
     log "Crawl log will be written to: $crawl_log"
 
+    # Build the final command with timeout if available
     timeout ${CRAWL_WAIT_TIME}s bash -c "$maven_cmd" > "$crawl_log" 2>&1
     local exit_code=$?
 

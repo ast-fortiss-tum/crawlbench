@@ -5,10 +5,10 @@ This guide captures the full procedure for crawling, testing and collecting code
 First download and extract the files. It contain all application files and docker scripts. Follow each application Readme files for more details.
  
 ```
- https://syncandshare.lrz.de/getlink/fiLiqxtJdqazCxA1xJ5f9e/web-apps-main.zip
+https://syncandshare.lrz.de/getlink/fi2zrg1ZzB4tCD4qZUwmHU/web-apps-main.7z
  ```
 
- *Password: `snn-ndd`*
+ *Password: `crawlbench`*
 
 
 **Replace every instance of the placeholders below with values for the run you are performing.**

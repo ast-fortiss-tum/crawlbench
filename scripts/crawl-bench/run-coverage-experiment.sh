@@ -23,6 +23,9 @@ NC='\033[0m' # No Color
 
 # Configuration
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+RESULTS_BASE_DIR="$PROJECT_ROOT/results/crawlbench"
+mkdir -p "$RESULTS_BASE_DIR"
+
 SAFS=("dynamic-rted" "dynamic-pdiff" "dynamic-consensus")
 TRAVERSALS=("bfs" "dfs" "most_actions_first" "priority_bfs")
 MAX_RUNTIME=120  # minutes
@@ -85,6 +88,9 @@ else
     COVERAGE_BASE="$PROJECT_ROOT/web-apps-main/web-apps-coverage/$APP_NAME"
     COVERAGE_SESSIONS_PATH="$COVERAGE_BASE/coverage/coverage_data/sessions"
 fi
+
+# Set RESULTS_DIR to base results directory
+RESULTS_DIR="$RESULTS_BASE_DIR"
 
 echo -e "${BLUE}═══════════════════════════════════════════════════════════════════${NC}"
 echo -e "${BLUE}  Automated Coverage Experiment Runner${NC}"
@@ -166,24 +172,26 @@ start_single_saf_backend() {
 
     log "Starting SAF backend service: $saf_type for $app"
 
+    local saf_log="$RESULTS_BASE_DIR/saf-${saf_type}-${app}.log"
+
     if [ "$saf_type" == "siamese" ]; then
         # Start Siamese SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/crawl-bench/run-saf-snn.sh "$app" > "saf-${saf_type}-${app}.log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-snn.sh "$app" > "$saf_log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
         log "Siamese SAF backend started (PID: $SAF_PID)"
     elif [ "$saf_type" == "rted" ]; then
         # Start RTED baseline SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/crawl-bench/run-saf-baseline.sh "$app" DOM_RTED acrossapp > "saf-${saf_type}-${app}.log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-baseline.sh "$app" DOM_RTED acrossapp > "$saf_log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
         log "RTED SAF backend started (PID: $SAF_PID)"
     elif [ "$saf_type" == "pdiff" ]; then
         # Start PDiff baseline SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/crawl-bench/run-saf-baseline.sh "$app" VISUAL_PDiff acrossapp > "saf-${saf_type}-${app}.log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-baseline.sh "$app" VISUAL_PDiff acrossapp > "$saf_log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
         log "PDiff SAF backend started (PID: $SAF_PID)"
@@ -395,34 +403,28 @@ stop_docker_coverage() {
     sleep 5
 }
 
-# Function to ensure Crawljax is built (run once)
+# Function to ensure Crawljax is built
 ensure_crawljax_built() {
-    local crawljax_root="$PROJECT_ROOT/ICST20-submission-material-DANTE/crawljax"
-    local build_marker="$crawljax_root/.built_with_port_config"
-
-    # Check if we've already built with our port configuration changes
-    if [ -f "$build_marker" ]; then
-        return 0
-    fi
-
-    log "Building Crawljax with port configuration changes..."
-    cd "$crawljax_root"
-
-    # Clean and build entire project (core + examples)
-    mvn clean install -DskipTests >> "$PROJECT_ROOT/maven-build.log" 2>&1
-
-    if [ $? -ne 0 ]; then
-        log_error "Failed to build Crawljax project"
-        log_error "Check maven-build.log for details"
-        cd "$PROJECT_ROOT"
-        return 1
-    fi
-
-    # Create marker file to avoid rebuilding
-    touch "$build_marker"
-    log "Crawljax built successfully"
-    cd "$PROJECT_ROOT"
+    # TEMPORARILY DISABLED: Assuming Crawljax is already built manually
+    # To re-enable automatic build, uncomment the code below
+    log "Skipping Crawljax build (assuming already built manually)"
     return 0
+
+    # log "Building Crawljax with JS coverage configuration..."
+    # cd "$PROJECT_ROOT/ICST20-submission-material-DANTE/crawljax"
+    # mvn clean install -DskipTests >> "$RESULTS_BASE_DIR/maven-build.log" 2>&1
+    # if [ $? -ne 0 ]; then
+    #     log_error "Failed to build Crawljax project"
+    #     log_error "Check maven-build.log for details"
+    #     cd "$PROJECT_ROOT"
+    #     return 1
+    # fi
+
+    # # Create marker file to avoid rebuilding
+    # touch "$build_marker"
+    # log "Crawljax built successfully"
+    # cd "$PROJECT_ROOT"
+    # return 0
 }
 
 # Function to run crawljax
@@ -433,27 +435,25 @@ run_crawljax() {
 
     log "Running Crawljax: $app with $saf SAF and $traversal traversal"
 
-    # Ensure Crawljax is built (only happens once)
-    if ! ensure_crawljax_built; then
-        return 1
-    fi
+    # Ensure Crawljax is built
+    ensure_crawljax_built
 
-    # Navigate to Crawljax examples directory
+    # Use Maven exec:java to run UnifiedRunner
+    # UnifiedRunner is in the examples module of Crawljax
     local crawljax_dir="$PROJECT_ROOT/ICST20-submission-material-DANTE/crawljax/examples"
     cd "$crawljax_dir"
 
-    # Use Maven exec:java to run UnifiedRunner with proper classpath
     local maven_cmd="mvn exec:java -Dexec.mainClass=com.crawljax.examples.UnifiedRunner -Dexec.args='$app $saf $traversal'"
 
     log "Executing: $maven_cmd"
-    log "Working directory: $crawljax_dir"
 
     # Run crawljax with timeout
-    timeout ${CRAWL_WAIT_TIME}s bash -c "$maven_cmd" > "$PROJECT_ROOT/crawl-${app}-${saf}-${traversal}.log" 2>&1
+    local crawl_log="$RESULTS_BASE_DIR/crawl-${app}-${saf}-${traversal}.log"
+    log "Crawl log will be written to: $crawl_log"
+
+    timeout ${CRAWL_WAIT_TIME}s bash -c "$maven_cmd" > "$crawl_log" 2>&1
     local exit_code=$?
 
-    # Return to project root
-    cd "$PROJECT_ROOT"
 
     if [ $exit_code -eq 0 ]; then
         log "Crawl completed successfully"

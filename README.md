@@ -1,15 +1,18 @@
-# Siamese Neural Network (SSN) For Near Duplicate Detection in Web App Model Inference
+# CrawlBench: Neural Embeddings for Web Testing
+
+*This project is a fork of the [Near Duplicate Detection Siamese Networks](https://github.com/ast-fortiss-tum/near-duplicate-detection-siamese-networks) project. It is designed to benchmark various combinations of **State Abstraction Functions (SAFs)**—including RTED, PDiff, FragGen, and SNN—with different **Crawl Traversal Methods** such as BFS, DFS, MOST_ACTION_FIRST, and PRIORITY_BFS. It provides a suite of automated scripts to facilitate these experiments.*
 
 ## 🚀 Get Started
 
-Follow these steps to create and activate the Conda environment to set up the project. Use ``snn-ndd`` as the password to download resources.
+Follow these steps to create and activate the Conda environment to set up the project. 
 
+*   Use `snn-ndd` as the password for downloading the dataset and baseline resources.
+*   Use `crawlbench` as the password for the Dante and web-app containers.
 
 ### 1) Clone the repository
 
 ```bash
-git clone https://github.com/ast-fortiss-tum/near-duplicate-detection-siamese-networks.git
-cd near-duplicate-detection-siamese-networks
+git clone https://github.com/ast-fortiss-tum/crawlbench.git
 ```
 
 ### 2) Create the Conda environment
@@ -17,18 +20,18 @@ cd near-duplicate-detection-siamese-networks
 The `environment.yml` already pins compatible versions.
 
 ```bash
-conda env create --name snn-ndd -f environment.yml
+conda env create --name crawl-bench -f environment.yml
 ```
 
 *What this does*
 
-1. Creates a new Conda env called **`snn-ndd`**.
+1. Creates a new Conda env called **`crawl-bench`**.
 2. Installs all Conda‑managed packages.
 
 ### 3) Activate the environment
 
 ```bash
-conda activate snn-ndd
+conda activate crawl-bench
 ```
 
 
@@ -61,9 +64,14 @@ Applications evaluated in this work
 
 ## 📂 Repository Structure
 
+To honor the original work, the package and directory structures have been kept largely the same. Specifically, the folders `rq1` through `rq4` correspond to the research questions and evaluations belonging to the original SNN project.
+
+**Our main contribution and the core of the benchmarking suite lies in the `scripts/crawl-bench/` folder.**
+
 ```
 ├── resources/                # Downloaded baseline datasets, doms, baseline runners (jar) and doc2vec embedding models
 ├── scripts/                  # Python scripts for running evaluations
+│   ├── crawl-bench/          # [Our Contribution] CrawlBench specific scripts for automation and SAF/traversal benchmarking
 │   ├── rq1/
 │   │   ├── within-app-classification/
 │   │   │   ├── bert_contrastive_classification.py
@@ -77,6 +85,7 @@ Applications evaluated in this work
 │   ├── rq3/                   # RQ3 evaluation scripts
 │   └── rq4/                   # RQ4 evaluation scripts
 ├── results/                  # Generated experiment results
+│   ├── crawlbench/           # [New] Centralized logs and results for CrawlBench automation
 │   ├── rq1/
 │   ├── rq2/
 │   ├── rq3/
@@ -274,20 +283,26 @@ Run below commands from the project base directory. Results will be saved in `re
 ```
    python scripts/rq4/javabased_baseline_inference_time.py
 ```
-## 📖 Reference
 
-If you use our work in your research, if you extend it, or if you simply like it, please cite it in your publications.
+### 5) 🛠️ CrawlBench Automation
 
-Here is an example BibTeX entry:
+For running large-scale experiments and automating the crawling process with different State Abstraction Functions (SAF), use the scripts in `scripts/crawl-bench/`.
 
-```bibtex
-@inproceedings{2026-Kanaththage-ICST,
-  	author    = {Kasun Kanaththage and Luigi Libero Lucio Starace and Matteo Biagiola and Paolo Tonella and Andrea Stocco},
-  	title     = {Neural Embeddings for Web Testing},
-	booktitle  = {Proceedings of the 19th IEEE International Conference on Software Testing, Verification and Validation},
-	series     = {ICST '26},
-	publisher  = {IEEE},
-	abbr       = {ICST},
-	year       = 2026
-}
+#### a) Run SAF with SNN
+```bash
+./scripts/crawl-bench/run-saf-snn.sh
+```
+
+#### b) Run SAF with Baseline Methods
+```bash
+./scripts/crawl-bench/run-saf-baseline.sh
+```
+
+#### c) Run Coverage Experiments
+```bash
+# For PHP applications
+./scripts/crawl-bench/run-coverage-experiment.sh
+
+# For JavaScript applications
+./scripts/crawl-bench/run-js-coverage-experiment.sh
 ```

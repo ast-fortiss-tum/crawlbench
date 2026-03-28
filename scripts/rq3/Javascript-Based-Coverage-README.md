@@ -4,10 +4,10 @@ This guide summarizes the end‑to‑end procedure for crawling, testing and mea
 
 First download and extract the DANTE project in user level ( /Users/_name_/workspace/)
 ```
-https://syncandshare.lrz.de/getlink/fi3U7LSw8LHm8n69QVKtaN/ICST20-submission-material-DANTE.zip
+https://syncandshare.lrz.de/getlink/fi84Tgftkr9U4C6Rd3k55e/ICST20-submission-material-DANTE.7z
 ```
 
-*Password: `snn-ndd`*
+*Password: `crawlbench`*
 
 **Replace every occurrence of the placeholders below with the concrete values for the application you are working on.**
 
