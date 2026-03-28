@@ -237,21 +237,21 @@ start_single_saf_backend() {
     if [ "$saf_type" == "siamese" ]; then
         # Start Siamese SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/coverage/run-saf-snn.sh "$app" > "saf-${saf_type}-${app}.log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-snn.sh "$app" > "saf-${saf_type}-${app}.log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
         log "Siamese SAF backend started (PID: $SAF_PID)"
     elif [ "$saf_type" == "rted" ]; then
         # Start RTED baseline SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/coverage/run-saf-baseline.sh "$app" DOM_RTED acrossapp > "saf-${saf_type}-${app}.log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-baseline.sh "$app" DOM_RTED acrossapp > "saf-${saf_type}-${app}.log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
         log "RTED SAF backend started (PID: $SAF_PID)"
     elif [ "$saf_type" == "pdiff" ]; then
         # Start PDiff baseline SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/coverage/run-saf-baseline.sh "$app" VISUAL_PDiff acrossapp > "saf-${saf_type}-${app}.log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-baseline.sh "$app" VISUAL_PDiff acrossapp > "saf-${saf_type}-${app}.log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
         log "PDiff SAF backend started (PID: $SAF_PID)"
