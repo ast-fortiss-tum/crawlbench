@@ -60,6 +60,37 @@ Use `run-js-coverage-experiment.sh` for JavaScript-based applications. This scri
 
 ---
 
+## ⚙️ Customizing Experiments
+
+You can customize the benchmarking by modifying the configuration variables at the top of the experiment scripts (`run-coverage-experiment.sh` or `run-js-coverage-experiment.sh`).
+
+### 1. SAF and Traversal Strategies
+By default, the scripts iterate through all combinations of the following:
+```bash
+SAFS=("rted" "pdiff" "fraggen" "siamese")
+TRAVERSALS=("bfs" "dfs" "most_actions_first" "priority_bfs")
+```
+Modify these arrays in the script to include/exclude specific methods.
+
+### 2. Runtime and Timeouts
+To change the maximum duration of a crawl, you must update two places:
+
+1.  **Script Timeout**: Modify `MAX_RUNTIME` (in minutes) at the top of the bash script. This controls the shell-level execution timeout.
+    ```bash
+    MAX_RUNTIME=120  # minutes
+    ```
+2.  **Crawljax Timeout**: You **must** also update the maximum duration inside the Java code to ensure Crawljax terminates gracefully.
+    *   **File**: `ICST20-submission-material-DANTE/crawljax/examples/src/main/java/com/crawljax/examples/UnifiedRunner.java`
+    *   Look for the configuration setting (e.g., `.setMaximumRunTime`) and update it to match your desired `MAX_RUNTIME`.
+
+### 3. Adding New SAFs or Traversal Methods
+If you wish to extend CrawlBench with new State Abstraction Functions or Traversal Strategies:
+*   **Implementation**: New methods must be implemented within the Crawljax core or plugins (located in `ICST20-submission-material-DANTE/crawljax/`).
+*   **Configuration**: After implementation, you must register and configure the new SAF or Traversal method within **`UnifiedRunner.java`** so it can be selected via command-line arguments.
+*   **Automation**: Finally, update the `SAFS` or `TRAVERSALS` arrays in the experiment scripts to include your new identifiers.
+
+---
+
 ## 📊 Results and Logs
 
 All execution logs, including SAF backend output, Crawljax logs, and Maven build outputs, are centralized in:
