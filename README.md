@@ -288,6 +288,8 @@ Run below commands from the project base directory. Results will be saved in `re
 
 For running large-scale experiments and automating the crawling process with different State Abstraction Functions (SAF), use the scripts in `scripts/crawl-bench/`.
 
+**Refer to the [scripts/crawl-bench/README.md](scripts/crawl-bench/README.md) for more detailed instructions on setup and execution.**
+
 #### a) Run SAF with SNN
 ```bash
 ./scripts/crawl-bench/run-saf-snn.sh
