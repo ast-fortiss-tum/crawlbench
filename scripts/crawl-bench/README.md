@@ -86,6 +86,8 @@ To change the maximum duration of a crawl, you must update two places:
 ### 3. Adding New SAFs or Traversal Methods
 If you wish to extend CrawlBench with new State Abstraction Functions or Traversal Strategies:
 *   **Implementation**: New methods must be implemented within the Crawljax core or plugins (located in `ICST20-submission-material-DANTE/crawljax/`).
+*   **Ready-to-use Methods**: Many traversal methods and SAFs are already available within Crawljax (either natively or through our modifications).
+*   **Scope of this Project**: Specific SAFs and strategies implemented or integrated for this benchmarking suite can be found and reviewed in **`UnifiedRunner.java`**.
 *   **Configuration**: After implementation, you must register and configure the new SAF or Traversal method within **`UnifiedRunner.java`** so it can be selected via command-line arguments.
 *   **Automation**: Finally, update the `SAFS` or `TRAVERSALS` arrays in the experiment scripts to include your new identifiers.
 
