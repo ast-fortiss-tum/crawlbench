@@ -116,7 +116,7 @@ To honor the original work, the package and directory structures have been kept 
    2. **Unpack and move the resources folder to the base project**
 
       ```bash
-      unzip resources.zip -d resources
+      unzip resources.zip -d
       ```
 
       You should now have folders:
