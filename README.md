@@ -106,10 +106,10 @@ To honor the original work, the package and directory structures have been kept 
 #### a) SNN Evaluation
 
 1. **Download resources**
-   `resources.zip` from (use password password as ``snn-ndd``):
+   `resources.zip` from (use password password as ``crawlbench``):
 
    ```
-   https://syncandshare.lrz.de/getlink/fiY4KcSXCwSLW8g8TVmnep/resources.zip
+   https://syncandshare.lrz.de/getlink/fi4TpRG9jRWaFHc32nLLNN/resources.zip
    ```
 
 
@@ -156,7 +156,7 @@ To honor the original work, the package and directory structures have been kept 
 > **Re-runs** will automatically reuse any existing models or embeddings; nothing is re-trained if already present. If you want to use trained models and embeddings, please obtain them from the link below and ensure they are located at the project parent level separately (`./models`, `./embeddings`). Then try generating the results.
  
 ```
-https://syncandshare.lrz.de/getlink/fi14MEw1swySBLPA6emQKP/models_and_embeddings.zip
+https://syncandshare.lrz.de/getlink/fi96wFKr5YERfVwZiK2hHR/models_and_embeddings.zip
 ```
 
 #### b) FragGen Evaluation
