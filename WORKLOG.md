@@ -2,6 +2,11 @@
 
 Running log of what we do in this repo. Newest entries first.
 
+## 2026-11-15
+
+- Reviewed and committed pending work in 3 commits (coverage/branch-coverage scripts, MarkupLM float32 fix + RQ1 scripts, worklog). `logs/` left uncommitted.
+- Fixed across-app bert title (`acrossapp_modernbert` -> `acrossapp_bert`). A first launch with the unfixed title (sed -i failed on macOS) was killed after ~1 epoch, before saving anything. Relaunched: `logs/rq1_across_bert_contrastive.log`, status `logs/rq1_across_bert.status`. Computing fresh bert embeddings first.
+
 ## 2026-11-14
 
 - 18:37 update: across-app markuplm DONE (17:35-18:17, xlsx `results/rq1/acrossapp_markuplm_results_contrastive_...181756.xlsx`; phoenix F1 0.93, petclinic 0.75 weighted). ALL markuplm runs finished; update cron stopped. Remaining RQ1 gap: across-app bert contrastive (title bug).

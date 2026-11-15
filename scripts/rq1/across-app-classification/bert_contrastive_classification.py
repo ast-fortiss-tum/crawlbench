@@ -54,7 +54,7 @@ if __name__ == "__main__":
     #for bert-base uncomment below
     model_name    = "bert-base-uncased"
     chunk_size    = 512
-    title         = "acrossapp_modernbert"
+    title         = "acrossapp_bert"
 
     #for modern-bert-base uncomment below
     # title           = "acrossapp_modernbert"
