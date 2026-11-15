@@ -34,7 +34,7 @@ def get_prediction(df_filtered, stateA, stateB):
 
 def fraggen_model_quality():
 
-    with open(f"{base_path}/resources/baseline-dataset/combinedEntries_fraggen.json", "r", encoding="utf-8") as f:
+    with open(f"{base_path}/resources/baseline-dataset/combinedEntries.json", "r", encoding="utf-8") as f:
         all_entries = json.load(f)
 
     # Name the columns according to your JSON structure

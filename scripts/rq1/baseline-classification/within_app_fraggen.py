@@ -25,7 +25,7 @@ def test_fraggen_rq1_with_refinedData():
     df_db = pd.read_sql_query(db_query, conn)
 
     # this file directly get from the fraggen replication package
-    with open(f'{base_path}/resources/baseline-dataset/combinedEntries_fraggen.json', "r", encoding="utf-8") as f:
+    with open(f'{base_path}/resources/baseline-dataset/combinedEntries.json', "r", encoding="utf-8") as f:
         all_entries = json.load(f)
 
     # Name the columns according to your JSON structure
