@@ -63,7 +63,7 @@ if __name__ == '__main__':
     filename    = ''
     base_path   = os.getcwd()
 
-    embedding_type = ['DOM_RTED', 'VISUAL_PDiff']
+    embedding_type = ['content_tags', 'DOM_RTED', 'VISUAL_PDiff']
     apps           = ['addressbook', 'claroline', 'ppma', 'mrbs', 'mantisbt', 'dimeshift', 'pagekit', 'phoenix', 'petclinic']
 
     baseline_model_dir = f"{base_path}/baseline-models"
@@ -111,7 +111,7 @@ if __name__ == '__main__':
             ]
 
             for name, model in zip(names, classifiers):
-                if emb in {'content_tags', 'DOM_RTED', 'VISUAL_PDiff'}:
+                if emb in {'DOM_RTED', 'VISUAL_PDiff'}:
                     feature = emb
                 else:
                     feature = 'doc2vec_distance_' + emb
