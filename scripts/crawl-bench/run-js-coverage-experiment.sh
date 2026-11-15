@@ -36,7 +36,10 @@ mkdir -p "$RESULTS_BASE_DIR"
 
 SAFS=("dynamic-rted" "dynamic-pdiff" "dynamic-consensus")
 TRAVERSALS=("bfs" "dfs" "most_actions_first" "priority_bfs")
-MAX_RUNTIME=120  # minutes
+MAX_RUNTIME=${CRAWLBENCH_MAX_RUNTIME:-120}  # minutes (thesis uses 60; override with CRAWLBENCH_MAX_RUNTIME)
+# Optional overrides, e.g. CRAWLBENCH_SAFS="fraggen rted" CRAWLBENCH_TRAVERSALS="bfs"
+[ -n "${CRAWLBENCH_SAFS:-}" ] && read -ra SAFS <<< "$CRAWLBENCH_SAFS"
+[ -n "${CRAWLBENCH_TRAVERSALS:-}" ] && read -ra TRAVERSALS <<< "$CRAWLBENCH_TRAVERSALS"
 CRAWL_WAIT_TIME=$((MAX_RUNTIME * 120 + 120))  # Runtime + 2 min buffer (in seconds)
 
 # Create results directory
@@ -123,7 +126,7 @@ get_tomcat_port() {
     local app=$1
     case "$app" in
         petclinic)
-            echo "9967"  # Tomcat for petclinic (9966 + 1 to avoid conflicts)
+            echo "${CRAWLBENCH_PETCLINIC_TOMCAT_PORT:-9967}"  # Tomcat for petclinic; the Angular client has 9966 baked in, so set 9966 for a working app
             ;;
         *)
             echo "9966"  # Default
@@ -175,11 +178,13 @@ log "Cleanup complete"
 echo ""
 
 # Ask for confirmation
+if [ -z "${CRAWLBENCH_ASSUME_YES:-}" ]; then
 read -p "Do you want to proceed? (y/n) " -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo "Aborted."
     exit 1
+fi
 fi
 
 # Track progress
@@ -589,7 +594,7 @@ run_crawljax() {
 
     # Use Maven exec:java to run UnifiedRunner
     # UnifiedRunner will create unique selenium-actions filename: selenium-actions-{app}-{saf}-{traversal}-{timestamp}
-    local maven_cmd="mvn exec:java -Dexec.mainClass=com.crawljax.examples.UnifiedRunner -Dexec.args='$app $saf $traversal'"
+    local maven_cmd="mvn exec:java -Dexec.mainClass=com.crawljax.examples.UnifiedRunner -Dcrawl.maxRuntimeMinutes=${MAX_RUNTIME}${CRAWLBENCH_CRAWL_URL:+ -Dcrawl.url=${CRAWLBENCH_CRAWL_URL}} -Dexec.args='$app $saf $traversal'"
 
     log "Executing: $maven_cmd"
     log "Working directory: $crawljax_dir"
@@ -877,6 +882,10 @@ generate_tests_and_coverage() {
         fi
     fi
 
+    # The generator silently reuses an existing suite directory ("Project directory ... exists"), which would replay
+    # the PREVIOUS run's test cases and static files. Always start from a clean suite.
+    rm -rf "$DANTE_ROOT/applications/$app/testsuite-$app"
+
     # Generate test suite using Java directly
     log "Generating test suite with TestSuiteGenerator"
     java -cp "$classpath" com.dante.suitegenerator.TestSuiteGenerator > "$RESULTS_DIR/${run_id}-generate.log" 2>&1
@@ -1018,6 +1027,24 @@ generate_tests_and_coverage() {
         local target_test="$RESULTS_DIR/${run_id}-test-results.txt"
         cp "$test_log" "$target_test"
         log "Test log saved to: $target_test"
+    fi
+
+    # Branch/statement/function/line coverage from the raw V8 block coverage dumped by DANTE's CodeCoverage
+    local v8_raw_dir="$testsuite_dir/coverage-reports/v8-raw"
+    if [ -d "$v8_raw_dir" ]; then
+        local bc_dir="$PROJECT_ROOT/scripts/crawl-bench/branch-coverage"
+        local bc_base="$RESULTS_DIR/${app}_${saf}_${traversal}_${RUN_TIMESTAMP}-${CURRENT_RUN}"
+        if [ ! -d "$bc_dir/node_modules" ]; then
+            (cd "$bc_dir" && npm install --silent --no-audit --no-fund) >> "$RESULTS_DIR/${run_id}-branch-coverage.log" 2>&1
+        fi
+        if node "$bc_dir/branch-coverage.mjs" "$v8_raw_dir" --json "${bc_base}-branch.json" > "${bc_base}-branch.txt" 2>> "$RESULTS_DIR/${run_id}-branch-coverage.log"; then
+            log "Branch coverage saved to: ${bc_base}-branch.txt (.json)"
+            rm -rf "${bc_base}-v8-raw" && cp -R "$v8_raw_dir" "${bc_base}-v8-raw"
+        else
+            log_warning "Branch coverage computation failed, see $RESULTS_DIR/${run_id}-branch-coverage.log"
+        fi
+    else
+        log_warning "No raw V8 coverage found at $v8_raw_dir (branch coverage skipped)"
     fi
 
     cd "$PROJECT_ROOT"

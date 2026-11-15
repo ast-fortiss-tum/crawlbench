@@ -1,0 +1,10 @@
+{
+  "name": "crawlbench-branch-coverage",
+  "private": true,
+  "type": "module",
+  "description": "Istanbul-style statement/branch/function/line coverage from raw V8 block coverage dumped by DANTE",
+  "dependencies": {
+    "acorn": "8.14.0",
+    "acorn-walk": "8.3.4"
+  }
+}

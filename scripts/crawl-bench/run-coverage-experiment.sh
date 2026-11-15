@@ -28,7 +28,9 @@ mkdir -p "$RESULTS_BASE_DIR"
 
 SAFS=("dynamic-rted" "dynamic-pdiff" "dynamic-consensus")
 TRAVERSALS=("bfs" "dfs" "most_actions_first" "priority_bfs")
-MAX_RUNTIME=120  # minutes
+MAX_RUNTIME=${CRAWLBENCH_MAX_RUNTIME:-120}  # minutes (thesis uses 60; override with CRAWLBENCH_MAX_RUNTIME)
+[ -n "${CRAWLBENCH_SAFS:-}" ] && read -ra SAFS <<< "$CRAWLBENCH_SAFS"
+[ -n "${CRAWLBENCH_TRAVERSALS:-}" ] && read -ra TRAVERSALS <<< "$CRAWLBENCH_TRAVERSALS"
 CRAWL_WAIT_TIME=$((MAX_RUNTIME * 120 + 120))  # Runtime + 2 min buffer (in seconds)
 
 # Function to log messages (defined early so they can be used anywhere)
@@ -116,7 +118,7 @@ if ! check_fraggen_dependencies; then
 fi
 
 # Ask for confirmation
-read -p "Do you want to proceed? (y/n) " -n 1 -r
+if [ -n "${CRAWLBENCH_ASSUME_YES:-}" ]; then REPLY=y; else read -p "Do you want to proceed? (y/n) " -n 1 -r; fi
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo "Aborted."
@@ -283,9 +285,89 @@ stop_saf_service() {
     log "All SAF backends stopped for strategy: ${saf}"
 }
 
+# ---------------------------------------------------------------------------------------------------------------
+# Xdebug 2.5.5 coverage (default). The legacy setup (Xdebug 2.2.4 + PHP_CodeCoverage, line coverage only) is kept as
+# CRAWLBENCH_PHP_COVERAGE=legacy. See scripts/crawl-bench/php-coverage/. Supported for mantisbt, mrbs, ppma; the
+# addressbook/claroline setup (php:5.6-apache + separate MySQL) falls back to legacy.
+# Overrides: CRAWLBENCH_PHP_PORT (host port of the app, then also set CRAWLBENCH_CRAWL_URL), CRAWLBENCH_PHP_COVERAGE.
+# ---------------------------------------------------------------------------------------------------------------
+PHP_COVERAGE_MODE="${CRAWLBENCH_PHP_COVERAGE:-xdebug255}"
+PHP_COV_DIR="$PROJECT_ROOT/scripts/crawl-bench/php-coverage"
+
+php_app_config() {
+    case "$1" in
+        mantisbt) PHP_BASE_IMAGE="dockercontainervm/mantisbt:1.2.0"; PHP_HOST_PORT=3001; PHP_DB_PORT=3307
+                  PHP_INCLUDE="/var/www/html/mantisbt/"; PHP_EXCLUDE="/var/www/html/mantisbt/library/:/var/www/html/mantisbt/tests/" ;;
+        mrbs)     PHP_BASE_IMAGE="dockercontainervm/mrbs:1.4.9"; PHP_HOST_PORT=3002; PHP_DB_PORT=3308
+                  PHP_INCLUDE="/var/www/html/mrbs/"; PHP_EXCLUDE="" ;;
+        ppma)     PHP_BASE_IMAGE="dockercontainervm/ppma:0.6.0"; PHP_HOST_PORT=3003; PHP_DB_PORT=3309
+                  PHP_INCLUDE="/var/www/html/ppma/protected/"; PHP_EXCLUDE="/var/www/html/ppma/vendor/" ;;
+        *) return 1 ;;
+    esac
+}
+
+use_xdebug255() {
+    [ "$PHP_COVERAGE_MODE" = "xdebug255" ] && php_app_config "$1"
+}
+
+php_start_container() {
+    local app=$1
+    php_app_config "$app" || return 1
+    local image="${app}-xdebug255"
+    local port="${CRAWLBENCH_PHP_PORT:-$PHP_HOST_PORT}"
+    if ! docker image inspect "$image" > /dev/null 2>&1; then
+        log "Building $image (Xdebug 2.5.5 on $PHP_BASE_IMAGE), this takes a few minutes"
+        docker build --platform linux/amd64 --build-arg BASE="$PHP_BASE_IMAGE" -t "$image" \
+            -f "$PHP_COV_DIR/Dockerfile.xdebug" "$PHP_COV_DIR" > "$RESULTS_BASE_DIR/php-image-build-$app.log" 2>&1 \
+            || { log_error "Image build failed, see $RESULTS_BASE_DIR/php-image-build-$app.log"; return 1; }
+    fi
+    PHP_RUN_STAMP=$(date +%Y%m%d_%H%M%S)
+    PHP_COV_DATA="$RESULTS_BASE_DIR/php-coverage/$app/coverage_data"
+    rm -rf "$PHP_COV_DATA"; mkdir -p "$PHP_COV_DATA"; chmod 777 "$PHP_COV_DATA"
+    docker rm -f "crawlbench-$app-cov" > /dev/null 2>&1
+    docker run -d --name "crawlbench-$app-cov" --platform linux/amd64 -p "$port:80" -p "$PHP_DB_PORT:3306" \
+        -v "$PHP_COV_DATA:/var/www/html/coverage/coverage_data" \
+        -e "COVERAGE_INCLUDE=$PHP_INCLUDE" -e "COVERAGE_EXCLUDE=$PHP_EXCLUDE" \
+        "$image" bash /home/run-services-docker.sh > /dev/null \
+        || { log_error "Could not start container (port $port busy? set CRAWLBENCH_PHP_PORT and CRAWLBENCH_CRAWL_URL)"; return 1; }
+    log "Waiting for $app on port $port..."
+    local i code
+    for i in $(seq 1 60); do
+        code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 "http://localhost:$port/$app/")
+        [ "$code" != "000" ] && [ "$code" != "404" ] && break
+        sleep 5
+    done
+    [ "$code" = "000" ] && { log_error "$app did not come up"; return 1; }
+    sleep 10
+    log "Docker coverage container ready (Xdebug 2.5.5)"
+}
+
+php_start_recording() {
+    touch "$PHP_COV_DATA/is_recording.txt"
+    log "Code coverage recording started (marker file)"
+}
+
+php_stop_recording() {
+    local app=$1
+    rm -f "$PHP_COV_DATA/is_recording.txt"
+    if [ ! -d "$PHP_COV_DATA/requests" ]; then
+        log_error "No coverage requests were recorded"
+        return 1
+    fi
+    local base="$RESULTS_DIR/${app}_${saf}_${traversal}_${PHP_RUN_STAMP}-php"
+    python3 "$PHP_COV_DIR/merge_xdebug_coverage.py" "$PHP_COV_DATA/requests" --json "${base}.json" > "${base}.txt" \
+        || { log_error "Merging coverage failed"; return 1; }
+    rm -rf "${base}-requests"; mv "$PHP_COV_DATA/requests" "${base}-requests"
+    find "${base}-requests" -name "*.json" -exec gzip -f {} +   # raw dumps compress ~10x
+    log "PHP coverage saved to: ${base}.txt (.json)"
+    sed -n '/Cumulative/,/paths/p' "${base}.txt"
+}
+
 # Function to start Docker coverage container
 start_docker_coverage() {
     local app=$1
+    if use_xdebug255 "$app"; then php_start_container "$app"; return $?; fi
+    [ "$PHP_COVERAGE_MODE" = "xdebug255" ] && log_warning "$app: Xdebug 2.5.5 mode not supported yet, using the legacy coverage setup"
 
     log "Starting Docker coverage container for $app"
 
@@ -342,6 +424,7 @@ get_coverage_url() {
 # Function to start code coverage recording
 start_coverage_recording() {
     local app=$1
+    if use_xdebug255 "$app"; then php_start_recording; return 0; fi
     local coverage_url=$(get_coverage_url "$app")
 
     if [ -z "$coverage_url" ]; then
@@ -366,6 +449,7 @@ start_coverage_recording() {
 # Function to stop code coverage recording and generate reports
 stop_coverage_recording() {
     local app=$1
+    if use_xdebug255 "$app"; then php_stop_recording "$app"; return $?; fi
     local coverage_url=$(get_coverage_url "$app")
 
     if [ -z "$coverage_url" ]; then
@@ -396,6 +480,7 @@ stop_coverage_recording() {
 # Function to stop Docker coverage container
 stop_docker_coverage() {
     local app=$1
+    if use_xdebug255 "$app"; then docker rm -f "crawlbench-$app-cov" > /dev/null 2>&1; return 0; fi
 
     log "Stopping Docker coverage for $app"
     cd "$COVERAGE_BASE"
@@ -443,7 +528,7 @@ run_crawljax() {
     local crawljax_dir="$PROJECT_ROOT/ICST20-submission-material-DANTE/crawljax/examples"
     cd "$crawljax_dir"
 
-    local maven_cmd="mvn exec:java -Dexec.mainClass=com.crawljax.examples.UnifiedRunner -Dexec.args='$app $saf $traversal'"
+    local maven_cmd="mvn exec:java -Dexec.mainClass=com.crawljax.examples.UnifiedRunner -Dcrawl.maxRuntimeMinutes=${MAX_RUNTIME}${CRAWLBENCH_CRAWL_URL:+ -Dcrawl.url=${CRAWLBENCH_CRAWL_URL}} -Dexec.args='$app $saf $traversal'"
 
     log "Executing: $maven_cmd"
 
@@ -472,6 +557,7 @@ run_crawljax() {
 rename_coverage_session() {
     local saf=$1
     local traversal=$2
+    if use_xdebug255 "$APP_NAME"; then return 0; fi   # results already labelled by php_stop_recording
 
     log "Renaming coverage session folder"
 
@@ -612,6 +698,6 @@ echo ""
 
 # List all coverage sessions
 log "Coverage sessions created:"
-ls -lh "$COVERAGE_SESSIONS_PATH" | grep -E "fraggen|pdiff|siamese|rted"
+if use_xdebug255 "$APP_NAME"; then ls -lh "$RESULTS_DIR" | grep -E "${APP_NAME}_.*-php"; else ls -lh "$COVERAGE_SESSIONS_PATH" | grep -E "fraggen|pdiff|siamese|rted"; fi
 
 exit 0

@@ -183,3 +183,12 @@ models/
 baseline-models/
 
 .DS_Store
+# local external artifacts (large)
+ext/
+resources_rebuilt/
+original/
+ICST20-submission-material-DANTE/
+web-apps-main/web-apps/
+node_modules/
+.temp/
+web-apps-main/web-apps-coverage/

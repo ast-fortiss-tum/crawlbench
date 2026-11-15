@@ -1,0 +1,20 @@
+# Adds Xdebug 2.5.5 (the newest Xdebug that runs on PHP 5.5; it adds branch + path coverage) to one of the
+# PHP 5.5 / Ubuntu 14.04 app images, e.g.:
+#   docker build --platform linux/amd64 --build-arg BASE=dockercontainervm/ppma:0.6.0 \
+#       -t ppma-xdebug255 -f Dockerfile.xdebug .
+ARG BASE=dockercontainervm/ppma:0.6.0
+FROM ${BASE}
+# Ubuntu 14.04 is EOL: security.ubuntu.com no longer serves the php5 packages, archive.ubuntu.com still does.
+RUN sed -i 's#http://security.ubuntu.com#http://archive.ubuntu.com#g' /etc/apt/sources.list \
+ && apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes php5-dev build-essential
+ADD https://xdebug.org/files/xdebug-2.5.5.tgz /tmp/xdebug.tgz
+RUN cd /tmp && tar xzf xdebug.tgz && cd xdebug-2.5.5 && phpize && ./configure --enable-xdebug && make \
+ && cp modules/xdebug.so /usr/lib/php5/xdebug-2.5.5.so && rm -rf /tmp/xdebug*
+COPY branch_coverage_prepend.php /opt/branch_coverage_prepend.php
+# Load Xdebug for the CLI and for Apache; the recorder is activated per request through auto_prepend_file
+# (only while coverage_data/is_recording.txt exists, same switch as the old start.php/stop.php utilities).
+RUN for d in cli apache2; do \
+      [ -d /etc/php5/$d/conf.d ] && echo "zend_extension=/usr/lib/php5/xdebug-2.5.5.so" > /etc/php5/$d/conf.d/00-xdebug-255.ini \
+      && printf "auto_prepend_file=/opt/branch_coverage_prepend.php\nmemory_limit=-1\n" > /etc/php5/$d/conf.d/99-branch-coverage.ini; \
+    done; true
