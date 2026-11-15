@@ -316,7 +316,7 @@ def embed_states_fixed_length_markuplm(
                 chunk_embs.append(torch.zeros(hidden_dim, device=device))
 
         final_emb = torch.cat(chunk_embs, dim=0)  # shape [global_max_chunks*hidden_dim]
-        state_embeddings[key] = final_emb.cpu()
+        state_embeddings[key] = final_emb.cpu().float()
 
     return state_embeddings, global_max_chunks * hidden_dim
 
@@ -334,6 +334,8 @@ def run_embedding_pipeline_markuplm(
         print("[Info] Loading cached MARKUPLM embeddings.")
         with open(cache_path, "rb") as f:
             state_embeddings, final_input_dim = pickle.load(f)
+        # MarkupLM may emit float16 (checkpoint dtype); the siamese head is float32 and MPS crashes on mixed dtypes
+        state_embeddings = {k: v.float() for k, v in state_embeddings.items()}
         return state_embeddings, final_input_dim
 
     state_chunks, global_max_chunks = gather_state_chunks_markuplm(
