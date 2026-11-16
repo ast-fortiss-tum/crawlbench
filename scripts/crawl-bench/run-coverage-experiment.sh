@@ -296,11 +296,11 @@ PHP_COV_DIR="$PROJECT_ROOT/scripts/crawl-bench/php-coverage"
 
 php_app_config() {
     case "$1" in
-        mantisbt) PHP_BASE_IMAGE="dockercontainervm/mantisbt:1.2.0"; PHP_HOST_PORT=3001; PHP_DB_PORT=3307
+        mantisbt) PHP_BASE_IMAGE="dockercontainervm/mantisbt:1.2.0"; PHP_HOST_PORT=3001; PHP_DB_PORT=3307; PHP_RUN_DIR=/home
                   PHP_INCLUDE="/var/www/html/mantisbt/"; PHP_EXCLUDE="/var/www/html/mantisbt/library/:/var/www/html/mantisbt/tests/" ;;
-        mrbs)     PHP_BASE_IMAGE="dockercontainervm/mrbs:1.4.9"; PHP_HOST_PORT=3002; PHP_DB_PORT=3308
+        mrbs)     PHP_BASE_IMAGE="dockercontainervm/mrbs:1.4.9"; PHP_HOST_PORT=3002; PHP_DB_PORT=3308; PHP_RUN_DIR=/home/mrbs
                   PHP_INCLUDE="/var/www/html/mrbs/"; PHP_EXCLUDE="" ;;
-        ppma)     PHP_BASE_IMAGE="dockercontainervm/ppma:0.6.0"; PHP_HOST_PORT=3003; PHP_DB_PORT=3309
+        ppma)     PHP_BASE_IMAGE="dockercontainervm/ppma:0.6.0"; PHP_HOST_PORT=3003; PHP_DB_PORT=3309; PHP_RUN_DIR=/home/ppma
                   PHP_INCLUDE="/var/www/html/ppma/protected/"; PHP_EXCLUDE="/var/www/html/ppma/vendor/" ;;
         *) return 1 ;;
     esac
@@ -325,10 +325,10 @@ php_start_container() {
     PHP_COV_DATA="$RESULTS_BASE_DIR/php-coverage/$app/coverage_data"
     rm -rf "$PHP_COV_DATA"; mkdir -p "$PHP_COV_DATA"; chmod 777 "$PHP_COV_DATA"
     docker rm -f "crawlbench-$app-cov" > /dev/null 2>&1
-    docker run -d --name "crawlbench-$app-cov" --platform linux/amd64 -p "$port:80" -p "$PHP_DB_PORT:3306" \
+    docker run -d --name "crawlbench-$app-cov" --platform linux/amd64 --workdir "$PHP_RUN_DIR" -p "$port:80" -p "$PHP_DB_PORT:3306" \
         -v "$PHP_COV_DATA:/var/www/html/coverage/coverage_data" \
         -e "COVERAGE_INCLUDE=$PHP_INCLUDE" -e "COVERAGE_EXCLUDE=$PHP_EXCLUDE" \
-        "$image" bash /home/run-services-docker.sh > /dev/null \
+        "$image" bash ./run-services-docker.sh > /dev/null \
         || { log_error "Could not start container (port $port busy? set CRAWLBENCH_PHP_PORT and CRAWLBENCH_CRAWL_URL)"; return 1; }
     log "Waiting for $app on port $port..."
     local i code
@@ -343,6 +343,7 @@ php_start_container() {
 }
 
 php_start_recording() {
+    PHP_T0=$(python3 -c 'import time; print(time.time())')   # start of the crawl, used as t=0 for coverage over time
     touch "$PHP_COV_DATA/is_recording.txt"
     log "Code coverage recording started (marker file)"
 }
@@ -355,12 +356,12 @@ php_stop_recording() {
         return 1
     fi
     local base="$RESULTS_DIR/${app}_${saf}_${traversal}_${PHP_RUN_STAMP}-php"
-    python3 "$PHP_COV_DIR/merge_xdebug_coverage.py" "$PHP_COV_DATA/requests" --json "${base}.json" > "${base}.txt" \
+    python3 "$PHP_COV_DIR/merge_xdebug_coverage.py" "$PHP_COV_DATA/requests" --json "${base}.json" ${PHP_T0:+--t0 "$PHP_T0"} > "${base}.txt" \
         || { log_error "Merging coverage failed"; return 1; }
     rm -rf "${base}-requests"; mv "$PHP_COV_DATA/requests" "${base}-requests"
     find "${base}-requests" -name "*.json" -exec gzip -f {} +   # raw dumps compress ~10x
     log "PHP coverage saved to: ${base}.txt (.json)"
-    sed -n '/Cumulative/,/paths/p' "${base}.txt"
+    sed -n '/Cumulative/,/paths/p;/Coverage over time/,$p' "${base}.txt"
 }
 
 # Function to start Docker coverage container
@@ -480,7 +481,7 @@ stop_coverage_recording() {
 # Function to stop Docker coverage container
 stop_docker_coverage() {
     local app=$1
-    if use_xdebug255 "$app"; then docker rm -f "crawlbench-$app-cov" > /dev/null 2>&1; return 0; fi
+    if use_xdebug255 "$app"; then docker rm -f "crawlbench-$app-cov" > /dev/null 2>&1 || true; return 0; fi   # `|| true`: set -e must not end the script here
 
     log "Stopping Docker coverage for $app"
     cd "$COVERAGE_BASE"

@@ -2,6 +2,7 @@
 """Merge the per-request Xdebug coverage files written by branch_coverage_prepend.php.
 
 Usage: merge_xdebug_coverage.py <coverage_data/requests dir> [--json out.json] [--exclude SUBSTR ...]
+                                [--t0 EPOCH_SECONDS] [--checkpoints MIN [MIN ...]]
 
 Reports, over all requests (cumulative) and as growth per request:
   lines          executed / executable lines (dead code excluded)
@@ -61,6 +62,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('requests_dir')
     ap.add_argument('--json')
+    ap.add_argument('--t0', type=float, help='crawl start (epoch seconds); default: time of the first request')
+    ap.add_argument('--checkpoints', type=float, nargs='*', default=[5, 10, 15, 30, 45, 60, 90, 120],
+                    help='minutes after t0 at which cumulative coverage is reported')
     ap.add_argument('--exclude', nargs='*', default=[], help='ignore files whose path contains any of these')
     a = ap.parse_args()
 
@@ -69,6 +73,11 @@ def main():
     if not reqs:
         sys.exit('no request files in ' + a.requests_dir)
 
+    def req_time(path):
+        # file name is <epoch %014.4f>-<pid>.json[.gz]
+        return float(os.path.basename(path).split('-')[0])
+
+    t0 = a.t0 if a.t0 is not None else req_time(reqs[0])
     m = Merged()
     growth = []
     for r in reqs:
@@ -76,7 +85,17 @@ def main():
         m.add({f: i for f, i in d['files'].items() if include(f)})
         s = m.summary()
         growth.append({'request': os.path.basename(r), 'uri': d.get('uri', ''),
-                       **{k: s[k]['percent'] for k in s}})
+                       'elapsed_s': round(req_time(r) - t0, 2),
+                       **{k: s[k]['percent'] for k in s},
+                       **{k + '_covered': s[k]['covered'] for k in s}})
+    # cumulative coverage at fixed times: last request at or before each checkpoint
+    checkpoints = []
+    for mins in a.checkpoints:
+        seen = [g for g in growth if g['elapsed_s'] <= mins * 60]
+        g = seen[-1] if seen else None
+        checkpoints.append({'minute': mins, 'requests': len(seen),
+                            **({k: g[k] for k in ('lines', 'blocks', 'edges')} if g else
+                               {'lines': 0.0, 'blocks': 0.0, 'edges': 0.0})})
     final = m.summary()
 
     print(f'Requests: {len(reqs)}, files: {len({k[0] for k in m.lines})}')
@@ -89,11 +108,14 @@ def main():
     for g in show:
         print('  ...' if g is None else
               f"  {g['uri'][:42]:42s} lines {g['lines']:6.2f}%  blocks {g['blocks']:6.2f}%  edges {g['edges']:6.2f}%")
+    print('\nCoverage over time (cumulative, minutes after start):')
+    for c in checkpoints:
+        print(f"  {c['minute']:>5g} min  requests {c['requests']:5d}  lines {c['lines']:6.2f}%  blocks {c['blocks']:6.2f}%  edges {c['edges']:6.2f}%")
     if a.json:
         per_file = {}
         for f in sorted({k[0] for k in m.lines}):
             per_file[f] = m.summary(lambda x, f=f: x == f)
-        json.dump({'final': final, 'perFile': per_file, 'growth': growth}, open(a.json, 'w'), indent=1)
+        json.dump({'final': final, 'perFile': per_file, 'growth': growth, 'checkpoints': checkpoints, 't0': t0}, open(a.json, 'w'), indent=1)
         print('\nWrote', a.json)
 
 
