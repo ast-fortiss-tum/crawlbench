@@ -106,3 +106,6 @@ Final lines coverage, mean (sd):
 - ppma: FragGen 45.66 (0.26), RTED 41.62 (3.85), PDiff 41.44 (3.63) bimodal 38.8/45-46, Siamese 38.80 (0.02): always the low mode, 37 requests, <1 min crawl.
 - Drift: reps 4-5 of mantisbt/mrbs RTED/FragGen make 2x the requests of reps 1-3 (machine load during reps 1-3 was higher). Time-budgeted crawls on a shared machine: report requests/actions alongside coverage and run reps under comparable load.
 - JS pilot started 2026-11-17 08:06 (pagekit, phoenix, petclinic x rted/fraggen/pdiff/siamese); pagekit RTED: 17.7% stmts / 5.2% branches / 45.5% lines, 66 tests, ~40 min per run incl. replay.
+
+## 2026-11-17 JS summary on a common denominator
+scripts/rq3/js_summary.py: branch-coverage.mjs percentages use the scripts each run loaded as denominator (pagekit PDiff: 54% over 1418 statements vs 18% over 8228 for FragGen). New script scores all runs of an app against max-per-script totals. Pagekit pilot (statements, common): FragGen 18.8, RTED 17.5, PDiff 9.3. Dimeshift: FragGen 27.2, RTED 18.3, PDiff 15.3 (all runs saw 56 scripts). Petclinic has older FragGen files from earlier experiments (not part of this pilot).
