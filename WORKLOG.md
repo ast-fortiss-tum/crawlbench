@@ -117,3 +117,4 @@ Observations: PDiff crawls end after a few tests on dimeshift/pagekit; Siamese (
 
 ## 2026-11-17 Migration prep
 Added MIGRATION.md (what git does not carry, how to copy/rebuild, smoke test), CLAUDE.md (handoff for Claude Code: rules, state, next steps, pitfalls) and environment-snn-ndd.yml (conda export, prefix removed). Note: resources/ and the DANTE/Crawljax clone (with ~70 locally modified files) are gitignored and must be copied by hand.
+- Cleanup 1: deleted crawljax/cli/target/crawljax-cli-5.2.4-SNAPSHOT.zip (936 MB build artifact, referenced by no script; regenerate with mvn package).
