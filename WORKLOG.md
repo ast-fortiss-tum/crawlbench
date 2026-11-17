@@ -98,3 +98,11 @@ Running log of what we do in this repo. Newest entries first.
 - run_repeats.sh: KIND=php|js, hard per-run limit (HARD_LIMIT_MIN = 4*MINUTES+40, killed -> FAIL), teardown timeouts (merge 600 s, docker rm 120 s) in run-coverage-experiment.sh.
 - Started: REPEATS=5 SAFS="fraggen rted pdiff siamese" MINUTES=10, lanes: mantisbt | ppma then mrbs (rep 1-3 of the 3 old SAFs are skipped, resumable). 33 new runs.
 - Plan after PHP: JS pilot on pagekit/phoenix/petclinic, then JS repeats (KIND=js). Status updates to the user every 60 min.
+
+## 2026-11-17 PHP repeats complete (3 apps x {FragGen,RTED,PDiff,Siamese} x 5 reps, BFS, 10 min; 60 runs, all ok)
+Final lines coverage, mean (sd): 
+- mantisbt: FragGen 28.79 (0.31), Siamese 28.74 (0.00), RTED 28.32 (0.37), PDiff 24.93 (0.28). PDiff clearly worst; the other three within ~0.5 pp.
+- mrbs: RTED 41.53 (0.15), PDiff 41.42 (0), FragGen 40.16 (2.22, two modes 41.8/37.7), Siamese 37.72 (0). Siamese ~600 requests but lowest coverage.
+- ppma: FragGen 45.66 (0.26), RTED 41.62 (3.85), PDiff 41.44 (3.63) bimodal 38.8/45-46, Siamese 38.80 (0.02): always the low mode, 37 requests, <1 min crawl.
+- Drift: reps 4-5 of mantisbt/mrbs RTED/FragGen make 2x the requests of reps 1-3 (machine load during reps 1-3 was higher). Time-budgeted crawls on a shared machine: report requests/actions alongside coverage and run reps under comparable load.
+- JS pilot started 2026-11-17 08:06 (pagekit, phoenix, petclinic x rted/fraggen/pdiff/siamese); pagekit RTED: 17.7% stmts / 5.2% branches / 45.5% lines, 66 tests, ~40 min per run incl. replay.
