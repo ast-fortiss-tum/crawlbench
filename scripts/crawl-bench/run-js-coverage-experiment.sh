@@ -249,7 +249,7 @@ start_single_saf_backend() {
     if [ "$saf_type" == "siamese" ]; then
         # Start Siamese SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/crawl-bench/run-saf-snn.sh "$app" > "$saf_log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-snn.sh "$app" "${SNN_TITLE:-acrossapp_modernbert}" "${SNN_SETTING:-contrastive}" > "$saf_log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
         log "Siamese SAF backend started (PID: $SAF_PID, Log: $saf_log)"

@@ -14,6 +14,9 @@ REPEATS=${REPEATS:-5}
 MINUTES=${MINUTES:-10}
 SAFS=(${SAFS:-fraggen rted pdiff})
 TRAV=${TRAVERSAL:-bfs}
+KIND=${KIND:-php}   # php: run-coverage-experiment.sh / *-$SUF.json ; js: run-js-coverage-experiment.sh / *-branch.json
+if [ "$KIND" = js ]; then SCRIPT=run-js-coverage-experiment.sh; SUF=branch; else SCRIPT=run-coverage-experiment.sh; SUF=php; fi
+HARD_LIMIT_MIN=${HARD_LIMIT_MIN:-$(( ${MINUTES:-10} * 4 + 40 ))}   # a stalled run is killed (rc 124) and counted as FAIL
 STATUS="$ROOT/logs/repeats_${APP}.status"
 mkdir -p "$ROOT/logs" "$ROOT/results/crawlbench"
 
@@ -51,14 +54,14 @@ for rep in $(seq 1 "$REPEATS"); do
     kill_orphans
     while [ "$(free_pct)" -lt "$MIN_FREE_PCT" ] 2>/dev/null; do log "WAIT free memory $(free_pct)% < ${MIN_FREE_PCT}%"; sleep 60; done
     log "START $run $(conditions)"
-    before=$(ls -1 results/crawlbench/ 2>/dev/null | grep -c "^${APP}_${saf}_${TRAV}_.*-php.json$")
+    before=$(ls -1 results/crawlbench/ 2>/dev/null | grep -c "^${APP}_${saf}_${TRAV}_.*-$SUF.json$")
     CRAWLBENCH_MAX_RUNTIME=$MINUTES CRAWLBENCH_SAFS="$saf" CRAWLBENCH_TRAVERSALS="$TRAV" CRAWLBENCH_ASSUME_YES=1 \
-      bash scripts/crawl-bench/run-coverage-experiment.sh "$APP" > "logs/repeats_${run}.log" 2>&1
+      timeout $((HARD_LIMIT_MIN*60))s bash "scripts/crawl-bench/$SCRIPT" "$APP" > "logs/repeats_${run}.log" 2>&1
     rc=$?
-    after=$(ls -1 results/crawlbench/ 2>/dev/null | grep -c "^${APP}_${saf}_${TRAV}_.*-php.json$")
-    cov=$(ls -1t results/crawlbench/${APP}_${saf}_${TRAV}_*-php.json 2>/dev/null | head -1)
+    after=$(ls -1 results/crawlbench/ 2>/dev/null | grep -c "^${APP}_${saf}_${TRAV}_.*-$SUF.json$")
+    cov=$(ls -1t results/crawlbench/${APP}_${saf}_${TRAV}_*-$SUF.json 2>/dev/null | head -1)
     out=$(ls -1dt ICST20-submission-material-DANTE/crawljax/examples/out/${APP}-${saf}-${TRAV}-${MINUTES}mins-* 2>/dev/null | head -1)
-    if [ $rc -eq 0 ] && [ "$after" -gt "$before" ] && [ -n "$out" ] && grep -q '"event":"NEW"' "$out/action-log.jsonl" 2>/dev/null; then
+    if [ $rc -eq 0 ] && [ "$after" -gt "$before" ] && { [ "$KIND" = js ] || { [ -n "$out" ] && grep -q '"event":"NEW"' "$out/action-log.jsonl" 2>/dev/null; }; }; then
       log "END $run ok coverage=$cov out=$out $(conditions)"
     else
       log "END $run FAIL rc=$rc new_coverage_files=$((after-before)) out=${out:-none} (see logs/repeats_${run}.log) $(conditions)"

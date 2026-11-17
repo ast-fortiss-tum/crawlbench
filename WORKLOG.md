@@ -92,3 +92,9 @@ Running log of what we do in this repo. Newest entries first.
 - run_pilot.sh: PILOT_KIND=js (run-js-coverage-experiment.sh, success = new *-branch.json); JS crawl output is moved, so the `out` lookup is not required for JS.
 - Results (statements / branches): FragGen 27.2 / 23.5 (111 tests), RTED 18.3 / 13.4 (10 tests), PDiff 15.3 / 9.3 (3 tests). RTED/PDiff crawls ended early ("Exhausted"). Single run each: needs repeats before concluding.
 - Open: pagekit, phoenix, petclinic (Tomcat port 9966 needed), Siamese SAF, repeats, per-state attribution for JS.
+
+## 2026-11-17 PHP repeats extended to 5 + Siamese; hardening
+- Siamese runs use acrossapp_modernbert **contrastive** (SNN_SETTING override; run-saf-snn.sh default is triplet, whose across-app F1 is 0.17-0.38 vs 0.45-0.77 for contrastive).
+- run_repeats.sh: KIND=php|js, hard per-run limit (HARD_LIMIT_MIN = 4*MINUTES+40, killed -> FAIL), teardown timeouts (merge 600 s, docker rm 120 s) in run-coverage-experiment.sh.
+- Started: REPEATS=5 SAFS="fraggen rted pdiff siamese" MINUTES=10, lanes: mantisbt | ppma then mrbs (rep 1-3 of the 3 old SAFs are skipped, resumable). 33 new runs.
+- Plan after PHP: JS pilot on pagekit/phoenix/petclinic, then JS repeats (KIND=js). Status updates to the user every 60 min.

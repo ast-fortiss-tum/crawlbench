@@ -179,7 +179,7 @@ start_single_saf_backend() {
     if [ "$saf_type" == "siamese" ]; then
         # Start Siamese SAF service
         cd "$PROJECT_ROOT"
-        ./scripts/crawl-bench/run-saf-snn.sh "$app" > "$saf_log" 2>&1 &
+        ./scripts/crawl-bench/run-saf-snn.sh "$app" "${SNN_TITLE:-acrossapp_modernbert}" "${SNN_SETTING:-contrastive}" > "$saf_log" 2>&1 &
         SAF_PID=$!
         echo $SAF_PID > "/tmp/saf-${saf_type}-${app}.pid"
         log "Siamese SAF backend started (PID: $SAF_PID)"
@@ -324,7 +324,7 @@ php_start_container() {
     PHP_RUN_STAMP=$(date +%Y%m%d_%H%M%S)
     PHP_COV_DATA="$RESULTS_BASE_DIR/php-coverage/$app/coverage_data"
     rm -rf "$PHP_COV_DATA"; mkdir -p "$PHP_COV_DATA"; chmod 777 "$PHP_COV_DATA"
-    docker rm -f "crawlbench-$app-cov" > /dev/null 2>&1
+    timeout 120 docker rm -f "crawlbench-$app-cov" > /dev/null 2>&1
     docker run -d --name "crawlbench-$app-cov" --platform linux/amd64 --workdir "$PHP_RUN_DIR" -p "$port:80" -p "$PHP_DB_PORT:3306" \
         -v "$PHP_COV_DATA:/var/www/html/coverage/coverage_data" \
         -e "COVERAGE_INCLUDE=$PHP_INCLUDE" -e "COVERAGE_EXCLUDE=$PHP_EXCLUDE" \
@@ -356,7 +356,7 @@ php_stop_recording() {
         return 1
     fi
     local base="$RESULTS_DIR/${app}_${saf}_${traversal}_${PHP_RUN_STAMP}-php"
-    python3 "$PHP_COV_DIR/merge_xdebug_coverage.py" "$PHP_COV_DATA/requests" --json "${base}.json" ${PHP_T0:+--t0 "$PHP_T0"} > "${base}.txt" \
+    timeout 600 python3 "$PHP_COV_DIR/merge_xdebug_coverage.py" "$PHP_COV_DATA/requests" --json "${base}.json" ${PHP_T0:+--t0 "$PHP_T0"} > "${base}.txt" \
         || { log_error "Merging coverage failed"; return 1; }
     rm -rf "${base}-requests"; mv "$PHP_COV_DATA/requests" "${base}-requests"
     find "${base}-requests" -name "*.json" -exec gzip -f {} +   # raw dumps compress ~10x
@@ -481,7 +481,7 @@ stop_coverage_recording() {
 # Function to stop Docker coverage container
 stop_docker_coverage() {
     local app=$1
-    if use_xdebug255 "$app"; then docker rm -f "crawlbench-$app-cov" > /dev/null 2>&1 || true; return 0; fi   # `|| true`: set -e must not end the script here
+    if use_xdebug255 "$app"; then timeout 120 docker rm -f "crawlbench-$app-cov" > /dev/null 2>&1 || true; return 0; fi   # `|| true`: set -e must not end the script here
 
     log "Stopping Docker coverage for $app"
     cd "$COVERAGE_BASE"
