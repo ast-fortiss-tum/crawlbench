@@ -33,3 +33,8 @@ Apply, then `cd core && mvn -o -q install -DskipTests` (installs crawljax-core i
    - index creation, before `plugins.runOnNewStatePlugins(context, index)`:
        context.setLastEventable(null); context.setLastEventKind("index");
 Note: `context.getCrawlPath()` can throw (null path), so never rely on it in plugins.
+
+## DANTE replay browser pin (JS apps)
+`dante/src/main/resources/staticfiles/DriverProvider.java` (and the already generated `applications/*/testsuite-*/.../DriverProvider.java`)
+now calls `chromeOptions.setBinary(System.getenv("CHROME_BIN"))` when set, so test replay uses the same Chrome 114 as CHROMEDRIVER_BIN
+instead of the system Chrome (otherwise: "ChromeDriver only supports Chrome version 114").

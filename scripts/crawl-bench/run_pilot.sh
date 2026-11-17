@@ -11,7 +11,8 @@ APPS=${PILOT_APPS:-"mantisbt mrbs ppma"}
 SAFS=${PILOT_SAFS:-"fraggen rted pdiff"}
 TRAVERSALS=${PILOT_TRAVERSALS:-"bfs"}
 MINUTES=${PILOT_MINUTES:-10}
-STATUS="$ROOT/logs/pilot.status"
+KIND=${PILOT_KIND:-php}   # php -> run-coverage-experiment.sh (*-$SUF.json); js -> run-js-coverage-experiment.sh (*-branch.json)
+if [ "$KIND" = js ]; then SCRIPT=run-js-coverage-experiment.sh; SUF=branch; STATUS="$ROOT/logs/pilot_js.status"; else SCRIPT=run-coverage-experiment.sh; SUF=php; STATUS="$ROOT/logs/pilot.status"; fi
 mkdir -p "$ROOT/logs" "$ROOT/results/crawlbench"
 
 # Chrome 114 (FragGen needs it) + a `timeout` shim (macOS has none) + the SNN env first on PATH for the SAF services
@@ -42,15 +43,15 @@ for app in $APPS; do
       run="${app}_${saf}_${trav}_${MINUTES}m"
       if grep -q "END $run ok" "$STATUS" 2>/dev/null; then log "SKIP $run (done)"; continue; fi
       log "START $run"
-      before=$(ls -1t results/crawlbench/ 2>/dev/null | grep -c "${app}_${saf}_${trav}_.*-php.json")
+      before=$(ls -1t results/crawlbench/ 2>/dev/null | grep -c "${app}_${saf}_${trav}_.*-$SUF.json")
       CRAWLBENCH_MAX_RUNTIME=$MINUTES CRAWLBENCH_SAFS="$saf" CRAWLBENCH_TRAVERSALS="$trav" CRAWLBENCH_ASSUME_YES=1 \
-        bash scripts/crawl-bench/run-coverage-experiment.sh "$app" > "logs/pilot_${run}.log" 2>&1
+        bash "scripts/crawl-bench/$SCRIPT" "$app" > "logs/pilot_${run}.log" 2>&1
       rc=$?
-      after=$(ls -1t results/crawlbench/ 2>/dev/null | grep -c "${app}_${saf}_${trav}_.*-php.json")
-      cov=$(ls -1t results/crawlbench/${app}_${saf}_${trav}_*-php.json 2>/dev/null | head -1)
+      after=$(ls -1t results/crawlbench/ 2>/dev/null | grep -c "${app}_${saf}_${trav}_.*-$SUF.json")
+      cov=$(ls -1t results/crawlbench/${app}_${saf}_${trav}_*-$SUF.json 2>/dev/null | head -1)
       out=$(ls -1dt ICST20-submission-material-DANTE/crawljax/examples/out/${app}-${saf}-${trav}-${MINUTES}mins-* 2>/dev/null | head -1)
       # a run only counts when it exited 0, produced a NEW coverage file and an action log with decisions
-      if [ $rc -eq 0 ] && [ "$after" -gt "$before" ] && [ -n "$out" ] && grep -q '"event":"NEW"' "$out/action-log.jsonl" 2>/dev/null; then
+      if [ $rc -eq 0 ] && [ "$after" -gt "$before" ] && { [ "$KIND" = js ] || [ -n "$out" ]; } && { [ "$KIND" = js ] || grep -q '"event":"NEW"' "$out/action-log.jsonl" 2>/dev/null; }; then
         log "END $run ok coverage=$cov out=$out"
       else
         log "END $run FAIL rc=$rc new_coverage_files=$((after-before)) out=${out:-none} (see logs/pilot_${run}.log)"

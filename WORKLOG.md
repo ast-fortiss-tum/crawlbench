@@ -86,3 +86,9 @@ Running log of what we do in this repo. Newest entries first.
   ppma fraggen 45.77 (0.28) / rted 43.49 (4.06) / pdiff 40.94 (3.73): bimodal (~38.8 or ~45-46 %, a ~7 pp jump); rted reached 46.1 in 2 of 3 reps, so the pilot's ranking on ppma was luck.
 - Requests/10 min: mrbs fraggen 57-62 vs rted 202-233 (FragGen is ~4x slower per action). mantisbt pdiff rep3 only 26 requests (vs 120-128 in reps 1-2), start load was low (load1 4.5): unexplained, check.
 - Implication (inference, n=3): where SAFs differ at all, the difference is small relative to the app effect; time-to-coverage and fault exposure (mutation) are likely more discriminating than final coverage. Repeats matter for bimodal apps (ppma), hardly for deterministic ones (mrbs).
+
+## 2026-11-16/17 JS pilot (dimeshift, BFS, 10 min, 1 run per SAF)
+- Fix: DANTE replay `DriverProvider` now honours CHROME_BIN (was system Chrome 157 vs chromedriver 114 -> 0 tests ran). Documented in crawljax-patches/README.md.
+- run_pilot.sh: PILOT_KIND=js (run-js-coverage-experiment.sh, success = new *-branch.json); JS crawl output is moved, so the `out` lookup is not required for JS.
+- Results (statements / branches): FragGen 27.2 / 23.5 (111 tests), RTED 18.3 / 13.4 (10 tests), PDiff 15.3 / 9.3 (3 tests). RTED/PDiff crawls ended early ("Exhausted"). Single run each: needs repeats before concluding.
+- Open: pagekit, phoenix, petclinic (Tomcat port 9966 needed), Siamese SAF, repeats, per-state attribution for JS.
