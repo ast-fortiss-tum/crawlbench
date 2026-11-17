@@ -14,7 +14,7 @@ Written 2026-11-17. The source machine was an Apple-silicon Mac (10 CPUs, 32 GB 
 | `logs/` (status files read by `scripts/rq3/repeats_summary.py`, per-run logs) | 13 MB | copy |
 | `resources/` (entirely gitignored: embedding models 2.6 GB, baseline-runner 0.9 GB, doms 0.2 GB, baseline-dataset incl. `combinedEntries.json` 46 MB) | 3.7 GB | copy |
 | Hugging Face cache (ModernBERT etc.) | 6.2 GB | copy `~/.cache/huggingface`, or let it re-download |
-| Chrome for Testing 114 + chromedriver 114 | 0.4 GB | copy `~/fraggen-chrome`, or download Chrome for Testing 114.0.5735.90 (mac-arm64) and the matching chromedriver |
+| Chrome 114 + chromedriver 114 (FragGen) | 0.4 GB | **do not copy** (the old one is a macOS arm64 build). On Ubuntu download the Linux builds, see 6 |
 | conda env `snn-ndd` | 4.4 GB | recreate: `conda env create -f environment-snn-ndd.yml` |
 | Docker images in use: `dockercontainervm/{pagekit,dimeshift,phoenix-trello,ppma:0.6.0,petclinic-angular2:empty-db}` | about 13 GB | `docker save` / `docker load`, or pull again |
 | Docker images `{mantisbt,mrbs,ppma}-xdebug255` | about 3.2 GB | **`docker save` / `docker load` (recommended)**: the bases `dockercontainervm/mantisbt:1.2.0` and `mrbs:1.4.9` are no longer on the old machine, so rebuilding needs them pulled again (see 3) |
@@ -68,3 +68,22 @@ Then check `scripts/rq3/repeats_summary.py` and `scripts/rq3/js_summary.py` stil
 ## 5. After arrival: what is open
 
 See `CLAUDE.md` (handoff for Claude Code) and `WORKLOG.md`.
+
+## 6. Ubuntu (Linux) notes: to be done by Claude Code on the new machine
+
+The user does not need to migrate Chrome. On arrival Claude should set this up and adapt the scripts:
+
+- **Chrome 114 and chromedriver 114 for Linux** (FragGen needs exactly 114):
+  - Chrome: `https://storage.googleapis.com/chrome-for-testing-public/114.0.5735.90/linux64/chrome-linux64.zip` (about 300 MB, checked 2026-11-17).
+  - chromedriver: `https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip` (the old location; the same file name under the Chrome for Testing bucket returns 404).
+  - Unzip into `~/fraggen-chrome/`, then `export CHROME_BIN=~/fraggen-chrome/chrome-linux64/chrome` and `export CHROMEDRIVER_BIN=~/fraggen-chrome/chromedriver` (or whatever the unzip layout is). `dante/chromedriver-linux64` contains only licence files, no binary.
+  - Chrome 114 needs the usual shared libraries (`libnss3`, `libatk-bridge2.0-0`, `libgbm1`, `libxss1`, `libasound2` and similar); install what `ldd chrome | grep "not found"` reports.
+- **macOS-only code in the scripts** (make it work on both, e.g. branch on `uname`):
+  - `scripts/crawl-bench/run_pilot.sh` and `run_repeats.sh` default `CHROME_BIN` to the macOS path (`chrome-mac-arm64/Google Chrome for Testing.app/...`); fix the default or always export the two variables first.
+  - `run_repeats.sh`: `free_pct()` uses `memory_pressure`, `conditions()` uses `sysctl vm.loadavg` / `vm.swapusage`. On Linux use `/proc/meminfo` (MemAvailable / MemTotal), `/proc/loadavg` and SwapTotal-SwapFree. Without the fix the memory guard silently does nothing and the logged conditions are blank.
+  - `kill_orphans()` greps for `fraggen-chrome`; it still works if Chrome stays under `~/fraggen-chrome`.
+  - `timeout` exists on Linux; the perl stand-in is skipped automatically.
+  - BSD vs GNU differences: `sed -i` (GNU takes no suffix argument), `date`, `ls -1t`, `stat`. Check any script that uses them.
+- **Docker:** the app images are linux/amd64. On x86 Ubuntu they run natively (faster than the emulated runs here; run times and request counts will not be comparable to the Mac results, so keep platforms apart or note it). On arm64 Ubuntu they need emulation (`--platform linux/amd64`, qemu-user-static). Check host-port publishing and `localhost` access from the containers; the smoke test in 4 will show problems.
+- **Java 23, Maven, conda:** install and re-run the smoke tests. Heap and thread limits may differ.
+- **Comparability:** results from the new machine are a different platform (CPU, load, Docker native vs emulated). Put them in separate result files or label them, and run the repeats for a given cell on one machine only.
