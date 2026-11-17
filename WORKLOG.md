@@ -109,3 +109,7 @@ Final lines coverage, mean (sd):
 
 ## 2026-11-17 JS summary on a common denominator
 scripts/rq3/js_summary.py: branch-coverage.mjs percentages use the scripts each run loaded as denominator (pagekit PDiff: 54% over 1418 statements vs 18% over 8228 for FragGen). New script scores all runs of an app against max-per-script totals. Pagekit pilot (statements, common): FragGen 18.8, RTED 17.5, PDiff 9.3. Dimeshift: FragGen 27.2, RTED 18.3, PDiff 15.3 (all runs saw 56 scripts). Petclinic has older FragGen files from earlier experiments (not part of this pilot).
+
+## 2026-11-17 JS pilot complete (4 apps x {RTED,FragGen,PDiff,Siamese}, BFS, 10 min, 1 run each; scripts/rq3/js_summary.py, common denominator)
+Statements %: dimeshift FragGen 27.2 / RTED 18.3 / PDiff 15.3; pagekit FragGen 18.8 / Siamese 17.8 / RTED 17.5 / PDiff 9.3; phoenix PDiff 51.2 / RTED 51.1 / FragGen 51.0 / Siamese 47.0 (2 tests, early stop); petclinic see js_summary.csv (FragGen runs vary 74.3-77.4 on their own).
+Observations: PDiff crawls end after a few tests on dimeshift/pagekit; Siamese (contrastive) ends early on phoenix and PPMA. Phoenix is one bundled script and does not separate SAFs. Single runs: repeats needed. Dimeshift Siamese not yet run. Runs ~20-40 min each incl. replay.
