@@ -16,8 +16,8 @@ Written 2026-11-17. The source machine was an Apple-silicon Mac (10 CPUs, 32 GB 
 | Hugging Face cache (ModernBERT etc.) | 6.2 GB | copy `~/.cache/huggingface`, or let it re-download |
 | Chrome for Testing 114 + chromedriver 114 | 0.4 GB | copy `~/fraggen-chrome`, or download Chrome for Testing 114.0.5735.90 (mac-arm64) and the matching chromedriver |
 | conda env `snn-ndd` | 4.4 GB | recreate: `conda env create -f environment-snn-ndd.yml` |
-| Docker images `dockercontainervm/*` | about 25 GB | `docker save` / `docker load`, or pull them again |
-| Docker images `<app>-xdebug255` (mantisbt, mrbs, ppma) | about 3 GB | rebuild, see 3 |
+| Docker images in use: `dockercontainervm/{pagekit,dimeshift,phoenix-trello,ppma:0.6.0,petclinic-angular2:empty-db}` | about 13 GB | `docker save` / `docker load`, or pull again |
+| Docker images `{mantisbt,mrbs,ppma}-xdebug255` | about 3.2 GB | **`docker save` / `docker load` (recommended)**: the bases `dockercontainervm/mantisbt:1.2.0` and `mrbs:1.4.9` are no longer on the old machine, so rebuilding needs them pulled again (see 3) |
 
 Rough total to copy by hand: about 10 GB without Docker images and caches.
 
