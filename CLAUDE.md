@@ -11,6 +11,17 @@ moving instructions are in `MIGRATION.md`.
 - Keep the user's name and project details out of requests to outside services.
 - Overall goal: given an arbitrary web app, recommend a good Crawljax configuration (SAF, traversal, input). The runtime-SAF bandit (`TODO.md`) is a separate, later paper.
 
+## State on 2026-11-18 (nothing running; moving to another machine, see MIGRATION.md section 7)
+Read `MIGRATION.md` section 7 first: restore steps, what to copy, RQ4 design. A different Claude account has no memory of earlier sessions; this file, `PLAN.md`, `WORKLOG.md` are the record.
+New since 2026-11-17 (Ubuntu 20.04, 4 CPU, 15 GB, GTX 1080 Ti machine):
+- Linux toolchain set up, Siamese weights retrained on the GPU, JS repeats (3 per cell, 10 min, BFS, 4 SAFs x 4 apps) run on Linux: 45 of 48 OK. Results with timestamp >= 20261117_170000 are Linux; earlier ones are Mac. `python3 scripts/rq3/js_summary.py --platform linux`.
+- Open: pagekit PDiff gives 0 tests on Linux (29 to 30 states, no completed path in 10 min; not load; cause unknown; options: longer budget, report as failure, profile). Pagekit FragGen found 34 states on Linux vs 54 on the Mac (n=1). The Siamese weights are not identical to the Mac ones, so Siamese results are not comparable across platforms.
+- Fixes: SAF services are now killed at run end (`exec python` in `run-saf-*.sh`); `run_pilot.sh`/`run_repeats.sh` work on Linux; `run_campaign_linux.sh` is the campaign driver.
+- **RQ4 started** (user approved on 2026-11-18): translate DANTE suites to Playwright (`scripts/rq4/dante2pw.py`), implicit oracle (`scripts/rq4/templates/oracle.ts`), fixed mutant set per app via our MultilayerMT extension `--mutants-file` (patch in `~/crawlbench-migration/mlmt/`, written, NOT yet built or tested). Pilot on dimeshift RTED: 20 mutants, 10 killed of 19 executed (52.6%), network mutants 2 of 2 killed. Project: `rq4/projects/dimeshift-rted/` (untracked). Details and the scoring rule in MIGRATION.md 7.5.
+- Nothing is committed (tracked changes: WORKLOG.md, run_pilot.sh, run_repeats.sh, run-saf-*.sh, js_summary.py; new: run_campaign_linux.sh, scripts/rq4/dante2pw.py, scripts/rq4/templates/, scripts/migrate/pack.sh, rq4/). The user decides when to commit.
+- The user is deciding on a better machine for the 60-minute campaigns; the new machine is the answer (sizing in MIGRATION.md 7.2).
+Next steps (in this order): (1) restore and smoke-test (MIGRATION 7.3); (2) build MLMT with the patch and check `--mutants-file` on two suites of dimeshift; (3) write `scripts/rq4/mutant_union.py` + the RQ4 driver and run RQ4 on dimeshift for all SAFs, then the other apps; (4) decide pagekit PDiff; (5) 60-minute RQ3 campaigns and the other traversals (DFS, MAF, PBFS) once the machine is confirmed; (6) the earlier next-steps list below still applies.
+
 ## State on 2026-11-17 (nothing running)
 Done:
 - **RQ1/RQ2** for all SAFs including FragGen (8 apps; MRBS has no FragGen verdicts, so precision and recall are n/a there).

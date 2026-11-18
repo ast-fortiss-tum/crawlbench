@@ -16,11 +16,16 @@ NAME = re.compile(r'(?P<app>\w+?)_(?P<saf>[a-z-]+?)_(?P<trav>[a-z_]+?)_(?P<stamp
 METRICS = ('statements', 'branches', 'functions', 'lines')
 
 
+PLATFORM_CUTOFF = '20261117_170000'   # Mac pilot runs are all earlier; the Ubuntu campaign started 2026-11-17 18:09
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--apps', nargs='*', default=['dimeshift', 'pagekit', 'phoenix', 'petclinic'])
     ap.add_argument('--metric', default='statements', choices=METRICS)
     ap.add_argument('--csv')
+    ap.add_argument('--platform', default='all', choices=['all', 'mac', 'linux'],
+                    help='mac: runs before 20261117_170000, linux: runs from then on (the Ubuntu machine)')
     a = ap.parse_args()
     rows = []
     for app in a.apps:
@@ -28,6 +33,8 @@ def main():
         for p in sorted(glob.glob(os.path.join(ROOT, 'results', 'crawlbench', f'{app}_*-branch.json'))):
             m = NAME.search(os.path.basename(p))
             if not m or m['app'] != app:
+                continue
+            if (a.platform == 'mac' and m['stamp'] >= PLATFORM_CUTOFF) or (a.platform == 'linux' and m['stamp'] < PLATFORM_CUTOFF):
                 continue
             d = json.load(open(p))
             runs.append((m['saf'], m['stamp'], d))

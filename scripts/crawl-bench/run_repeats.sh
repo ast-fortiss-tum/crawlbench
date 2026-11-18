@@ -21,7 +21,8 @@ STATUS="$ROOT/logs/repeats_${APP}.status"
 mkdir -p "$ROOT/logs" "$ROOT/results/crawlbench"
 
 CHROME_DIR="${FRAGGEN_CHROME_DIR:-$HOME/fraggen-chrome}"
-export CHROME_BIN="${CHROME_BIN:-$CHROME_DIR/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing}"
+if [ "$(uname)" = Darwin ]; then DEFAULT_CHROME="$CHROME_DIR/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"; else DEFAULT_CHROME="$CHROME_DIR/chrome-linux64/chrome"; fi
+export CHROME_BIN="${CHROME_BIN:-$DEFAULT_CHROME}"
 export CHROMEDRIVER_BIN="${CHROMEDRIVER_BIN:-$CHROME_DIR/chromedriver}"
 SHIM_DIR="$ROOT/logs/bin"; mkdir -p "$SHIM_DIR"
 if ! command -v timeout > /dev/null 2>&1; then
@@ -41,8 +42,13 @@ export PATH="${SNN_ENV_BIN:-$HOME/miniconda3/envs/snn-ndd/bin}:$PATH"
 
 log() { echo "[$(date +%Y-%m-%d_%H:%M:%S)] $*" | tee -a "$STATUS"; }
 MIN_FREE_PCT=${MIN_FREE_PCT:-25}
-free_pct() { memory_pressure 2>/dev/null | awk '/free percentage/ {gsub("%","",$NF); print $NF}'; }
-conditions() { echo "load1=$(sysctl -n vm.loadavg | awk '{print $2}') swap_used_mb=$(sysctl -n vm.swapusage | sed -E 's/.*used = ([0-9.]+)M.*/\1/') free_mem_pct=$(free_pct)"; }
+if [ "$(uname)" = Darwin ]; then
+  free_pct() { memory_pressure 2>/dev/null | awk '/free percentage/ {gsub("%","",$NF); print $NF}'; }
+  conditions() { echo "load1=$(sysctl -n vm.loadavg | awk '{print $2}') swap_used_mb=$(sysctl -n vm.swapusage | sed -E 's/.*used = ([0-9.]+)M.*/\1/') free_mem_pct=$(free_pct)"; }
+else
+  free_pct() { awk '/^MemTotal:/ {t=$2} /^MemAvailable:/ {a=$2} END {if (t) printf "%d", 100*a/t}' /proc/meminfo; }
+  conditions() { echo "load1=$(cut -d' ' -f1 /proc/loadavg) swap_used_mb=$(awk '/^SwapTotal:/ {t=$2} /^SwapFree:/ {f=$2} END {printf "%d", (t-f)/1024}' /proc/meminfo) free_mem_pct=$(free_pct)"; }
+fi
 # crawls that stop on the time limit leave their Chrome behind; kill only orphans (parent died), never another lane's browser
 kill_orphans() { ps -Ao pid,ppid,command | awk '$2==1 && /fraggen-chrome/ {print $1}' | xargs kill -9 2>/dev/null; true; }
 n=${#SAFS[@]}

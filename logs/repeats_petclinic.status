@@ -1,0 +1,25 @@
+[2026-11-17_21:48:10] START petclinic_fraggen_bfs_10m_rep1 load1=1.53 swap_used_mb=0 free_mem_pct=72
+[2026-11-17_22:07:30] END petclinic_fraggen_bfs_10m_rep1 ok coverage=results/crawlbench/petclinic_fraggen_bfs_20261117_214810-1-branch.json out= load1=1.76 swap_used_mb=0 free_mem_pct=64
+[2026-11-17_22:07:30] START petclinic_rted_bfs_10m_rep1 load1=1.76 swap_used_mb=0 free_mem_pct=64
+[2026-11-17_22:35:29] END petclinic_rted_bfs_10m_rep1 ok coverage=results/crawlbench/petclinic_rted_bfs_20261117_220730-1-branch.json out= load1=2.37 swap_used_mb=0 free_mem_pct=60
+[2026-11-17_22:35:29] START petclinic_pdiff_bfs_10m_rep1 load1=2.37 swap_used_mb=0 free_mem_pct=60
+[2026-11-17_22:51:02] END petclinic_pdiff_bfs_10m_rep1 ok coverage=results/crawlbench/petclinic_pdiff_bfs_20261117_223529-1-branch.json out= load1=1.08 swap_used_mb=0 free_mem_pct=61
+[2026-11-17_22:51:02] START petclinic_siamese_bfs_10m_rep1 load1=1.08 swap_used_mb=0 free_mem_pct=61
+[2026-11-17_23:18:42] END petclinic_siamese_bfs_10m_rep1 ok coverage=results/crawlbench/petclinic_siamese_bfs_20261117_225102-1-branch.json out= load1=2.29 swap_used_mb=0 free_mem_pct=60
+[2026-11-17_23:18:42] START petclinic_rted_bfs_10m_rep2 load1=2.29 swap_used_mb=0 free_mem_pct=60
+[2026-11-17_23:46:21] END petclinic_rted_bfs_10m_rep2 ok coverage=results/crawlbench/petclinic_rted_bfs_20261117_231842-1-branch.json out= load1=1.76 swap_used_mb=0 free_mem_pct=53
+[2026-11-17_23:46:21] START petclinic_pdiff_bfs_10m_rep2 load1=1.76 swap_used_mb=0 free_mem_pct=53
+[2026-11-18_00:02:21] END petclinic_pdiff_bfs_10m_rep2 ok coverage=results/crawlbench/petclinic_pdiff_bfs_20261117_234621-1-branch.json out= load1=2.17 swap_used_mb=0 free_mem_pct=69
+[2026-11-18_00:02:21] START petclinic_siamese_bfs_10m_rep2 load1=2.17 swap_used_mb=0 free_mem_pct=69
+[2026-11-18_00:19:25] END petclinic_siamese_bfs_10m_rep2 ok coverage=results/crawlbench/petclinic_siamese_bfs_20261118_000221-1-branch.json out= load1=0.85 swap_used_mb=0 free_mem_pct=59
+[2026-11-18_00:19:25] START petclinic_fraggen_bfs_10m_rep2 load1=0.85 swap_used_mb=0 free_mem_pct=59
+[2026-11-18_00:39:09] END petclinic_fraggen_bfs_10m_rep2 ok coverage=results/crawlbench/petclinic_fraggen_bfs_20261118_001925-1-branch.json out= load1=1.65 swap_used_mb=0 free_mem_pct=49
+[2026-11-18_00:39:09] START petclinic_pdiff_bfs_10m_rep3 load1=1.65 swap_used_mb=0 free_mem_pct=49
+[2026-11-18_00:54:50] END petclinic_pdiff_bfs_10m_rep3 ok coverage=results/crawlbench/petclinic_pdiff_bfs_20261118_003909-1-branch.json out= load1=2.27 swap_used_mb=0 free_mem_pct=60
+[2026-11-18_00:54:50] START petclinic_siamese_bfs_10m_rep3 load1=2.27 swap_used_mb=0 free_mem_pct=60
+[2026-11-18_01:23:20] END petclinic_siamese_bfs_10m_rep3 ok coverage=results/crawlbench/petclinic_siamese_bfs_20261118_005450-1-branch.json out= load1=2.22 swap_used_mb=0 free_mem_pct=57
+[2026-11-18_01:23:20] START petclinic_fraggen_bfs_10m_rep3 load1=2.22 swap_used_mb=0 free_mem_pct=57
+[2026-11-18_01:43:05] END petclinic_fraggen_bfs_10m_rep3 ok coverage=results/crawlbench/petclinic_fraggen_bfs_20261118_012320-1-branch.json out= load1=1.81 swap_used_mb=0 free_mem_pct=46
+[2026-11-18_01:43:05] START petclinic_rted_bfs_10m_rep3 load1=1.81 swap_used_mb=0 free_mem_pct=46
+[2026-11-18_02:10:43] END petclinic_rted_bfs_10m_rep3 ok coverage=results/crawlbench/petclinic_rted_bfs_20261118_014305-1-branch.json out= load1=1.59 swap_used_mb=0 free_mem_pct=51
+[2026-11-18_02:10:43] LANE DONE petclinic

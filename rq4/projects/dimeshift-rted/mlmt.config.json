@@ -1,0 +1,27 @@
+{
+  "app": "dimeshift",
+  "projectRoot": ".",
+  "playwrightConfig": "playwright.config.ts",
+  "testDir": "tests",
+  "maxPwe": 8,
+  "workers": 1,
+  "layers": [
+    "dom",
+    "network"
+  ],
+  "operatorSet": "thesis",
+  "pageKeyQuery": "none",
+  "network": {
+    "resourceTypes": [
+      "xhr",
+      "fetch",
+      "document"
+    ]
+  },
+  "testSelection": "covering",
+  "mutantTimeoutMs": 600000,
+  "reporters": [
+    "json",
+    "console"
+  ]
+}

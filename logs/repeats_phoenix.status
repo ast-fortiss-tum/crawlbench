@@ -1,0 +1,25 @@
+[2026-11-17_18:09:40] START phoenix_fraggen_bfs_10m_rep1 load1=0.38 swap_used_mb=0 free_mem_pct=83
+[2026-11-17_18:15:37] END phoenix_fraggen_bfs_10m_rep1 ok coverage=results/crawlbench/phoenix_fraggen_bfs_20261117_180940-1-branch.json out= load1=2.46 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_18:15:37] START phoenix_rted_bfs_10m_rep1 load1=2.46 swap_used_mb=0 free_mem_pct=72
+[2026-11-17_18:36:15] END phoenix_rted_bfs_10m_rep1 ok coverage=results/crawlbench/phoenix_rted_bfs_20261117_181537-1-branch.json out= load1=1.96 swap_used_mb=0 free_mem_pct=75
+[2026-11-17_18:36:15] START phoenix_pdiff_bfs_10m_rep1 load1=1.96 swap_used_mb=0 free_mem_pct=75
+[2026-11-17_18:57:51] END phoenix_pdiff_bfs_10m_rep1 ok coverage=results/crawlbench/phoenix_pdiff_bfs_20261117_183615-1-branch.json out= load1=2.78 swap_used_mb=0 free_mem_pct=61
+[2026-11-17_18:57:51] START phoenix_siamese_bfs_10m_rep1 load1=2.78 swap_used_mb=0 free_mem_pct=61
+[2026-11-17_19:13:57] END phoenix_siamese_bfs_10m_rep1 ok coverage=results/crawlbench/phoenix_siamese_bfs_20261117_185751-1-branch.json out= load1=1.87 swap_used_mb=0 free_mem_pct=69
+[2026-11-17_19:13:57] START phoenix_rted_bfs_10m_rep2 load1=1.87 swap_used_mb=0 free_mem_pct=69
+[2026-11-17_19:33:54] END phoenix_rted_bfs_10m_rep2 ok coverage=results/crawlbench/phoenix_rted_bfs_20261117_191357-1-branch.json out= load1=3.90 swap_used_mb=0 free_mem_pct=59
+[2026-11-17_19:33:54] START phoenix_pdiff_bfs_10m_rep2 load1=3.90 swap_used_mb=0 free_mem_pct=59
+[2026-11-17_19:55:35] END phoenix_pdiff_bfs_10m_rep2 ok coverage=results/crawlbench/phoenix_pdiff_bfs_20261117_193354-1-branch.json out= load1=2.78 swap_used_mb=0 free_mem_pct=72
+[2026-11-17_19:55:35] START phoenix_siamese_bfs_10m_rep2 load1=2.78 swap_used_mb=0 free_mem_pct=72
+[2026-11-17_20:11:40] END phoenix_siamese_bfs_10m_rep2 ok coverage=results/crawlbench/phoenix_siamese_bfs_20261117_195535-1-branch.json out= load1=1.24 swap_used_mb=0 free_mem_pct=81
+[2026-11-17_20:11:40] START phoenix_fraggen_bfs_10m_rep2 load1=1.24 swap_used_mb=0 free_mem_pct=81
+[2026-11-17_20:31:19] END phoenix_fraggen_bfs_10m_rep2 ok coverage=results/crawlbench/phoenix_fraggen_bfs_20261117_201140-1-branch.json out= load1=2.92 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_20:31:19] START phoenix_pdiff_bfs_10m_rep3 load1=2.92 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_20:52:22] END phoenix_pdiff_bfs_10m_rep3 ok coverage=results/crawlbench/phoenix_pdiff_bfs_20261117_203119-1-branch.json out= load1=2.45 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_20:52:22] START phoenix_siamese_bfs_10m_rep3 load1=2.45 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_21:08:24] END phoenix_siamese_bfs_10m_rep3 ok coverage=results/crawlbench/phoenix_siamese_bfs_20261117_205222-1-branch.json out= load1=1.04 swap_used_mb=0 free_mem_pct=80
+[2026-11-17_21:08:24] START phoenix_fraggen_bfs_10m_rep3 load1=1.04 swap_used_mb=0 free_mem_pct=80
+[2026-11-17_21:27:40] END phoenix_fraggen_bfs_10m_rep3 ok coverage=results/crawlbench/phoenix_fraggen_bfs_20261117_210824-1-branch.json out= load1=2.26 swap_used_mb=0 free_mem_pct=65
+[2026-11-17_21:27:40] START phoenix_rted_bfs_10m_rep3 load1=2.26 swap_used_mb=0 free_mem_pct=66
+[2026-11-17_21:48:10] END phoenix_rted_bfs_10m_rep3 ok coverage=results/crawlbench/phoenix_rted_bfs_20261117_212740-1-branch.json out= load1=1.53 swap_used_mb=0 free_mem_pct=72
+[2026-11-17_21:48:10] LANE DONE phoenix

@@ -1,0 +1,25 @@
+[2026-11-17_08:06:16] START pagekit_rted_bfs_10m
+[2026-11-17_08:46:03] END pagekit_rted_bfs_10m ok coverage=results/crawlbench/pagekit_rted_bfs_20261117_080616-1-branch.json out=
+[2026-11-17_08:46:03] START pagekit_fraggen_bfs_10m
+[2026-11-17_09:13:25] END pagekit_fraggen_bfs_10m ok coverage=results/crawlbench/pagekit_fraggen_bfs_20261117_084603-1-branch.json out=
+[2026-11-17_09:13:25] START pagekit_pdiff_bfs_10m
+[2026-11-17_09:31:59] END pagekit_pdiff_bfs_10m ok coverage=results/crawlbench/pagekit_pdiff_bfs_20261117_091325-1-branch.json out=
+[2026-11-17_09:31:59] START pagekit_siamese_bfs_10m
+[2026-11-17_10:30:30] END pagekit_siamese_bfs_10m ok coverage=results/crawlbench/pagekit_siamese_bfs_20261117_093159-1-branch.json out=
+[2026-11-17_10:30:30] START phoenix_rted_bfs_10m
+[2026-11-17_10:50:25] END phoenix_rted_bfs_10m ok coverage=results/crawlbench/phoenix_rted_bfs_20261117_103030-1-branch.json out=
+[2026-11-17_10:50:25] START phoenix_fraggen_bfs_10m
+[2026-11-17_11:08:18] END phoenix_fraggen_bfs_10m ok coverage=results/crawlbench/phoenix_fraggen_bfs_20261117_105025-1-branch.json out=
+[2026-11-17_11:08:18] START phoenix_pdiff_bfs_10m
+[2026-11-17_11:49:56] END phoenix_pdiff_bfs_10m ok coverage=results/crawlbench/phoenix_pdiff_bfs_20261117_110818-1-branch.json out=
+[2026-11-17_11:49:56] START phoenix_siamese_bfs_10m
+[2026-11-17_11:55:58] END phoenix_siamese_bfs_10m ok coverage=results/crawlbench/phoenix_siamese_bfs_20261117_114956-1-branch.json out=
+[2026-11-17_11:55:58] START petclinic_rted_bfs_10m
+[2026-11-17_12:22:02] END petclinic_rted_bfs_10m ok coverage=results/crawlbench/petclinic_rted_bfs_20261117_115558-1-branch.json out=
+[2026-11-17_12:22:02] START petclinic_fraggen_bfs_10m
+[2026-11-17_12:40:58] END petclinic_fraggen_bfs_10m ok coverage=results/crawlbench/petclinic_fraggen_bfs_20261117_122202-1-branch.json out=
+[2026-11-17_12:40:58] START petclinic_pdiff_bfs_10m
+[2026-11-17_12:56:26] END petclinic_pdiff_bfs_10m ok coverage=results/crawlbench/petclinic_pdiff_bfs_20261117_124059-1-branch.json out=
+[2026-11-17_12:56:26] START petclinic_siamese_bfs_10m
+[2026-11-17_13:09:43] END petclinic_siamese_bfs_10m ok coverage=results/crawlbench/petclinic_siamese_bfs_20261117_125627-1-branch.json out=
+[2026-11-17_13:09:43] PILOT DONE

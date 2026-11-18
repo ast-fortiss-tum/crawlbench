@@ -1,0 +1,19 @@
+[2026-11-15_11:36:20] START rq1_baseline_across_v2
+[2026-11-15_11:39:50] END rq1_baseline_across_v2 exit=0
+[2026-11-15_11:39:50] START rq2_a_webembed_v2
+[2026-11-15_11:40:17] END rq2_a_webembed_v2 exit=0
+[2026-11-15_11:40:17] START rq2_b_webembed_v2
+[2026-11-15_11:40:19] END rq2_b_webembed_v2 exit=0
+[2026-11-15_11:40:19] START rq1_within_doc2vec_triplet
+[2026-11-15_11:47:32] END rq1_within_doc2vec_triplet exit=0
+[2026-11-15_11:47:32] START rq1_within_bert_triplet
+[2026-11-15_11:54:44] END rq1_within_bert_triplet exit=0
+[2026-11-15_11:54:44] START rq1_within_markuplm_triplet
+[2026-11-15_12:02:06] END rq1_within_markuplm_triplet exit=0
+[2026-11-15_12:02:06] START rq1_across_doc2vec_triplet
+[2026-11-15_12:09:56] END rq1_across_doc2vec_triplet exit=0
+[2026-11-15_12:09:56] START rq1_across_markuplm_triplet
+[2026-11-15_12:23:24] END rq1_across_markuplm_triplet exit=0
+[2026-11-15_12:23:24] START rq2_snn_v2
+[2026-11-15_12:26:30] END rq2_snn_v2 exit=0
+[2026-11-15_12:26:30] ALL DONE

@@ -1,0 +1,25 @@
+[2026-11-17_18:09:40] START dimeshift_fraggen_bfs_10m_rep1 load1=0.38 swap_used_mb=0 free_mem_pct=83
+[2026-11-17_18:36:56] END dimeshift_fraggen_bfs_10m_rep1 ok coverage=results/crawlbench/dimeshift_fraggen_bfs_20261117_180940-1-branch.json out= load1=2.05 swap_used_mb=0 free_mem_pct=78
+[2026-11-17_18:36:56] START dimeshift_rted_bfs_10m_rep1 load1=2.05 swap_used_mb=0 free_mem_pct=78
+[2026-11-17_18:47:35] END dimeshift_rted_bfs_10m_rep1 ok coverage=results/crawlbench/dimeshift_rted_bfs_20261117_183656-1-branch.json out= load1=2.57 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_18:47:35] START dimeshift_pdiff_bfs_10m_rep1 load1=2.57 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_19:04:59] END dimeshift_pdiff_bfs_10m_rep1 ok coverage=results/crawlbench/dimeshift_pdiff_bfs_20261117_184735-1-branch.json out= load1=1.02 swap_used_mb=0 free_mem_pct=76
+[2026-11-17_19:04:59] START dimeshift_siamese_bfs_10m_rep1 load1=1.02 swap_used_mb=0 free_mem_pct=76
+[2026-11-17_19:15:05] END dimeshift_siamese_bfs_10m_rep1 ok coverage=results/crawlbench/dimeshift_siamese_bfs_20261117_190459-1-branch.json out= load1=1.62 swap_used_mb=0 free_mem_pct=77
+[2026-11-17_19:15:05] START dimeshift_rted_bfs_10m_rep2 load1=1.62 swap_used_mb=0 free_mem_pct=77
+[2026-11-17_19:25:42] END dimeshift_rted_bfs_10m_rep2 ok coverage=results/crawlbench/dimeshift_rted_bfs_20261117_191505-1-branch.json out= load1=2.50 swap_used_mb=0 free_mem_pct=65
+[2026-11-17_19:25:42] START dimeshift_pdiff_bfs_10m_rep2 load1=2.50 swap_used_mb=0 free_mem_pct=65
+[2026-11-17_19:43:00] END dimeshift_pdiff_bfs_10m_rep2 ok coverage=results/crawlbench/dimeshift_pdiff_bfs_20261117_192542-1-branch.json out= load1=2.65 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_19:43:00] START dimeshift_siamese_bfs_10m_rep2 load1=2.65 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_19:53:06] END dimeshift_siamese_bfs_10m_rep2 ok coverage=results/crawlbench/dimeshift_siamese_bfs_20261117_194300-1-branch.json out= load1=2.69 swap_used_mb=0 free_mem_pct=67
+[2026-11-17_19:53:06] START dimeshift_fraggen_bfs_10m_rep2 load1=2.69 swap_used_mb=0 free_mem_pct=67
+[2026-11-17_20:22:17] END dimeshift_fraggen_bfs_10m_rep2 ok coverage=results/crawlbench/dimeshift_fraggen_bfs_20261117_195306-1-branch.json out= load1=1.85 swap_used_mb=0 free_mem_pct=69
+[2026-11-17_20:22:17] START dimeshift_pdiff_bfs_10m_rep3 load1=1.85 swap_used_mb=0 free_mem_pct=69
+[2026-11-17_20:39:20] END dimeshift_pdiff_bfs_10m_rep3 ok coverage=results/crawlbench/dimeshift_pdiff_bfs_20261117_202217-1-branch.json out= load1=2.90 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_20:39:20] START dimeshift_siamese_bfs_10m_rep3 load1=2.90 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_20:49:26] END dimeshift_siamese_bfs_10m_rep3 ok coverage=results/crawlbench/dimeshift_siamese_bfs_20261117_203920-1-branch.json out= load1=1.93 swap_used_mb=0 free_mem_pct=68
+[2026-11-17_20:49:26] START dimeshift_fraggen_bfs_10m_rep3 load1=1.93 swap_used_mb=0 free_mem_pct=68
+[2026-11-17_21:18:27] END dimeshift_fraggen_bfs_10m_rep3 ok coverage=results/crawlbench/dimeshift_fraggen_bfs_20261117_204926-1-branch.json out= load1=2.25 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_21:18:27] START dimeshift_rted_bfs_10m_rep3 load1=2.25 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_21:29:04] END dimeshift_rted_bfs_10m_rep3 ok coverage=results/crawlbench/dimeshift_rted_bfs_20261117_211827-1-branch.json out= load1=1.56 swap_used_mb=0 free_mem_pct=74
+[2026-11-17_21:29:04] LANE DONE dimeshift

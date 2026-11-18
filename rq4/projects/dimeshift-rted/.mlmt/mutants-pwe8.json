@@ -1,0 +1,392 @@
+[
+  {
+    "id": "D0019",
+    "operator": "TIM.wrap.div",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/",
+      "selector": "#input_email",
+      "description": "<input> #input_email (PWE #2, score 0.8182)"
+    },
+    "params": {},
+    "testFiles": [
+      "path00.spec.ts",
+      "path01.spec.ts",
+      "path02.spec.ts",
+      "path03.spec.ts",
+      "path04.spec.ts",
+      "path05.spec.ts",
+      "path06.spec.ts",
+      "path07.spec.ts",
+      "path08.spec.ts",
+      "path09.spec.ts"
+    ]
+  },
+  {
+    "id": "D0062",
+    "operator": "EVD.click.delay",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/",
+      "selector": "li:nth-of-type(7) > a",
+      "description": "<a> li:nth-of-type(7) > a (PWE #6, score 0.6909)"
+    },
+    "params": {
+      "minMs": 300,
+      "maxMs": 800
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path01.spec.ts",
+      "path02.spec.ts",
+      "path03.spec.ts",
+      "path04.spec.ts",
+      "path05.spec.ts",
+      "path06.spec.ts",
+      "path07.spec.ts",
+      "path08.spec.ts",
+      "path09.spec.ts"
+    ]
+  },
+  {
+    "id": "D0121",
+    "operator": "SFM.script.fail",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/",
+      "resourceUrl": "http://localhost:3006/scripts/app/template_manager.js",
+      "description": "script http://localhost:3006/scripts/app/template_manager.js"
+    },
+    "params": {
+      "suffix": ".404.js"
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path01.spec.ts",
+      "path02.spec.ts",
+      "path03.spec.ts",
+      "path04.spec.ts",
+      "path05.spec.ts",
+      "path06.spec.ts",
+      "path07.spec.ts",
+      "path08.spec.ts",
+      "path09.spec.ts"
+    ]
+  },
+  {
+    "id": "D0217",
+    "operator": "TIM.form.reorderFields",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/plans",
+      "selector": "#signin_modal_form",
+      "description": "<input> #signin_modal_form (PWE #1, score 1)"
+    },
+    "params": {},
+    "testFiles": [
+      "path00.spec.ts",
+      "path03.spec.ts",
+      "path08.spec.ts"
+    ]
+  },
+  {
+    "id": "D0252",
+    "operator": "TIM.wrap.div",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/plans",
+      "selector": "#footer > div > div > a",
+      "description": "<a> #footer > div > div > a (PWE #4, score 0.6)"
+    },
+    "params": {},
+    "testFiles": [
+      "path00.spec.ts",
+      "path03.spec.ts",
+      "path08.spec.ts"
+    ]
+  },
+  {
+    "id": "D0477",
+    "operator": "SFM.script.fail",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/profile",
+      "resourceUrl": "http://localhost:3006/vendors/jquery/jquery.min.js",
+      "description": "script http://localhost:3006/vendors/jquery/jquery.min.js"
+    },
+    "params": {
+      "suffix": ".404.js"
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path04.spec.ts",
+      "path09.spec.ts"
+    ]
+  },
+  {
+    "id": "D0479",
+    "operator": "SFM.script.fail",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/profile",
+      "resourceUrl": "http://localhost:3006/vendors/bootstrap/js/button.js",
+      "description": "script http://localhost:3006/vendors/bootstrap/js/button.js"
+    },
+    "params": {
+      "suffix": ".404.js"
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path04.spec.ts",
+      "path09.spec.ts"
+    ]
+  },
+  {
+    "id": "D0501",
+    "operator": "SFM.script.fail",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/profile",
+      "resourceUrl": "http://localhost:3006/scripts/app/abstract/dialog.js",
+      "description": "script http://localhost:3006/scripts/app/abstract/dialog.js"
+    },
+    "params": {
+      "suffix": ".404.js"
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path04.spec.ts",
+      "path09.spec.ts"
+    ]
+  },
+  {
+    "id": "D0544",
+    "operator": "SFM.script.fail",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/profile",
+      "resourceUrl": "http://localhost:3006/scripts/app/views/tours/wallets.js",
+      "description": "script http://localhost:3006/scripts/app/views/tours/wallets.js"
+    },
+    "params": {
+      "suffix": ".404.js"
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path04.spec.ts",
+      "path09.spec.ts"
+    ]
+  },
+  {
+    "id": "D0578",
+    "operator": "SVM.opacity.dim",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/user/fillprofile",
+      "selector": "body > pre",
+      "description": "<pre> body > pre (PWE #2, score 0.3)"
+    },
+    "params": {
+      "opacity": 0.2
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path01.spec.ts",
+      "path05.spec.ts"
+    ]
+  },
+  {
+    "id": "D0582",
+    "operator": "SFM.script.fail",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/user/fillprofile",
+      "description": "scripts on http://localhost:3006/user/fillprofile"
+    },
+    "params": {
+      "suffix": ".404.js"
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path01.spec.ts",
+      "path05.spec.ts"
+    ],
+    "precheckFailed": "no external script on page"
+  },
+  {
+    "id": "D0588",
+    "operator": "TIM.wrap.div",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/user/logout",
+      "selector": "body > div",
+      "description": "<div> body > div (PWE #1, score 0.375)"
+    },
+    "params": {},
+    "testFiles": [
+      "path00.spec.ts",
+      "path01.spec.ts",
+      "path05.spec.ts"
+    ]
+  },
+  {
+    "id": "D0663",
+    "operator": "SVM.visibility.hide",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/wallets",
+      "selector": "#input_password",
+      "description": "<input> #input_password (PWE #2, score 0.92)"
+    },
+    "params": {},
+    "testFiles": [
+      "path00.spec.ts",
+      "path02.spec.ts",
+      "path07.spec.ts"
+    ]
+  },
+  {
+    "id": "D0667",
+    "operator": "FVM.required.toggle",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/wallets",
+      "selector": "#input_password",
+      "description": "<input> #input_password (PWE #2, score 0.92)"
+    },
+    "params": {},
+    "testFiles": [
+      "path00.spec.ts",
+      "path02.spec.ts",
+      "path07.spec.ts"
+    ]
+  },
+  {
+    "id": "D0777",
+    "operator": "SFM.script.fail",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/wallets",
+      "resourceUrl": "http://localhost:3006/scripts/app/collections/users.js",
+      "description": "script http://localhost:3006/scripts/app/collections/users.js"
+    },
+    "params": {
+      "suffix": ".404.js"
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path02.spec.ts",
+      "path07.spec.ts"
+    ]
+  },
+  {
+    "id": "D0793",
+    "operator": "SFM.script.fail",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/wallets",
+      "resourceUrl": "http://localhost:3006/scripts/app/views/dialogs/signin.js",
+      "description": "script http://localhost:3006/scripts/app/views/dialogs/signin.js"
+    },
+    "params": {
+      "suffix": ".404.js"
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path02.spec.ts",
+      "path07.spec.ts"
+    ]
+  },
+  {
+    "id": "D0799",
+    "operator": "SFM.script.fail",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/wallets",
+      "resourceUrl": "http://localhost:3006/scripts/app/views/parts/transactions.js",
+      "description": "script http://localhost:3006/scripts/app/views/parts/transactions.js"
+    },
+    "params": {
+      "suffix": ".404.js"
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path02.spec.ts",
+      "path07.spec.ts"
+    ]
+  },
+  {
+    "id": "D0807",
+    "operator": "SFM.script.fail",
+    "layer": "dom",
+    "target": {
+      "kind": "dom",
+      "pageKey": "http://localhost:3006/wallets",
+      "resourceUrl": "http://localhost:3006/scripts/app/views/pages/update_password.js",
+      "description": "script http://localhost:3006/scripts/app/views/pages/update_password.js"
+    },
+    "params": {
+      "suffix": ".404.js"
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path02.spec.ts",
+      "path07.spec.ts"
+    ]
+  },
+  {
+    "id": "N0116",
+    "operator": "NSO.status.override",
+    "layer": "network",
+    "target": {
+      "kind": "network",
+      "endpoint": "GET http://localhost:3006/jstemplates/pages/wallets/index",
+      "method": "GET",
+      "urlBase": "http://localhost:3006/jstemplates/pages/wallets/index",
+      "description": "GET http://localhost:3006/jstemplates/pages/wallets/index [xhr]"
+    },
+    "params": {
+      "status": 500
+    },
+    "testFiles": [
+      "path00.spec.ts",
+      "path02.spec.ts",
+      "path07.spec.ts"
+    ]
+  },
+  {
+    "id": "N0218",
+    "operator": "NLT.timeout.inject",
+    "layer": "network",
+    "target": {
+      "kind": "network",
+      "endpoint": "GET http://localhost:3006/wallets",
+      "method": "GET",
+      "urlBase": "http://localhost:3006/wallets",
+      "description": "GET http://localhost:3006/wallets [document]"
+    },
+    "params": {},
+    "testFiles": [
+      "path00.spec.ts",
+      "path02.spec.ts",
+      "path07.spec.ts"
+    ]
+  }
+]

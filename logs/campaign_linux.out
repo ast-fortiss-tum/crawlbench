@@ -1,0 +1,111 @@
+[2026-11-17_18:09:40] SNN training finished, 9/9 weight files
+[2026-11-17_18:09:40] CAMPAIGN START repeats=3 minutes=10 safs=fraggen rted pdiff siamese
+[2026-11-17_18:09:40] LANE app dimeshift start
+[2026-11-17_18:09:40] LANE app phoenix start
+[2026-11-17_18:09:40] START dimeshift_fraggen_bfs_10m_rep1 load1=0.38 swap_used_mb=0 free_mem_pct=83
+[2026-11-17_18:09:40] START phoenix_fraggen_bfs_10m_rep1 load1=0.38 swap_used_mb=0 free_mem_pct=83
+[2026-11-17_18:15:37] END phoenix_fraggen_bfs_10m_rep1 ok coverage=results/crawlbench/phoenix_fraggen_bfs_20261117_180940-1-branch.json out= load1=2.46 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_18:15:37] START phoenix_rted_bfs_10m_rep1 load1=2.46 swap_used_mb=0 free_mem_pct=72
+[2026-11-17_18:36:15] END phoenix_rted_bfs_10m_rep1 ok coverage=results/crawlbench/phoenix_rted_bfs_20261117_181537-1-branch.json out= load1=1.96 swap_used_mb=0 free_mem_pct=75
+[2026-11-17_18:36:15] START phoenix_pdiff_bfs_10m_rep1 load1=1.96 swap_used_mb=0 free_mem_pct=75
+[2026-11-17_18:36:56] END dimeshift_fraggen_bfs_10m_rep1 ok coverage=results/crawlbench/dimeshift_fraggen_bfs_20261117_180940-1-branch.json out= load1=2.05 swap_used_mb=0 free_mem_pct=78
+[2026-11-17_18:36:56] START dimeshift_rted_bfs_10m_rep1 load1=2.05 swap_used_mb=0 free_mem_pct=78
+[2026-11-17_18:47:35] END dimeshift_rted_bfs_10m_rep1 ok coverage=results/crawlbench/dimeshift_rted_bfs_20261117_183656-1-branch.json out= load1=2.57 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_18:47:35] START dimeshift_pdiff_bfs_10m_rep1 load1=2.57 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_18:57:51] END phoenix_pdiff_bfs_10m_rep1 ok coverage=results/crawlbench/phoenix_pdiff_bfs_20261117_183615-1-branch.json out= load1=2.78 swap_used_mb=0 free_mem_pct=61
+[2026-11-17_18:57:51] START phoenix_siamese_bfs_10m_rep1 load1=2.78 swap_used_mb=0 free_mem_pct=61
+[2026-11-17_19:04:59] END dimeshift_pdiff_bfs_10m_rep1 ok coverage=results/crawlbench/dimeshift_pdiff_bfs_20261117_184735-1-branch.json out= load1=1.02 swap_used_mb=0 free_mem_pct=76
+[2026-11-17_19:04:59] START dimeshift_siamese_bfs_10m_rep1 load1=1.02 swap_used_mb=0 free_mem_pct=76
+[2026-11-17_19:13:57] END phoenix_siamese_bfs_10m_rep1 ok coverage=results/crawlbench/phoenix_siamese_bfs_20261117_185751-1-branch.json out= load1=1.87 swap_used_mb=0 free_mem_pct=69
+[2026-11-17_19:13:57] START phoenix_rted_bfs_10m_rep2 load1=1.87 swap_used_mb=0 free_mem_pct=69
+[2026-11-17_19:15:05] END dimeshift_siamese_bfs_10m_rep1 ok coverage=results/crawlbench/dimeshift_siamese_bfs_20261117_190459-1-branch.json out= load1=1.62 swap_used_mb=0 free_mem_pct=77
+[2026-11-17_19:15:05] START dimeshift_rted_bfs_10m_rep2 load1=1.62 swap_used_mb=0 free_mem_pct=77
+[2026-11-17_19:25:42] END dimeshift_rted_bfs_10m_rep2 ok coverage=results/crawlbench/dimeshift_rted_bfs_20261117_191505-1-branch.json out= load1=2.50 swap_used_mb=0 free_mem_pct=65
+[2026-11-17_19:25:42] START dimeshift_pdiff_bfs_10m_rep2 load1=2.50 swap_used_mb=0 free_mem_pct=65
+[2026-11-17_19:33:54] END phoenix_rted_bfs_10m_rep2 ok coverage=results/crawlbench/phoenix_rted_bfs_20261117_191357-1-branch.json out= load1=3.90 swap_used_mb=0 free_mem_pct=59
+[2026-11-17_19:33:54] START phoenix_pdiff_bfs_10m_rep2 load1=3.90 swap_used_mb=0 free_mem_pct=59
+[2026-11-17_19:43:00] END dimeshift_pdiff_bfs_10m_rep2 ok coverage=results/crawlbench/dimeshift_pdiff_bfs_20261117_192542-1-branch.json out= load1=2.65 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_19:43:00] START dimeshift_siamese_bfs_10m_rep2 load1=2.65 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_19:53:06] END dimeshift_siamese_bfs_10m_rep2 ok coverage=results/crawlbench/dimeshift_siamese_bfs_20261117_194300-1-branch.json out= load1=2.69 swap_used_mb=0 free_mem_pct=67
+[2026-11-17_19:53:06] START dimeshift_fraggen_bfs_10m_rep2 load1=2.69 swap_used_mb=0 free_mem_pct=67
+[2026-11-17_19:55:35] END phoenix_pdiff_bfs_10m_rep2 ok coverage=results/crawlbench/phoenix_pdiff_bfs_20261117_193354-1-branch.json out= load1=2.78 swap_used_mb=0 free_mem_pct=72
+[2026-11-17_19:55:35] START phoenix_siamese_bfs_10m_rep2 load1=2.78 swap_used_mb=0 free_mem_pct=72
+[2026-11-17_20:11:40] END phoenix_siamese_bfs_10m_rep2 ok coverage=results/crawlbench/phoenix_siamese_bfs_20261117_195535-1-branch.json out= load1=1.24 swap_used_mb=0 free_mem_pct=81
+[2026-11-17_20:11:40] START phoenix_fraggen_bfs_10m_rep2 load1=1.24 swap_used_mb=0 free_mem_pct=81
+[2026-11-17_20:22:17] END dimeshift_fraggen_bfs_10m_rep2 ok coverage=results/crawlbench/dimeshift_fraggen_bfs_20261117_195306-1-branch.json out= load1=1.85 swap_used_mb=0 free_mem_pct=69
+[2026-11-17_20:22:17] START dimeshift_pdiff_bfs_10m_rep3 load1=1.85 swap_used_mb=0 free_mem_pct=69
+[2026-11-17_20:31:19] END phoenix_fraggen_bfs_10m_rep2 ok coverage=results/crawlbench/phoenix_fraggen_bfs_20261117_201140-1-branch.json out= load1=2.92 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_20:31:19] START phoenix_pdiff_bfs_10m_rep3 load1=2.92 swap_used_mb=0 free_mem_pct=73
+[2026-11-17_20:39:20] END dimeshift_pdiff_bfs_10m_rep3 ok coverage=results/crawlbench/dimeshift_pdiff_bfs_20261117_202217-1-branch.json out= load1=2.90 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_20:39:20] START dimeshift_siamese_bfs_10m_rep3 load1=2.90 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_20:49:26] END dimeshift_siamese_bfs_10m_rep3 ok coverage=results/crawlbench/dimeshift_siamese_bfs_20261117_203920-1-branch.json out= load1=1.93 swap_used_mb=0 free_mem_pct=68
+[2026-11-17_20:49:26] START dimeshift_fraggen_bfs_10m_rep3 load1=1.93 swap_used_mb=0 free_mem_pct=68
+[2026-11-17_20:52:22] END phoenix_pdiff_bfs_10m_rep3 ok coverage=results/crawlbench/phoenix_pdiff_bfs_20261117_203119-1-branch.json out= load1=2.45 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_20:52:22] START phoenix_siamese_bfs_10m_rep3 load1=2.45 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_21:08:24] END phoenix_siamese_bfs_10m_rep3 ok coverage=results/crawlbench/phoenix_siamese_bfs_20261117_205222-1-branch.json out= load1=1.04 swap_used_mb=0 free_mem_pct=80
+[2026-11-17_21:08:24] START phoenix_fraggen_bfs_10m_rep3 load1=1.04 swap_used_mb=0 free_mem_pct=80
+[2026-11-17_21:18:27] END dimeshift_fraggen_bfs_10m_rep3 ok coverage=results/crawlbench/dimeshift_fraggen_bfs_20261117_204926-1-branch.json out= load1=2.25 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_21:18:27] START dimeshift_rted_bfs_10m_rep3 load1=2.25 swap_used_mb=0 free_mem_pct=71
+[2026-11-17_21:27:40] END phoenix_fraggen_bfs_10m_rep3 ok coverage=results/crawlbench/phoenix_fraggen_bfs_20261117_210824-1-branch.json out= load1=2.26 swap_used_mb=0 free_mem_pct=65
+[2026-11-17_21:27:40] START phoenix_rted_bfs_10m_rep3 load1=2.26 swap_used_mb=0 free_mem_pct=66
+[2026-11-17_21:29:04] END dimeshift_rted_bfs_10m_rep3 ok coverage=results/crawlbench/dimeshift_rted_bfs_20261117_211827-1-branch.json out= load1=1.56 swap_used_mb=0 free_mem_pct=74
+[2026-11-17_21:29:04] LANE DONE dimeshift
+[2026-11-17_21:29:04] LANE app dimeshift end
+[2026-11-17_21:29:04] LANE app pagekit start
+[2026-11-17_21:29:04] START pagekit_fraggen_bfs_10m_rep1 load1=1.56 swap_used_mb=0 free_mem_pct=74
+[2026-11-17_21:46:27] END pagekit_fraggen_bfs_10m_rep1 ok coverage=results/crawlbench/pagekit_fraggen_bfs_20261117_212904-1-branch.json out= load1=2.03 swap_used_mb=0 free_mem_pct=67
+[2026-11-17_21:46:27] START pagekit_rted_bfs_10m_rep1 load1=2.03 swap_used_mb=0 free_mem_pct=67
+[2026-11-17_21:48:10] END phoenix_rted_bfs_10m_rep3 ok coverage=results/crawlbench/phoenix_rted_bfs_20261117_212740-1-branch.json out= load1=1.53 swap_used_mb=0 free_mem_pct=72
+[2026-11-17_21:48:10] LANE DONE phoenix
+[2026-11-17_21:48:10] LANE app phoenix end
+[2026-11-17_21:48:10] LANE app petclinic start
+[2026-11-17_21:48:10] START petclinic_fraggen_bfs_10m_rep1 load1=1.53 swap_used_mb=0 free_mem_pct=72
+[2026-11-17_22:07:30] END petclinic_fraggen_bfs_10m_rep1 ok coverage=results/crawlbench/petclinic_fraggen_bfs_20261117_214810-1-branch.json out= load1=1.76 swap_used_mb=0 free_mem_pct=64
+[2026-11-17_22:07:30] START petclinic_rted_bfs_10m_rep1 load1=1.76 swap_used_mb=0 free_mem_pct=64
+[2026-11-17_22:20:56] END pagekit_rted_bfs_10m_rep1 ok coverage=results/crawlbench/pagekit_rted_bfs_20261117_214627-1-branch.json out= load1=1.67 swap_used_mb=0 free_mem_pct=66
+[2026-11-17_22:20:56] START pagekit_pdiff_bfs_10m_rep1 load1=1.67 swap_used_mb=0 free_mem_pct=66
+[2026-11-17_22:33:39] END pagekit_pdiff_bfs_10m_rep1 FAIL rc=0 new_coverage_files=0 out=none (see logs/repeats_pagekit_pdiff_bfs_10m_rep1.log) load1=2.73 swap_used_mb=0 free_mem_pct=52
+[2026-11-17_22:33:40] START pagekit_siamese_bfs_10m_rep1 load1=2.73 swap_used_mb=0 free_mem_pct=52
+[2026-11-17_22:35:29] END petclinic_rted_bfs_10m_rep1 ok coverage=results/crawlbench/petclinic_rted_bfs_20261117_220730-1-branch.json out= load1=2.37 swap_used_mb=0 free_mem_pct=60
+[2026-11-17_22:35:29] START petclinic_pdiff_bfs_10m_rep1 load1=2.37 swap_used_mb=0 free_mem_pct=60
+[2026-11-17_22:51:02] END petclinic_pdiff_bfs_10m_rep1 ok coverage=results/crawlbench/petclinic_pdiff_bfs_20261117_223529-1-branch.json out= load1=1.08 swap_used_mb=0 free_mem_pct=61
+[2026-11-17_22:51:02] START petclinic_siamese_bfs_10m_rep1 load1=1.08 swap_used_mb=0 free_mem_pct=61
+[2026-11-17_23:13:03] END pagekit_siamese_bfs_10m_rep1 ok coverage=results/crawlbench/pagekit_siamese_bfs_20261117_223340-1-branch.json out= load1=2.36 swap_used_mb=0 free_mem_pct=48
+[2026-11-17_23:13:03] START pagekit_rted_bfs_10m_rep2 load1=2.36 swap_used_mb=0 free_mem_pct=48
+[2026-11-17_23:18:42] END petclinic_siamese_bfs_10m_rep1 ok coverage=results/crawlbench/petclinic_siamese_bfs_20261117_225102-1-branch.json out= load1=2.29 swap_used_mb=0 free_mem_pct=60
+[2026-11-17_23:18:42] START petclinic_rted_bfs_10m_rep2 load1=2.29 swap_used_mb=0 free_mem_pct=60
+[2026-11-17_23:46:21] END petclinic_rted_bfs_10m_rep2 ok coverage=results/crawlbench/petclinic_rted_bfs_20261117_231842-1-branch.json out= load1=1.76 swap_used_mb=0 free_mem_pct=53
+[2026-11-17_23:46:21] START petclinic_pdiff_bfs_10m_rep2 load1=1.76 swap_used_mb=0 free_mem_pct=53
+[2026-11-17_23:49:14] END pagekit_rted_bfs_10m_rep2 ok coverage=results/crawlbench/pagekit_rted_bfs_20261117_231303-1-branch.json out= load1=2.42 swap_used_mb=0 free_mem_pct=61
+[2026-11-17_23:49:14] START pagekit_pdiff_bfs_10m_rep2 load1=2.42 swap_used_mb=0 free_mem_pct=61
+[2026-11-18_00:02:20] END pagekit_pdiff_bfs_10m_rep2 FAIL rc=0 new_coverage_files=0 out=none (see logs/repeats_pagekit_pdiff_bfs_10m_rep2.log) load1=2.17 swap_used_mb=0 free_mem_pct=69
+[2026-11-18_00:02:21] START pagekit_siamese_bfs_10m_rep2 load1=2.17 swap_used_mb=0 free_mem_pct=69
+[2026-11-18_00:02:21] END petclinic_pdiff_bfs_10m_rep2 ok coverage=results/crawlbench/petclinic_pdiff_bfs_20261117_234621-1-branch.json out= load1=2.17 swap_used_mb=0 free_mem_pct=69
+[2026-11-18_00:02:21] START petclinic_siamese_bfs_10m_rep2 load1=2.17 swap_used_mb=0 free_mem_pct=69
+[2026-11-18_00:19:25] END petclinic_siamese_bfs_10m_rep2 ok coverage=results/crawlbench/petclinic_siamese_bfs_20261118_000221-1-branch.json out= load1=0.85 swap_used_mb=0 free_mem_pct=59
+[2026-11-18_00:19:25] START petclinic_fraggen_bfs_10m_rep2 load1=0.85 swap_used_mb=0 free_mem_pct=59
+[2026-11-18_00:39:09] END petclinic_fraggen_bfs_10m_rep2 ok coverage=results/crawlbench/petclinic_fraggen_bfs_20261118_001925-1-branch.json out= load1=1.65 swap_used_mb=0 free_mem_pct=49
+[2026-11-18_00:39:09] START petclinic_pdiff_bfs_10m_rep3 load1=1.65 swap_used_mb=0 free_mem_pct=49
+[2026-11-18_00:41:45] END pagekit_siamese_bfs_10m_rep2 ok coverage=results/crawlbench/pagekit_siamese_bfs_20261118_000221-1-branch.json out= load1=3.00 swap_used_mb=0 free_mem_pct=60
+[2026-11-18_00:41:45] START pagekit_fraggen_bfs_10m_rep2 load1=3.00 swap_used_mb=0 free_mem_pct=60
+[2026-11-18_00:54:50] END petclinic_pdiff_bfs_10m_rep3 ok coverage=results/crawlbench/petclinic_pdiff_bfs_20261118_003909-1-branch.json out= load1=2.27 swap_used_mb=0 free_mem_pct=60
+[2026-11-18_00:54:50] START petclinic_siamese_bfs_10m_rep3 load1=2.27 swap_used_mb=0 free_mem_pct=60
+[2026-11-18_00:59:25] END pagekit_fraggen_bfs_10m_rep2 ok coverage=results/crawlbench/pagekit_fraggen_bfs_20261118_004145-1-branch.json out= load1=1.69 swap_used_mb=0 free_mem_pct=58
+[2026-11-18_00:59:25] START pagekit_pdiff_bfs_10m_rep3 load1=1.69 swap_used_mb=0 free_mem_pct=58
+[2026-11-18_01:11:52] END pagekit_pdiff_bfs_10m_rep3 FAIL rc=0 new_coverage_files=0 out=none (see logs/repeats_pagekit_pdiff_bfs_10m_rep3.log) load1=2.08 swap_used_mb=0 free_mem_pct=59
+[2026-11-18_01:11:52] START pagekit_siamese_bfs_10m_rep3 load1=2.08 swap_used_mb=0 free_mem_pct=59
+[2026-11-18_01:23:20] END petclinic_siamese_bfs_10m_rep3 ok coverage=results/crawlbench/petclinic_siamese_bfs_20261118_005450-1-branch.json out= load1=2.22 swap_used_mb=0 free_mem_pct=57
+[2026-11-18_01:23:20] START petclinic_fraggen_bfs_10m_rep3 load1=2.22 swap_used_mb=0 free_mem_pct=57
+[2026-11-18_01:43:05] END petclinic_fraggen_bfs_10m_rep3 ok coverage=results/crawlbench/petclinic_fraggen_bfs_20261118_012320-1-branch.json out= load1=1.81 swap_used_mb=0 free_mem_pct=46
+[2026-11-18_01:43:05] START petclinic_rted_bfs_10m_rep3 load1=1.81 swap_used_mb=0 free_mem_pct=46
+[2026-11-18_01:50:58] END pagekit_siamese_bfs_10m_rep3 ok coverage=results/crawlbench/pagekit_siamese_bfs_20261118_011152-1-branch.json out= load1=0.97 swap_used_mb=0 free_mem_pct=61
+[2026-11-18_01:50:58] START pagekit_fraggen_bfs_10m_rep3 load1=0.97 swap_used_mb=0 free_mem_pct=61
+[2026-11-18_02:10:43] END petclinic_rted_bfs_10m_rep3 ok coverage=results/crawlbench/petclinic_rted_bfs_20261118_014305-1-branch.json out= load1=1.59 swap_used_mb=0 free_mem_pct=51
+[2026-11-18_02:10:43] LANE DONE petclinic
+[2026-11-18_02:10:43] LANE app petclinic end
+[2026-11-18_02:12:33] END pagekit_fraggen_bfs_10m_rep3 ok coverage=results/crawlbench/pagekit_fraggen_bfs_20261118_015058-1-branch.json out= load1=1.57 swap_used_mb=0 free_mem_pct=65
+[2026-11-18_02:12:33] START pagekit_rted_bfs_10m_rep3 load1=1.57 swap_used_mb=0 free_mem_pct=65
+[2026-11-18_02:48:26] END pagekit_rted_bfs_10m_rep3 ok coverage=results/crawlbench/pagekit_rted_bfs_20261118_021233-1-branch.json out= load1=0.78 swap_used_mb=0 free_mem_pct=64
+[2026-11-18_02:48:26] LANE DONE pagekit
+[2026-11-18_02:48:26] LANE app pagekit end
+[2026-11-18_02:48:26] CAMPAIGN DONE

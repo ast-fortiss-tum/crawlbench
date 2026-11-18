@@ -192,3 +192,11 @@ web-apps-main/web-apps/
 node_modules/
 .temp/
 web-apps-main/web-apps-coverage/
+
+# rq4 generated artifacts (keep golden.json, mutants-*.json, pwe-*.json, report-*.json, specs)
+rq4/projects/*/node_modules
+rq4/projects/*/.mutants/
+rq4/projects/*/.mlmt/runs/
+rq4/projects/*/.mlmt/trace*
+rq4/projects/*/test-results/
+rq4/projects/*/tests/golden-raw/

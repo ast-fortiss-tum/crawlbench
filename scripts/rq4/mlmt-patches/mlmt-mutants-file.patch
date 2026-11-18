@@ -1,0 +1,91 @@
+diff --git a/docs/config.schema.json b/docs/config.schema.json
+index 2c11b1d..b2a6483 100644
+--- a/docs/config.schema.json
++++ b/docs/config.schema.json
+@@ -70,6 +70,7 @@
+     "seed": { "type": "integer" },
+     "maxElementsPerSnapshot": { "type": "integer", "minimum": 1 },
+     "maxMutants": { "type": "integer", "minimum": 0 },
++    "mutantsFile": { "type": "string" },
+     "keepSandboxes": { "type": "boolean" },
+     "requireGreenBaseline": { "type": "boolean" }
+   }
+diff --git a/src/cli.ts b/src/cli.ts
+index 3eab47d..473e4f6 100644
+--- a/src/cli.ts
++++ b/src/cli.ts
+@@ -43,6 +43,7 @@ Run options:
+   --operators <list>        operator ids / family prefixes to include
+   --exclude <list>          operator ids / family prefixes to exclude
+   --max-mutants <n>         execute a seeded random sample of n mutants
++  --mutants-file <file>     run exactly the mutants of another run's mutants-pwe<N>.json (fixed mutant set)
+   --reuse-trace             reuse <outputDir>/trace.json
+   --all-tests               run the whole suite for every mutant
+   --keep-sandboxes          keep sandbox directories for inspection
+@@ -108,6 +109,7 @@ export function overridesFrom(o: Record<string, any>): UserConfig {
+     maxPwe: int(o['max-pwe'], 'max-pwe'),
+     workers: int(o.workers, 'workers'),
+     maxMutants: int(o['max-mutants'], 'max-mutants'),
++    mutantsFile: o['mutants-file'] ? path.resolve(String(o['mutants-file'])) : undefined,
+     layers: list(o.layers) as Layer[] | undefined,
+     plugins: o.plugin,
+     reporters: o.reporter,
+diff --git a/src/config.ts b/src/config.ts
+index b65c5c0..63c85b4 100644
+--- a/src/config.ts
++++ b/src/config.ts
+@@ -78,6 +78,8 @@ export interface MlmtConfig {
+   maxElementsPerSnapshot: number;
+   /** Execute a seeded random sample of this many mutants (0 = all). */
+   maxMutants: number;
++  /** Run exactly the mutants in this JSON file (a mutants-pwe<N>.json of another run) instead of generating them. Test-layer mutants in the file are ignored. testFiles are recomputed from this suite's trace. Absolute path or relative to the working directory. */
++  mutantsFile: string;
+   /** Keep sandbox directories after the run (debugging). */
+   keepSandboxes: boolean;
+   /** Abort if the baseline has failing tests (otherwise they are ignored). */
+@@ -115,6 +117,7 @@ export const DEFAULT_CONFIG: MlmtConfig = {
+   seed: 42,
+   maxElementsPerSnapshot: 3000,
+   maxMutants: 0,
++  mutantsFile: '',
+   keepSandboxes: false,
+   requireGreenBaseline: false,
+ };
+diff --git a/src/engine/engine.ts b/src/engine/engine.ts
+index f3c2564..eec0a7b 100644
+--- a/src/engine/engine.ts
++++ b/src/engine/engine.ts
+@@ -236,8 +236,33 @@ export class MutationEngine extends EventEmitter {
+     return model;
+   }
+ 
++  /** Fixed mutant set: load descriptors from cfg.mutantsFile and recompute, from this suite's trace, which tests reach them. */
++  private loadFixedMutants(trace: SuiteTrace): MutantDescriptor[] {
++    const loaded = readJson<MutantDescriptor[]>(this.cfg.mutantsFile).filter((m) => m.layer !== 'test');
++    const pageFiles = new Map<string, Set<string>>();
++    const endpointFiles = new Map<string, Set<string>>();
++    for (const t of trace.tests) {
++      for (const pk of Object.keys(t.snapshots)) (pageFiles.get(pk) ?? pageFiles.set(pk, new Set()).get(pk)!).add(t.testFile);
++      for (const r of t.network) (endpointFiles.get(r.endpoint) ?? endpointFiles.set(r.endpoint, new Set()).get(r.endpoint)!).add(t.testFile);
++    }
++    return loaded.map((m) => {
++      const files = m.target.kind === 'dom' ? pageFiles.get(m.target.pageKey) : m.target.kind === 'network' ? endpointFiles.get(m.target.endpoint) : undefined;
++      const out: MutantDescriptor = { ...m, testFiles: this.cfg.testSelection === 'all' ? [] : [...(files ?? [])].sort() };
++      delete out.precheckFailed;
++      if (!files || !files.size) out.precheckFailed = 'not reached by this suite (page/endpoint never visited)';
++      return out;
++    });
++  }
++
+   generate(trace: SuiteTrace, pwe: PwePage[]): MutantDescriptor[] {
+     this.emit('phase', 'generate');
++    if (this.cfg.mutantsFile) {
++      const fixed = this.loadFixedMutants(trace);
++      writeJson(this.paths.mutants, fixed);
++      this.logger.info(`fixed mutant set from ${this.cfg.mutantsFile}: ${fixed.length} mutants, ${fixed.filter((m) => m.precheckFailed).length} not reached by this suite`);
++      this.emit('generated', fixed);
++      return fixed;
++    }
+     let mutants = generateMutants(this.cfg, pwe, trace, { registry: this.registry, testSources: readTestSources(this.cfg, this.inlineTests) });
+     if (this.cfg.maxMutants > 0 && mutants.length > this.cfg.maxMutants) {
+       const rand = mulberry32(this.cfg.seed);

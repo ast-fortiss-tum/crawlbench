@@ -1,0 +1,25 @@
+[2026-11-17_21:29:04] START pagekit_fraggen_bfs_10m_rep1 load1=1.56 swap_used_mb=0 free_mem_pct=74
+[2026-11-17_21:46:27] END pagekit_fraggen_bfs_10m_rep1 ok coverage=results/crawlbench/pagekit_fraggen_bfs_20261117_212904-1-branch.json out= load1=2.03 swap_used_mb=0 free_mem_pct=67
+[2026-11-17_21:46:27] START pagekit_rted_bfs_10m_rep1 load1=2.03 swap_used_mb=0 free_mem_pct=67
+[2026-11-17_22:20:56] END pagekit_rted_bfs_10m_rep1 ok coverage=results/crawlbench/pagekit_rted_bfs_20261117_214627-1-branch.json out= load1=1.67 swap_used_mb=0 free_mem_pct=66
+[2026-11-17_22:20:56] START pagekit_pdiff_bfs_10m_rep1 load1=1.67 swap_used_mb=0 free_mem_pct=66
+[2026-11-17_22:33:39] END pagekit_pdiff_bfs_10m_rep1 FAIL rc=0 new_coverage_files=0 out=none (see logs/repeats_pagekit_pdiff_bfs_10m_rep1.log) load1=2.73 swap_used_mb=0 free_mem_pct=52
+[2026-11-17_22:33:40] START pagekit_siamese_bfs_10m_rep1 load1=2.73 swap_used_mb=0 free_mem_pct=52
+[2026-11-17_23:13:03] END pagekit_siamese_bfs_10m_rep1 ok coverage=results/crawlbench/pagekit_siamese_bfs_20261117_223340-1-branch.json out= load1=2.36 swap_used_mb=0 free_mem_pct=48
+[2026-11-17_23:13:03] START pagekit_rted_bfs_10m_rep2 load1=2.36 swap_used_mb=0 free_mem_pct=48
+[2026-11-17_23:49:14] END pagekit_rted_bfs_10m_rep2 ok coverage=results/crawlbench/pagekit_rted_bfs_20261117_231303-1-branch.json out= load1=2.42 swap_used_mb=0 free_mem_pct=61
+[2026-11-17_23:49:14] START pagekit_pdiff_bfs_10m_rep2 load1=2.42 swap_used_mb=0 free_mem_pct=61
+[2026-11-18_00:02:20] END pagekit_pdiff_bfs_10m_rep2 FAIL rc=0 new_coverage_files=0 out=none (see logs/repeats_pagekit_pdiff_bfs_10m_rep2.log) load1=2.17 swap_used_mb=0 free_mem_pct=69
+[2026-11-18_00:02:21] START pagekit_siamese_bfs_10m_rep2 load1=2.17 swap_used_mb=0 free_mem_pct=69
+[2026-11-18_00:41:45] END pagekit_siamese_bfs_10m_rep2 ok coverage=results/crawlbench/pagekit_siamese_bfs_20261118_000221-1-branch.json out= load1=3.00 swap_used_mb=0 free_mem_pct=60
+[2026-11-18_00:41:45] START pagekit_fraggen_bfs_10m_rep2 load1=3.00 swap_used_mb=0 free_mem_pct=60
+[2026-11-18_00:59:25] END pagekit_fraggen_bfs_10m_rep2 ok coverage=results/crawlbench/pagekit_fraggen_bfs_20261118_004145-1-branch.json out= load1=1.69 swap_used_mb=0 free_mem_pct=58
+[2026-11-18_00:59:25] START pagekit_pdiff_bfs_10m_rep3 load1=1.69 swap_used_mb=0 free_mem_pct=58
+[2026-11-18_01:11:52] END pagekit_pdiff_bfs_10m_rep3 FAIL rc=0 new_coverage_files=0 out=none (see logs/repeats_pagekit_pdiff_bfs_10m_rep3.log) load1=2.08 swap_used_mb=0 free_mem_pct=59
+[2026-11-18_01:11:52] START pagekit_siamese_bfs_10m_rep3 load1=2.08 swap_used_mb=0 free_mem_pct=59
+[2026-11-18_01:50:58] END pagekit_siamese_bfs_10m_rep3 ok coverage=results/crawlbench/pagekit_siamese_bfs_20261118_011152-1-branch.json out= load1=0.97 swap_used_mb=0 free_mem_pct=61
+[2026-11-18_01:50:58] START pagekit_fraggen_bfs_10m_rep3 load1=0.97 swap_used_mb=0 free_mem_pct=61
+[2026-11-18_02:12:33] END pagekit_fraggen_bfs_10m_rep3 ok coverage=results/crawlbench/pagekit_fraggen_bfs_20261118_015058-1-branch.json out= load1=1.57 swap_used_mb=0 free_mem_pct=65
+[2026-11-18_02:12:33] START pagekit_rted_bfs_10m_rep3 load1=1.57 swap_used_mb=0 free_mem_pct=65
+[2026-11-18_02:48:26] END pagekit_rted_bfs_10m_rep3 ok coverage=results/crawlbench/pagekit_rted_bfs_20261118_021233-1-branch.json out= load1=0.78 swap_used_mb=0 free_mem_pct=64
+[2026-11-18_02:48:26] LANE DONE pagekit

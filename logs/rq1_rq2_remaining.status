@@ -1,0 +1,15 @@
+[2026-11-15_11:29:03] START rq1_baseline_within
+[2026-11-15_11:29:28] END rq1_baseline_within exit=0
+[2026-11-15_11:29:28] START rq1_baseline_across
+[2026-11-15_11:31:55] END rq1_baseline_across exit=0
+[2026-11-15_11:31:55] START rq2_snn
+[2026-11-15_11:33:48] END rq2_snn exit=0
+[2026-11-15_11:33:48] START rq2_a_other_baselines
+[2026-11-15_11:34:46] END rq2_a_other_baselines exit=0
+[2026-11-15_11:34:46] START rq2_b_other_baselines
+[2026-11-15_11:34:47] END rq2_b_other_baselines exit=0
+[2026-11-15_11:34:47] START rq2_a_webembed
+[2026-11-15_11:34:59] END rq2_a_webembed exit=0
+[2026-11-15_11:34:59] START rq2_b_webembed
+[2026-11-15_11:35:00] END rq2_b_webembed exit=1
+[2026-11-15_11:35:00] ALL DONE

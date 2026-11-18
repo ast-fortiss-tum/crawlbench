@@ -1,0 +1,27 @@
+[2026-11-16_12:13:05] START mantisbt_fraggen_bfs_10m
+[2026-11-16_12:25:41] END mantisbt_fraggen_bfs_10m FAIL rc=1 new_coverage_files=1 out=ICST20-submission-material-DANTE/crawljax/examples/out/mantisbt-fraggen-bfs-10mins-1794827606527 (see logs/pilot_mantisbt_fraggen_bfs_10m.log)
+[2026-11-16_12:25:41] START mantisbt_rted_bfs_10m
+[2026-11-16_12:37:01] END mantisbt_rted_bfs_10m FAIL rc=1 new_coverage_files=1 out=ICST20-submission-material-DANTE/crawljax/examples/out/mantisbt-rted-bfs-10mins-1794828375459 (see logs/pilot_mantisbt_rted_bfs_10m.log)
+[2026-11-16_12:37:01] START mantisbt_pdiff_bfs_10m
+[2026-11-16_12:48:46] END mantisbt_pdiff_bfs_10m ok coverage=results/crawlbench/mantisbt_pdiff_bfs_20261116_123711-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mantisbt-pdiff-bfs-10mins-1794829058142
+[2026-11-16_12:48:46] START mrbs_fraggen_bfs_10m
+[2026-11-16_12:57:16] END mrbs_fraggen_bfs_10m FAIL rc=1 new_coverage_files=0 out=none (see logs/pilot_mrbs_fraggen_bfs_10m.log)
+[2026-11-16_12:57:16] START mrbs_rted_bfs_10m
+[2026-11-16_13:05:00] END mantisbt_fraggen_bfs_10m ok coverage=results/crawlbench/mantisbt_fraggen_bfs_20261116_121305-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mantisbt-fraggen-bfs-10mins-1794827606527 (manually accepted: rc=1 was the teardown set -e bug, artifacts verified)
+[2026-11-16_13:05:00] END mantisbt_rted_bfs_10m ok coverage=results/crawlbench/mantisbt_rted_bfs_20261116_122551-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mantisbt-rted-bfs-10mins-1794828375459 (manually accepted: rc=1 was the teardown set -e bug, artifacts verified)
+[2026-11-16_13:02:22] SKIP mantisbt_fraggen_bfs_10m (done)
+[2026-11-16_13:02:22] SKIP mantisbt_rted_bfs_10m (done)
+[2026-11-16_13:02:22] SKIP mantisbt_pdiff_bfs_10m (done)
+[2026-11-16_13:02:22] START mrbs_fraggen_bfs_10m
+[2026-11-16_13:13:38] END mrbs_fraggen_bfs_10m ok coverage=results/crawlbench/mrbs_fraggen_bfs_20261116_130223-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-fraggen-bfs-10mins-1794830565796
+[2026-11-16_13:13:38] START mrbs_rted_bfs_10m
+[2026-11-16_13:25:10] END mrbs_rted_bfs_10m ok coverage=results/crawlbench/mrbs_rted_bfs_20261116_131348-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-rted-bfs-10mins-1794831250126
+[2026-11-16_13:25:10] START mrbs_pdiff_bfs_10m
+[2026-11-16_13:36:44] END mrbs_pdiff_bfs_10m ok coverage=results/crawlbench/mrbs_pdiff_bfs_20261116_132520-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-pdiff-bfs-10mins-1794831948222
+[2026-11-16_13:36:44] START ppma_fraggen_bfs_10m
+[2026-11-16_13:48:10] END ppma_fraggen_bfs_10m ok coverage=results/crawlbench/ppma_fraggen_bfs_20261116_134226-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-fraggen-bfs-10mins-1794832975963
+[2026-11-16_13:48:10] START ppma_rted_bfs_10m
+[2026-11-16_13:52:29] END ppma_rted_bfs_10m ok coverage=results/crawlbench/ppma_rted_bfs_20261116_134822-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-rted-bfs-10mins-1794833331212
+[2026-11-16_13:52:29] START ppma_pdiff_bfs_10m
+[2026-11-16_14:03:43] END ppma_pdiff_bfs_10m ok coverage=results/crawlbench/ppma_pdiff_bfs_20261116_135239-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-pdiff-bfs-10mins-1794833584118
+[2026-11-16_14:03:43] PILOT DONE

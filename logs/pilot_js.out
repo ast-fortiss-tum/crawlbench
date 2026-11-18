@@ -1,0 +1,7 @@
+[2026-11-16_21:35:08] START dimeshift_rted_bfs_10m
+[2026-11-16_21:45:26] END dimeshift_rted_bfs_10m FAIL rc=0 new_coverage_files=1 out=none (see logs/pilot_dimeshift_rted_bfs_10m.log)
+[2026-11-16_21:45:26] START dimeshift_fraggen_bfs_10m
+[2026-11-16_22:24:24] END dimeshift_fraggen_bfs_10m FAIL rc=0 new_coverage_files=1 out=none (see logs/pilot_dimeshift_fraggen_bfs_10m.log)
+[2026-11-16_22:24:24] START dimeshift_pdiff_bfs_10m
+[2026-11-16_22:41:41] END dimeshift_pdiff_bfs_10m FAIL rc=0 new_coverage_files=1 out=none (see logs/pilot_dimeshift_pdiff_bfs_10m.log)
+[2026-11-16_22:41:41] PILOT DONE

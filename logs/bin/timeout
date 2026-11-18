@@ -1,0 +1,6 @@
+#!/usr/bin/env perl
+my $d = shift @ARGV; $d =~ s/s$//;
+my $pid = fork();
+if ($pid == 0) { exec @ARGV or exit 127; }
+$SIG{ALRM} = sub { kill 'TERM', $pid; sleep 2; kill 'KILL', $pid; waitpid($pid,0); exit 124; };
+alarm $d; waitpid($pid,0); exit($? >> 8);

@@ -1,0 +1,2677 @@
+{
+ "obs": {
+  "path00|0": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path00|1": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path00|10": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path00|11": {
+   "runs": 3,
+   "loc": [
+    "/profile"
+   ],
+   "title": [
+    "User Profile | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path00|12": {
+   "runs": 3,
+   "loc": [
+    "/wallets"
+   ],
+   "title": [
+    "Wallets | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path00|13": {
+   "runs": 3,
+   "loc": [
+    "/plans"
+   ],
+   "title": [
+    "Plan your expenses | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path00|14": {
+   "runs": 3,
+   "loc": [
+    "/user/registration"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/registration does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/registration does not exist\"}"
+   ]
+  },
+  "path00|15": {
+   "runs": 3,
+   "loc": [
+    "/user/signin"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}"
+   ]
+  },
+  "path00|16": {
+   "runs": 3,
+   "loc": [
+    "/profile"
+   ],
+   "title": [
+    "User Profile | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path00|17": {
+   "runs": 3,
+   "loc": [
+    "/user/logout"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/logout does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/logout does not exist\"}"
+   ]
+  },
+  "path00|18": {
+   "runs": 3,
+   "loc": [
+    "/user/change_language"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/change_language does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/change_language does not exist\"}"
+   ]
+  },
+  "path00|19": {
+   "runs": 3,
+   "loc": [
+    "/user/fillprofile"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/fillprofile does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/fillprofile does not exist\"}"
+   ]
+  },
+  "path00|2": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path00|20": {
+   "runs": 3,
+   "loc": [
+    "/user/registration"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/registration does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/registration does not exist\"}"
+   ]
+  },
+  "path00|21": {
+   "runs": 3,
+   "loc": [
+    "/user/restore"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/restore does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/restore does not exist\"}"
+   ]
+  },
+  "path00|22": {
+   "runs": 3,
+   "loc": [
+    "/user/restore"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/restore does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/restore does not exist\"}"
+   ]
+  },
+  "path00|3": {
+   "runs": 3,
+   "loc": [
+    "/wallets"
+   ],
+   "title": [
+    "Wallets | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path00|4": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path00|5": {
+   "runs": 3,
+   "loc": [
+    "/plans"
+   ],
+   "title": [
+    "Plan your expenses | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path00|6": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path00|7": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:14,button:1,input:5,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path00|8": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path00|9": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:15,button:1,input:4,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path01|0": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path01|1": {
+   "runs": 3,
+   "loc": [
+    "/user/logout"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/logout does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/logout does not exist\"}"
+   ]
+  },
+  "path01|10": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path01|11": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path01|2": {
+   "runs": 3,
+   "loc": [
+    "/user/change_language"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/change_language does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/change_language does not exist\"}"
+   ]
+  },
+  "path01|3": {
+   "runs": 3,
+   "loc": [
+    "/user/fillprofile"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/fillprofile does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/fillprofile does not exist\"}"
+   ]
+  },
+  "path01|4": {
+   "runs": 3,
+   "loc": [
+    "/images/homepage/screenshots/transactions.jpg"
+   ],
+   "title": [
+    "transactions.jpg (#\u00d7#)"
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [],
+   "allowed": []
+  },
+  "path01|5": {
+   "runs": 3,
+   "loc": [
+    "/images/homepage/screenshots/wallets.jpg"
+   ],
+   "title": [
+    "wallets.jpg (#\u00d7#)"
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [],
+   "allowed": []
+  },
+  "path01|6": {
+   "runs": 3,
+   "loc": [
+    "/images/homepage/screenshots/goal.jpg"
+   ],
+   "title": [
+    "goal.jpg (#\u00d7#)"
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [],
+   "allowed": []
+  },
+  "path01|7": {
+   "runs": 3,
+   "loc": [
+    "/images/homepage/screenshots/i#n.jpg"
+   ],
+   "title": [
+    "i#n.jpg (#\u00d7#)"
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [],
+   "allowed": []
+  },
+  "path01|8": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path01|9": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:14,button:1,input:5,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path02|0": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path02|1": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:14,button:1,input:5,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path02|2": {
+   "runs": 3,
+   "loc": [
+    "/wallets"
+   ],
+   "title": [
+    "Wallets | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path02|3": {
+   "runs": 3,
+   "loc": [
+    "/wallets"
+   ],
+   "title": [
+    "Wallets | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path03|0": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path03|1": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:14,button:1,input:5,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path03|2": {
+   "runs": 3,
+   "loc": [
+    "/plans"
+   ],
+   "title": [
+    "Plan your expenses | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path03|3": {
+   "runs": 3,
+   "loc": [
+    "/plans"
+   ],
+   "title": [
+    "Plan your expenses | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path04|0": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path04|1": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:14,button:1,input:5,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path04|2": {
+   "runs": 3,
+   "loc": [
+    "/user/registration"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/registration does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/registration does not exist\"}"
+   ]
+  },
+  "path04|3": {
+   "runs": 3,
+   "loc": [
+    "/user/signin"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}"
+   ]
+  },
+  "path04|4": {
+   "runs": 3,
+   "loc": [
+    "/profile"
+   ],
+   "title": [
+    "User Profile | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path04|5": {
+   "runs": 3,
+   "loc": [
+    "/profile"
+   ],
+   "title": [
+    "User Profile | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path05|0": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path05|1": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:14,button:1,input:5,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Already a member? Sign In",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Email",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Registration",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path05|10": {
+   "runs": 3,
+   "loc": [
+    "/user/signin"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}"
+   ]
+  },
+  "path05|2": {
+   "runs": 3,
+   "loc": [
+    "/user/logout"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/logout does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/logout does not exist\"}"
+   ]
+  },
+  "path05|3": {
+   "runs": 3,
+   "loc": [
+    "/user/change_language"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/change_language does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/change_language does not exist\"}"
+   ]
+  },
+  "path05|4": {
+   "runs": 3,
+   "loc": [
+    "/user/fillprofile"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/fillprofile does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/fillprofile does not exist\"}"
+   ]
+  },
+  "path05|5": {
+   "runs": 3,
+   "loc": [
+    "/images/homepage/screenshots/transactions.jpg"
+   ],
+   "title": [
+    "transactions.jpg (#\u00d7#)"
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [],
+   "allowed": []
+  },
+  "path05|6": {
+   "runs": 3,
+   "loc": [
+    "/images/homepage/screenshots/wallets.jpg"
+   ],
+   "title": [
+    "wallets.jpg (#\u00d7#)"
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [],
+   "allowed": []
+  },
+  "path05|7": {
+   "runs": 3,
+   "loc": [
+    "/images/homepage/screenshots/goal.jpg"
+   ],
+   "title": [
+    "goal.jpg (#\u00d7#)"
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [],
+   "allowed": []
+  },
+  "path05|8": {
+   "runs": 3,
+   "loc": [
+    "/images/homepage/screenshots/i#n.jpg"
+   ],
+   "title": [
+    "i#n.jpg (#\u00d7#)"
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [],
+   "allowed": []
+  },
+  "path05|9": {
+   "runs": 3,
+   "loc": [
+    "/user/signin"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}"
+   ]
+  },
+  "path06|0": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path06|1": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:15,button:1,input:4,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path06|2": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path06|3": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path07|0": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path07|1": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:15,button:1,input:4,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path07|2": {
+   "runs": 3,
+   "loc": [
+    "/wallets"
+   ],
+   "title": [
+    "Wallets | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path07|3": {
+   "runs": 3,
+   "loc": [
+    "/wallets"
+   ],
+   "title": [
+    "Wallets | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path08|0": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path08|1": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:15,button:1,input:4,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path08|2": {
+   "runs": 3,
+   "loc": [
+    "/plans"
+   ],
+   "title": [
+    "Plan your expenses | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path08|3": {
+   "runs": 3,
+   "loc": [
+    "/plans"
+   ],
+   "title": [
+    "Plan your expenses | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path09|0": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:13,button:0,input:1,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Register",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "View Source on GitHub"
+   ]
+  },
+  "path09|1": {
+   "runs": 3,
+   "loc": [
+    "/"
+   ],
+   "title": [
+    "Homepage | DimeShift"
+   ],
+   "ctl": [
+    "a:15,button:1,input:4,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "DimeShift \u2013 the easiest way to track your expenses",
+    "Home",
+    "Just move your mouse pointer over and start using wallet right now!",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Screenshots",
+    "Sign In",
+    "To demonstrate how simple it is \u2013 we don't even ask you to register.",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path09|2": {
+   "runs": 3,
+   "loc": [
+    "/user/registration"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/registration does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/registration does not exist\"}"
+   ]
+  },
+  "path09|3": {
+   "runs": 3,
+   "loc": [
+    "/user/signin"
+   ],
+   "title": [
+    ""
+   ],
+   "ctl": [
+    "a:0,button:0,input:0,select:0,textarea:0"
+   ],
+   "required": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}"
+   ],
+   "allowed": [
+    "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}"
+   ]
+  },
+  "path09|4": {
+   "runs": 3,
+   "loc": [
+    "/profile"
+   ],
+   "title": [
+    "User Profile | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  },
+  "path09|5": {
+   "runs": 3,
+   "loc": [
+    "/profile"
+   ],
+   "title": [
+    "User Profile | DimeShift"
+   ],
+   "ctl": [
+    "a:11,button:1,input:3,select:0,textarea:0"
+   ],
+   "required": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ],
+   "allowed": [
+    "$ dimeshift",
+    "API",
+    "Contact",
+    "Copyright # DimeShift. GNU Affero GPL License",
+    "Home",
+    "Password",
+    "Register",
+    "Register Restore your password",
+    "Sign In",
+    "Username or Email",
+    "View Source on GitHub",
+    "\u00d7"
+   ]
+  }
+ },
+ "end": {
+  "path00|end": {
+   "net": [
+    "GET /user/change_language 404",
+    "GET /user/fillprofile 404",
+    "GET /user/logout 404",
+    "GET /user/registration 404",
+    "GET /user/restore 404",
+    "GET /user/signin 404"
+   ],
+   "cons": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "Failed to load resource: the server responded with a status of # (Not Found)"
+   ]
+  },
+  "path01|end": {
+   "net": [
+    "GET /user/change_language 404",
+    "GET /user/fillprofile 404",
+    "GET /user/logout 404"
+   ],
+   "cons": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "Failed to load resource: the server responded with a status of # (Not Found)"
+   ]
+  },
+  "path02|end": {
+   "net": [],
+   "cons": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+   ]
+  },
+  "path03|end": {
+   "net": [],
+   "cons": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+   ]
+  },
+  "path04|end": {
+   "net": [
+    "GET /user/registration 404",
+    "GET /user/signin 404"
+   ],
+   "cons": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "Failed to load resource: the server responded with a status of # (Not Found)"
+   ]
+  },
+  "path05|end": {
+   "net": [
+    "GET /user/change_language 404",
+    "GET /user/fillprofile 404",
+    "GET /user/logout 404",
+    "GET /user/signin 404"
+   ],
+   "cons": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "Failed to load resource: the server responded with a status of # (Not Found)"
+   ]
+  },
+  "path06|end": {
+   "net": [],
+   "cons": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+   ]
+  },
+  "path07|end": {
+   "net": [],
+   "cons": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+   ]
+  },
+  "path08|end": {
+   "net": [],
+   "cons": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+   ]
+  },
+  "path09|end": {
+   "net": [
+    "GET /user/registration 404",
+    "GET /user/signin 404"
+   ],
+   "cons": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "Failed to load resource: the server responded with a status of # (Not Found)"
+   ]
+  }
+ }
+}

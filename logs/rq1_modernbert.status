@@ -1,0 +1,9 @@
+[2026-11-15_12:26:41] START rq1_across_modernbert_contrastive
+[2026-11-15_12:50:04] END rq1_across_modernbert_contrastive exit=0
+[2026-11-15_12:50:04] START rq1_within_modernbert_contrastive
+[2026-11-15_13:04:16] END rq1_within_modernbert_contrastive exit=0
+[2026-11-15_13:04:16] START rq1_within_modernbert_triplet
+[2026-11-15_13:10:56] END rq1_within_modernbert_triplet exit=0
+[2026-11-15_13:10:56] START rq2_snn_v3
+[2026-11-15_13:14:56] END rq2_snn_v3 exit=0
+[2026-11-15_13:14:56] ALL DONE

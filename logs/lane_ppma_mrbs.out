@@ -1,0 +1,64 @@
+[2026-11-17_06:00:41] SKIP ppma_fraggen_bfs_10m_rep1 (done)
+[2026-11-17_06:00:41] SKIP ppma_rted_bfs_10m_rep1 (done)
+[2026-11-17_06:00:41] SKIP ppma_pdiff_bfs_10m_rep1 (done)
+[2026-11-17_06:00:41] START ppma_siamese_bfs_10m_rep1 load1=2.63 swap_used_mb=10663.81 free_mem_pct=78
+[2026-11-17_06:02:52] END ppma_siamese_bfs_10m_rep1 ok coverage=results/crawlbench/ppma_siamese_bfs_20261117_060051-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-siamese-bfs-10mins-1794891672037 load1=3.49 swap_used_mb=8598.12 free_mem_pct=76
+[2026-11-17_06:02:52] SKIP ppma_rted_bfs_10m_rep2 (done)
+[2026-11-17_06:02:52] SKIP ppma_pdiff_bfs_10m_rep2 (done)
+[2026-11-17_06:02:52] START ppma_siamese_bfs_10m_rep2 load1=3.49 swap_used_mb=8598.12 free_mem_pct=76
+[2026-11-17_06:04:59] END ppma_siamese_bfs_10m_rep2 ok coverage=results/crawlbench/ppma_siamese_bfs_20261117_060302-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-siamese-bfs-10mins-1794891800831 load1=2.35 swap_used_mb=8300.00 free_mem_pct=80
+[2026-11-17_06:04:59] SKIP ppma_fraggen_bfs_10m_rep2 (done)
+[2026-11-17_06:04:59] SKIP ppma_pdiff_bfs_10m_rep3 (done)
+[2026-11-17_06:04:59] START ppma_siamese_bfs_10m_rep3 load1=2.35 swap_used_mb=8300.00 free_mem_pct=80
+[2026-11-17_06:07:04] END ppma_siamese_bfs_10m_rep3 ok coverage=results/crawlbench/ppma_siamese_bfs_20261117_060509-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-siamese-bfs-10mins-1794891927363 load1=2.49 swap_used_mb=8228.00 free_mem_pct=73
+[2026-11-17_06:07:04] SKIP ppma_fraggen_bfs_10m_rep3 (done)
+[2026-11-17_06:07:04] SKIP ppma_rted_bfs_10m_rep3 (done)
+[2026-11-17_06:07:04] START ppma_siamese_bfs_10m_rep4 load1=2.49 swap_used_mb=8228.00 free_mem_pct=73
+[2026-11-17_06:09:14] END ppma_siamese_bfs_10m_rep4 ok coverage=results/crawlbench/ppma_siamese_bfs_20261117_060715-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-siamese-bfs-10mins-1794892053665 load1=5.56 swap_used_mb=7716.00 free_mem_pct=77
+[2026-11-17_06:09:14] START ppma_fraggen_bfs_10m_rep4 load1=5.56 swap_used_mb=7716.00 free_mem_pct=77
+[2026-11-17_06:12:20] END ppma_fraggen_bfs_10m_rep4 ok coverage=results/crawlbench/ppma_fraggen_bfs_20261117_060915-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-fraggen-bfs-10mins-1794892173133 load1=3.66 swap_used_mb=7046.88 free_mem_pct=76
+[2026-11-17_06:12:20] START ppma_rted_bfs_10m_rep4 load1=5.13 swap_used_mb=7046.88 free_mem_pct=76
+[2026-11-17_06:15:03] END ppma_rted_bfs_10m_rep4 ok coverage=results/crawlbench/ppma_rted_bfs_20261117_061231-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-rted-bfs-10mins-1794892369772 load1=4.95 swap_used_mb=6894.88 free_mem_pct=76
+[2026-11-17_06:15:03] START ppma_pdiff_bfs_10m_rep4 load1=4.95 swap_used_mb=6894.88 free_mem_pct=76
+[2026-11-17_06:18:43] END ppma_pdiff_bfs_10m_rep4 ok coverage=results/crawlbench/ppma_pdiff_bfs_20261117_061513-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-pdiff-bfs-10mins-1794892533199 load1=3.68 swap_used_mb=6806.88 free_mem_pct=74
+[2026-11-17_06:18:43] START ppma_fraggen_bfs_10m_rep5 load1=3.68 swap_used_mb=6806.88 free_mem_pct=74
+[2026-11-17_06:22:31] END ppma_fraggen_bfs_10m_rep5 ok coverage=results/crawlbench/ppma_fraggen_bfs_20261117_061843-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-fraggen-bfs-10mins-1794892741692 load1=4.04 swap_used_mb=6678.88 free_mem_pct=72
+[2026-11-17_06:22:32] START ppma_rted_bfs_10m_rep5 load1=4.04 swap_used_mb=6678.88 free_mem_pct=76
+[2026-11-17_06:25:13] END ppma_rted_bfs_10m_rep5 ok coverage=results/crawlbench/ppma_rted_bfs_20261117_062242-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-rted-bfs-10mins-1794892980324 load1=1.83 swap_used_mb=6486.81 free_mem_pct=73
+[2026-11-17_06:25:13] START ppma_pdiff_bfs_10m_rep5 load1=1.83 swap_used_mb=6486.81 free_mem_pct=73
+[2026-11-17_06:30:30] END ppma_pdiff_bfs_10m_rep5 ok coverage=results/crawlbench/ppma_pdiff_bfs_20261117_062523-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-pdiff-bfs-10mins-1794893142110 load1=2.90 swap_used_mb=6285.50 free_mem_pct=74
+[2026-11-17_06:30:31] START ppma_siamese_bfs_10m_rep5 load1=2.90 swap_used_mb=6285.50 free_mem_pct=74
+[2026-11-17_06:32:36] END ppma_siamese_bfs_10m_rep5 ok coverage=results/crawlbench/ppma_siamese_bfs_20261117_063041-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/ppma-siamese-bfs-10mins-1794893459175 load1=2.60 swap_used_mb=6285.50 free_mem_pct=71
+[2026-11-17_06:32:36] LANE DONE ppma
+[2026-11-17_06:32:36] SKIP mrbs_fraggen_bfs_10m_rep1 (done)
+[2026-11-17_06:32:36] SKIP mrbs_rted_bfs_10m_rep1 (done)
+[2026-11-17_06:32:36] SKIP mrbs_pdiff_bfs_10m_rep1 (done)
+[2026-11-17_06:32:36] START mrbs_siamese_bfs_10m_rep1 load1=2.60 swap_used_mb=6285.50 free_mem_pct=71
+[2026-11-17_06:43:56] END mrbs_siamese_bfs_10m_rep1 ok coverage=results/crawlbench/mrbs_siamese_bfs_20261117_063247-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-siamese-bfs-10mins-1794893585027 load1=4.70 swap_used_mb=6269.50 free_mem_pct=66
+[2026-11-17_06:43:57] SKIP mrbs_rted_bfs_10m_rep2 (done)
+[2026-11-17_06:43:57] SKIP mrbs_pdiff_bfs_10m_rep2 (done)
+[2026-11-17_06:43:57] START mrbs_siamese_bfs_10m_rep2 load1=4.70 swap_used_mb=6269.50 free_mem_pct=66
+[2026-11-17_06:55:17] END mrbs_siamese_bfs_10m_rep2 ok coverage=results/crawlbench/mrbs_siamese_bfs_20261117_064407-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-siamese-bfs-10mins-1794894265101 load1=4.93 swap_used_mb=6197.50 free_mem_pct=67
+[2026-11-17_06:55:17] SKIP mrbs_fraggen_bfs_10m_rep2 (done)
+[2026-11-17_06:55:17] SKIP mrbs_pdiff_bfs_10m_rep3 (done)
+[2026-11-17_06:55:17] START mrbs_siamese_bfs_10m_rep3 load1=4.93 swap_used_mb=6197.50 free_mem_pct=67
+[2026-11-17_07:06:36] END mrbs_siamese_bfs_10m_rep3 ok coverage=results/crawlbench/mrbs_siamese_bfs_20261117_065527-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-siamese-bfs-10mins-1794894945775 load1=3.54 swap_used_mb=6173.50 free_mem_pct=69
+[2026-11-17_07:06:36] SKIP mrbs_fraggen_bfs_10m_rep3 (done)
+[2026-11-17_07:06:36] SKIP mrbs_rted_bfs_10m_rep3 (done)
+[2026-11-17_07:06:36] START mrbs_siamese_bfs_10m_rep4 load1=3.66 swap_used_mb=6173.50 free_mem_pct=69
+[2026-11-17_07:17:56] END mrbs_siamese_bfs_10m_rep4 ok coverage=results/crawlbench/mrbs_siamese_bfs_20261117_070647-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-siamese-bfs-10mins-1794895624819 load1=3.36 swap_used_mb=6141.50 free_mem_pct=68
+[2026-11-17_07:17:56] START mrbs_fraggen_bfs_10m_rep4 load1=3.36 swap_used_mb=6141.50 free_mem_pct=68
+[2026-11-17_07:29:07] END mrbs_fraggen_bfs_10m_rep4 ok coverage=results/crawlbench/mrbs_fraggen_bfs_20261117_071756-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-fraggen-bfs-10mins-1794896294665 load1=2.83 swap_used_mb=6141.50 free_mem_pct=64
+[2026-11-17_07:29:07] START mrbs_rted_bfs_10m_rep4 load1=2.83 swap_used_mb=6141.50 free_mem_pct=64
+[2026-11-17_07:40:30] END mrbs_rted_bfs_10m_rep4 ok coverage=results/crawlbench/mrbs_rted_bfs_20261117_072917-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-rted-bfs-10mins-1794896975285 load1=2.75 swap_used_mb=6117.50 free_mem_pct=66
+[2026-11-17_07:40:30] START mrbs_pdiff_bfs_10m_rep4 load1=2.75 swap_used_mb=6117.50 free_mem_pct=66
+[2026-11-17_07:51:53] END mrbs_pdiff_bfs_10m_rep4 ok coverage=results/crawlbench/mrbs_pdiff_bfs_20261117_074040-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-pdiff-bfs-10mins-1794897658754 load1=4.69 swap_used_mb=6109.50 free_mem_pct=65
+[2026-11-17_07:51:53] START mrbs_fraggen_bfs_10m_rep5 load1=4.69 swap_used_mb=6109.50 free_mem_pct=65
+[2026-11-17_08:03:05] END mrbs_fraggen_bfs_10m_rep5 ok coverage=results/crawlbench/mrbs_fraggen_bfs_20261117_075153-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-fraggen-bfs-10mins-1794898332003 load1=3.72 swap_used_mb=6109.50 free_mem_pct=69
+[2026-11-17_08:03:05] START mrbs_rted_bfs_10m_rep5 load1=3.72 swap_used_mb=6109.50 free_mem_pct=69
+[2026-11-17_08:14:25] END mrbs_rted_bfs_10m_rep5 ok coverage=results/crawlbench/mrbs_rted_bfs_20261117_080315-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-rted-bfs-10mins-1794899013255 load1=2.74 swap_used_mb=6093.50 free_mem_pct=65
+[2026-11-17_08:14:25] START mrbs_pdiff_bfs_10m_rep5 load1=2.74 swap_used_mb=6093.50 free_mem_pct=65
+[2026-11-17_08:25:50] END mrbs_pdiff_bfs_10m_rep5 ok coverage=results/crawlbench/mrbs_pdiff_bfs_20261117_081436-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-pdiff-bfs-10mins-1794899694334 load1=2.56 swap_used_mb=6085.50 free_mem_pct=63
+[2026-11-17_08:25:50] START mrbs_siamese_bfs_10m_rep5 load1=2.56 swap_used_mb=6085.50 free_mem_pct=63
+[2026-11-17_08:37:10] END mrbs_siamese_bfs_10m_rep5 ok coverage=results/crawlbench/mrbs_siamese_bfs_20261117_082600-php.json out=ICST20-submission-material-DANTE/crawljax/examples/out/mrbs-siamese-bfs-10mins-1794900378742 load1=3.67 swap_used_mb=6085.50 free_mem_pct=66
+[2026-11-17_08:37:10] LANE DONE mrbs

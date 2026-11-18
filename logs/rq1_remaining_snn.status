@@ -1,0 +1,11 @@
+[2026-11-13_19:42:50] START within-app-classification/doc2vec
+[2026-11-13_19:57:01] END within-app-classification/doc2vec exit=0
+[2026-11-13_19:57:01] START across-app-classification/doc2vec
+[2026-11-13_20:25:12] END across-app-classification/doc2vec exit=0
+[2026-11-13_20:25:12] START within-app-classification/bert
+[2026-11-13_20:39:40] END within-app-classification/bert exit=0
+[2026-11-13_20:39:40] START within-app-classification/markuplm
+[2026-11-13_20:42:56] END within-app-classification/markuplm exit=0
+[2026-11-13_20:42:56] START across-app-classification/markuplm
+[2026-11-13_20:45:33] END across-app-classification/markuplm exit=0
+[2026-11-13_20:45:33] ALL DONE

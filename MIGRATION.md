@@ -87,3 +87,74 @@ The user does not need to migrate Chrome. On arrival Claude should set this up a
 - **Docker:** the app images are linux/amd64. On x86 Ubuntu they run natively (faster than the emulated runs here; run times and request counts will not be comparable to the Mac results, so keep platforms apart or note it). On arm64 Ubuntu they need emulation (`--platform linux/amd64`, qemu-user-static). Check host-port publishing and `localhost` access from the containers; the smoke test in 4 will show problems.
 - **Java 23, Maven, conda:** install and re-run the smoke tests. Heap and thread limits may differ.
 - **Comparability:** results from the new machine are a different platform (CPU, load, Docker native vs emulated). Put them in separate result files or label them, and run the repeats for a given cell on one machine only.
+
+## 7. Second move (2026-11-18): Linux machine to a new Linux machine, possibly a different Claude account
+
+Written 2026-11-18. Source machine: Ubuntu 20.04, 4 CPUs, 15 GB RAM, GTX 1080 Ti (11 GB), Docker 28, no swap issues but crawls ran at load 2 to 4.
+A different Claude account has **no memory and no transcript** of the earlier sessions. Everything it needs is in `CLAUDE.md`, `PLAN.md`, `WORKLOG.md` and this file.
+Do not rely on `~/.claude/`.
+
+### 7.1 What to prepare on the old machine (done once, before leaving)
+1. Make sure nothing is running: `pgrep -af "crawljax|playwright|saf-|java"` and `docker ps`. The old machine was left idle on 2026-11-18.
+2. Run `bash scripts/migrate/pack.sh` (writes `~/crawlbench-migration/`, 180 MB). It contains:
+   - `git/uncommitted-tracked.patch`, `git/untracked-files.tgz`, `git/logs.tgz`, `git/HEAD.txt`: the uncommitted work (nothing was committed in the 2026-11-17/18 sessions).
+   - `crawljax/crawljax-local-changes.patch` and `crawljax-untracked.tgz`: safety net for the DANTE/Crawljax directory.
+   - `mlmt/`: our extension of MultilayerMT as a patch against the upstream commit in `upstream-commit.txt`, plus the pilot report.
+   - `meta/models.tgz`: the Siamese weights, baseline SVMs and embeddings (the retrain is NOT bit-identical, keep these).
+   - `conda/*.yml`, `conda/*.pip.txt`: exported Linux environments (`--no-builds`); `meta/machine.txt`: versions and Docker image IDs.
+3. **Preferred way to carry the repo changes: commit and push** (the user decides; Claude does not commit unasked). Then the new machine just clones. The patch files are the fallback.
+4. Big items, moved with rsync (about 15 GB, see section 1 for the table; paths are relative to the repo root):
+
+       rsync -a --info=progress2 OLD:/home/andrea/repos/crawlbench/ICST20-submission-material-DANTE/ ./ICST20-submission-material-DANTE/   # 9.6 GB; add --exclude 'crawljax/examples/out/*/localhost' to save space
+       rsync -a --info=progress2 OLD:/home/andrea/repos/crawlbench/{results,resources,logs} ./                                            # 1.3 GB + 3.8 GB + 15 MB
+       rsync -a OLD:~/.cache/huggingface ~/.cache/                                                                                       # 0.6 GB, or let it re-download
+       rsync -a OLD:~/crawlbench-migration ~/                                                                                            # the pack
+
+   `results/crawlbench/` holds the Mac results (timestamps before 20261117_170000) and the Linux results (from then on); `results/crawlbench/linux-smoke/` holds smoke and diagnostic runs. Keep them apart: a third platform gets its own label, see 7.6.
+5. Docker images: `docker pull` works for all of them (the 7 apps from `dockercontainervm/*`: `mantisbt:1.2.0`, `mrbs:1.4.9`, `ppma:0.6.0`, `dimeshift:non-empty-db`, `pagekit:latest`, `phoenix-trello:non-empty-db`, `petclinic-angular2:empty-db`; pull hit an IPv6 "network is unreachable" once, a retry worked).
+   The `<app>-xdebug255` images are built locally: either `docker save mantisbt-xdebug255 mrbs-xdebug255 ppma-xdebug255 | gzip > xdebug.tgz` and `docker load`, or rebuild with `scripts/crawl-bench/php-coverage/Dockerfile.xdebug` (section 3).
+
+### 7.2 What the new machine needs (sizing)
+- x86-64 Ubuntu 22.04 or newer (Playwright 1.63 does not support 20.04; on 20.04 export `PLAYWRIGHT_HOST_PLATFORM_OVERRIDE=ubuntu22.04-x64`, otherwise not needed).
+- Docker with the user in the `docker` group (`sudo usermod -aG docker $USER`, then log in again; in an existing shell use `sg docker -c "..."`).
+- Guideline for the 60-minute RQ3 campaigns and RQ4: 16 or more cores, 32 to 64 GB RAM, SSD. Each crawl lane needs about 3 GB (app containers plus Chrome plus Crawljax JVM) and a core or two. The GPU is only for the Siamese training/inference and is optional (CPU inference works, slower).
+- Parallelism is currently limited to one lane per app (ports and container names are fixed per app in `run-js-coverage-experiment.sh` and `run-coverage-experiment.sh`). More lanes per app need configurable ports and container names (small change, not done).
+
+### 7.3 Restore steps on the new machine (Claude can do these)
+1. Clone: `git clone https://github.com/ast-fortiss-tum/crawlbench.git` (or apply `git/uncommitted-tracked.patch` with `git apply`, and unpack `untracked-files.tgz` in the repo root). Put the rsynced directories in place. `chmod +x scripts/crawl-bench/*.sh scripts/migrate/*.sh`.
+2. Toolchain (all under `~/tools`, no root needed; add to `~/.bashrc`):
+   - JDK **21** (Temurin 21 works; the Mac used 23): `JAVA_HOME=$HOME/tools/jdk`.
+   - Maven 3.9.9: `$HOME/tools/apache-maven-3.9.9`.
+   - Node 20.18.1: `$HOME/tools/node`.
+   - `export PATH=$HOME/tools/node/bin:$JAVA_HOME/bin:$HOME/tools/apache-maven-3.9.9/bin:$PATH CHROME_BIN=$HOME/fraggen-chrome/chrome-linux64/chrome CHROMEDRIVER_BIN=$HOME/fraggen-chrome/chromedriver`
+   - Chrome 114 and chromedriver 114: section 6 has the URLs. Install shared libraries as `ldd chrome | grep "not found"` says.
+3. Maven (empty `~/.m2` on a new machine; the first crawl fails with "Could not find artifact crawljax-core:5.2.4-SNAPSHOT" otherwise):
+   - `cd ICST20-submission-material-DANTE/crawljax && mvn install -DskipTests`
+   - `cd ../dante && mvn install -DskipTests`, then `mvn dependency:get -Dartifact=org.testng:testng:7.0.0-beta1` and `-Dartifact=com.beust:jcommander:1.72` if the replay fails with `NoClassDefFoundError`.
+4. Node: `cd scripts/crawl-bench/branch-coverage && npm install`.
+5. Conda (accept the channel terms first: `conda tos accept`): `environment-snn-ndd.yml` pins macOS builds and does not solve on Linux. Use the exported files: `conda env create -n snn-ndd -f ~/crawlbench-migration/conda/snn-ndd.yml` and the same for `snn-ndd-gpu` (torch 2.6.0+cu124; transformers 5.x needs torch >= 2.6; also needs `imbalanced-learn` and `openpyxl`). If a solve fails, create from top-level packages and use the `.pip.txt` list as the reference. The GPU env is used for training and Siamese inference: `export SNN_ENV_BIN=$HOME/miniconda3/envs/snn-ndd-gpu/bin`.
+6. Models: unpack `meta/models.tgz` in the repo root (gives `models/`, `baseline-models/`, `embeddings/`). Do not retrain unless needed; `across_app_baseline.py` and `modernbert_contrastive_classification.py` retrain them (the Siamese result is not identical to the earlier weights).
+7. Petclinic: `export CRAWLBENCH_PETCLINIC_TOMCAT_PORT=9966`. The campaign script `scripts/crawl-bench/run_campaign_linux.sh` sets all of this.
+8. RQ4 (mutation testing) tooling:
+   - Clone MultilayerMT into a **durable** place (the working copy used so far lived in a session scratchpad that is lost): `git clone https://github.com/ast-fortiss-tum/multilayer-mt ~/tools/multilayer-mt && cd ~/tools/multilayer-mt && git checkout $(head -1 ~/crawlbench-migration/mlmt/upstream-commit.txt) && git apply scripts/rq4/mlmt-patches/mlmt-mutants-file.patch (also in the pack) && npm ci && npm run build`.
+   - `PLAYWRIGHT_HOST_PLATFORM_OVERRIDE=ubuntu22.04-x64 npx playwright install chromium` (drop the variable on 22.04+).
+   - The patch adds `--mutants-file <mutants-pwe<N>.json>` (config `mutantsFile`). It is **written but not yet built or tested** (the last `dist/` was built before the patch). First thing: build, then verify with the fixed-set run in 7.5.
+   - The translated project `rq4/projects/dimeshift-rted/` (untracked; in `git/untracked-files.tgz`) has `node_modules` as a symlink to the MLMT checkout's `node_modules`: `ln -sfn ~/tools/multilayer-mt/node_modules rq4/projects/dimeshift-rted/node_modules`.
+9. Smoke tests: section 4, plus for RQ4: start the dimeshift container (`cd ICST20-submission-material-DANTE/dante/docker/dimeshift && bash run-docker.sh -p yes -n rq4-dimeshift -a 3006 -d 3311`, wait about 60 s), then `cd rq4/projects/dimeshift-rted && node ~/tools/multilayer-mt/dist/src/cli.js run --max-mutants 20 --workers 3`. Expect a green baseline (10 passed) and about 50% mutation score (the pilot gave 10 killed of 19 executed; it varies with the sample). Stop and remove the container afterwards.
+
+### 7.4 Status at the time of the move
+See the top of `CLAUDE.md` ("State on 2026-11-18") and the last entries of `WORKLOG.md`. In short: RQ1/RQ2 done on all SAFs; RQ3 PHP repeats done (Mac), JS repeats done on Linux (45 of 48 runs OK; pagekit PDiff always yields 0 tests on Linux within 10 minutes, unresolved); RQ4 tooling built and piloted on one suite.
+
+### 7.5 RQ4 design decisions made on 2026-11-18 (user approved)
+- **Translate the suites** (DANTE selenium-actions to Playwright, `scripts/rq4/dante2pw.py`), do not extend MultilayerMT to Selenium. The grammar is only `get`, `click`, `clear`, `sendKeys`, `sleep`; one spec per path (paths are separated by `----`).
+- **Implicit oracle** (the suites have no assertions), `scripts/rq4/templates/oracle.ts`: after every get/click it compares URL, title, visible text lines, visible control counts against `tests/golden.json`; at the end of a test it checks HTTP responses >= 400 / failed requests and console errors / page errors. `golden.json` is merged from at least 3 baseline runs in record mode (`ORACLE_MODE=record`, then `python3 scripts/rq4/dante2pw.py merge <project>`): required lines = seen in all runs, allowed = seen in any run, so run-to-run noise does not cause false kills. The dimeshift RTED baseline was stable (5 of 5 green, 0 noisy points, 1.3 to 1.4 min per replay).
+- **Fixed mutant set per app** (PLAN.md rule): `--mutants-file` runs the same descriptors on every suite. Mutants are defined by operator + page key + selector/endpoint, so they are suite-independent; `testFiles` are recomputed per suite from its trace; mutants whose page/endpoint the suite never reaches are reported as SKIPPED with reason "not reached". **Scoring rule to apply in the analysis: kills / size of the fixed set (unreached counts as not detected)**, and also report kills / reached.
+- Layers `dom` and `network`, `operatorSet: thesis`. The test-script layer is dropped (the AST rewriter targets TypeScript tests, our generated specs have almost no sites).
+- Still to build: `scripts/rq4/mutant_union.py` (union the generated mutants of all suites of an app, seeded sample of a fixed size, e.g. 200 per app, stable ids), a driver that translates every suite of an app, records the golden file, and runs the fixed set; the analysis script. Cost indication: 20 mutants took about 15 minutes with 3 workers on the old machine (about 4.9 s/mutant on the todo demo, 30 to 50 s/mutant on dimeshift with sleeps scaled 1.0); `--sleep-scale 0.3` in the translator would cut that.
+- App state: the dimeshift suites do not submit forms, so a shared app instance is fine. Check this per app (phoenix, pagekit, the PHP apps do change state) and restart the container between runs where needed.
+
+### 7.6 Platform separation on a third platform
+Results from the new machine are a third platform. Use a new cutoff timestamp (record it in `WORKLOG.md` at the first run) and extend `PLATFORM_CUTOFF` / `--platform` in `scripts/rq3/js_summary.py` (currently mac before and linux from `20261117_170000`). Do the repeats for one cell on one machine only.
+
+### 7.7 Prompt for the new Claude session
+> Read `CLAUDE.md`, `MIGRATION.md` (section 7), `PLAN.md` and the last entries of `WORKLOG.md`. Restore the environment following section 7.3, run the smoke tests, report what failed, and then continue with the "Next steps" in `CLAUDE.md`. Ask before committing, pushing, or sending anything outside the machine.

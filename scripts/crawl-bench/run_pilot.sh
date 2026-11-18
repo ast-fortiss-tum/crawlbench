@@ -17,7 +17,8 @@ mkdir -p "$ROOT/logs" "$ROOT/results/crawlbench"
 
 # Chrome 114 (FragGen needs it) + a `timeout` shim (macOS has none) + the SNN env first on PATH for the SAF services
 CHROME_DIR="${FRAGGEN_CHROME_DIR:-$HOME/fraggen-chrome}"
-export CHROME_BIN="${CHROME_BIN:-$CHROME_DIR/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing}"
+if [ "$(uname)" = Darwin ]; then DEFAULT_CHROME="$CHROME_DIR/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"; else DEFAULT_CHROME="$CHROME_DIR/chrome-linux64/chrome"; fi
+export CHROME_BIN="${CHROME_BIN:-$DEFAULT_CHROME}"
 export CHROMEDRIVER_BIN="${CHROMEDRIVER_BIN:-$CHROME_DIR/chromedriver}"
 SHIM_DIR="$ROOT/logs/bin"; mkdir -p "$SHIM_DIR"
 if ! command -v timeout > /dev/null 2>&1; then

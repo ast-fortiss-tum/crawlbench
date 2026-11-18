@@ -1,0 +1,4114 @@
+{
+  "tool": "MultilayerMT",
+  "version": "0.1.0",
+  "app": "dimeshift",
+  "config": {
+    "maxPwe": 8,
+    "workers": 3,
+    "layers": [
+      "dom",
+      "network"
+    ],
+    "testSelection": "covering"
+  },
+  "startedAt": "2026-11-18T14:29:29.245Z",
+  "finishedAt": "2026-11-18T14:34:55.225Z",
+  "wallTimeMs": 260589,
+  "sumMutantTimeMs": 761548,
+  "baselineMs": 32386,
+  "totals": {
+    "generated": 20,
+    "executed": 19,
+    "skipped": 1,
+    "killed": 10,
+    "survived": 9,
+    "timeout": 0,
+    "error": 0,
+    "mutationScore": 0.5263157894736842,
+    "applicability": 0.95
+  },
+  "perLayer": {
+    "dom": {
+      "generated": 18,
+      "executed": 17,
+      "skipped": 1,
+      "killed": 8,
+      "survived": 9,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 0.47058823529411764,
+      "applicability": 0.9444444444444444
+    },
+    "network": {
+      "generated": 2,
+      "executed": 2,
+      "skipped": 0,
+      "killed": 2,
+      "survived": 0,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 1,
+      "applicability": 1
+    },
+    "test": {
+      "generated": 0,
+      "executed": 0,
+      "skipped": 0,
+      "killed": 0,
+      "survived": 0,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": null,
+      "applicability": null
+    }
+  },
+  "perOperator": {
+    "TIM.wrap.div": {
+      "generated": 3,
+      "executed": 3,
+      "skipped": 0,
+      "killed": 0,
+      "survived": 3,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 0,
+      "applicability": 1
+    },
+    "EVD.click.delay": {
+      "generated": 1,
+      "executed": 1,
+      "skipped": 0,
+      "killed": 0,
+      "survived": 1,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 0,
+      "applicability": 1
+    },
+    "SFM.script.fail": {
+      "generated": 10,
+      "executed": 9,
+      "skipped": 1,
+      "killed": 7,
+      "survived": 2,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 0.7777777777777778,
+      "applicability": 0.9
+    },
+    "TIM.form.reorderFields": {
+      "generated": 1,
+      "executed": 1,
+      "skipped": 0,
+      "killed": 0,
+      "survived": 1,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 0,
+      "applicability": 1
+    },
+    "SVM.opacity.dim": {
+      "generated": 1,
+      "executed": 1,
+      "skipped": 0,
+      "killed": 0,
+      "survived": 1,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 0,
+      "applicability": 1
+    },
+    "SVM.visibility.hide": {
+      "generated": 1,
+      "executed": 1,
+      "skipped": 0,
+      "killed": 1,
+      "survived": 0,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 1,
+      "applicability": 1
+    },
+    "FVM.required.toggle": {
+      "generated": 1,
+      "executed": 1,
+      "skipped": 0,
+      "killed": 0,
+      "survived": 1,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 0,
+      "applicability": 1
+    },
+    "NSO.status.override": {
+      "generated": 1,
+      "executed": 1,
+      "skipped": 0,
+      "killed": 1,
+      "survived": 0,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 1,
+      "applicability": 1
+    },
+    "NLT.timeout.inject": {
+      "generated": 1,
+      "executed": 1,
+      "skipped": 0,
+      "killed": 1,
+      "survived": 0,
+      "timeout": 0,
+      "error": 0,
+      "mutationScore": 1,
+      "applicability": 1
+    }
+  },
+  "gapCategories": {
+    "Weak Assertions": 6,
+    "Missing Error Handling": 2,
+    "Timing Dependencies": 1
+  },
+  "pwe": [
+    {
+      "pageKey": "http://localhost:3006/",
+      "candidates": 146,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/",
+          "selector": "#input_password",
+          "element": {
+            "selector": "#input_password",
+            "tag": "input",
+            "attrs": {
+              "id": "input_password",
+              "name": "password",
+              "type": "password",
+              "placeholder": "Password",
+              "class": "form-control"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": true,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 11,
+            "focus": 11,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 220,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 1,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 1,
+          "rank": 1,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path02.spec.ts",
+            "path03.spec.ts",
+            "path04.spec.ts",
+            "path05.spec.ts",
+            "path06.spec.ts",
+            "path07.spec.ts",
+            "path08.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/",
+          "selector": "#input_email",
+          "element": {
+            "selector": "#input_email",
+            "tag": "input",
+            "attrs": {
+              "id": "input_email",
+              "name": "email",
+              "type": "email",
+              "placeholder": "Email",
+              "class": "form-control"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#registration_modal_form",
+              "formControlCount": 3,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": true,
+              "implicitRole": "textbox",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 6,
+            "focus": 6,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 120,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0.5454545454545454,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.8182,
+          "rank": 2,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path02.spec.ts",
+            "path03.spec.ts",
+            "path04.spec.ts",
+            "path05.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/",
+          "selector": "#input_login",
+          "element": {
+            "selector": "#input_login",
+            "tag": "input",
+            "attrs": {
+              "id": "input_login",
+              "name": "login",
+              "type": "text",
+              "placeholder": "Username",
+              "class": "form-control"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#registration_modal_form",
+              "formControlCount": 3,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": true,
+              "implicitRole": "textbox",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 6,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 90,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0.4090909090909091,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.7636,
+          "rank": 3,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path02.spec.ts",
+            "path03.spec.ts",
+            "path04.spec.ts",
+            "path05.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/",
+          "selector": "#input_username",
+          "element": {
+            "selector": "#input_username",
+            "tag": "input",
+            "attrs": {
+              "id": "input_username",
+              "name": "username",
+              "type": "text",
+              "placeholder": "Username or Email",
+              "class": "form-control"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": true,
+              "implicitRole": "textbox",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 5,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 75,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0.3409090909090909,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.7364,
+          "rank": 4,
+          "testFiles": [
+            "path00.spec.ts",
+            "path06.spec.ts",
+            "path07.spec.ts",
+            "path08.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/",
+          "selector": "li:nth-of-type(6) > a",
+          "element": {
+            "selector": "li:nth-of-type(6) > a",
+            "tag": "a",
+            "attrs": {
+              "href": "/user/registration"
+            },
+            "text": "Register",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 1,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 6,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 60,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0.2727272727272727,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.7091,
+          "rank": 5,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path02.spec.ts",
+            "path03.spec.ts",
+            "path04.spec.ts",
+            "path05.spec.ts",
+            "path06.spec.ts",
+            "path07.spec.ts",
+            "path08.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/",
+          "selector": "li:nth-of-type(7) > a",
+          "element": {
+            "selector": "li:nth-of-type(7) > a",
+            "tag": "a",
+            "attrs": {
+              "href": "/user/signin",
+              "class": "signin_caller"
+            },
+            "text": "Sign In",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 2,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 5,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 50,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0.22727272727272727,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6909,
+          "rank": 6,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path02.spec.ts",
+            "path03.spec.ts",
+            "path04.spec.ts",
+            "path05.spec.ts",
+            "path06.spec.ts",
+            "path07.spec.ts",
+            "path08.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/",
+          "selector": "#header > div > div:nth-of-type(1) > a",
+          "element": {
+            "selector": "#header > div > div:nth-of-type(1) > a",
+            "tag": "a",
+            "attrs": {
+              "href": "/",
+              "class": "btn btn-info btn-lg btn-logo"
+            },
+            "text": "$ dimeshift",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 2,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 1,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 10,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0.045454545454545456,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6182,
+          "rank": 7,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path02.spec.ts",
+            "path03.spec.ts",
+            "path04.spec.ts",
+            "path05.spec.ts",
+            "path06.spec.ts",
+            "path07.spec.ts",
+            "path08.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/",
+          "selector": "li:nth-of-type(1) > a",
+          "element": {
+            "selector": "li:nth-of-type(1) > a",
+            "tag": "a",
+            "attrs": {
+              "href": "/",
+              "class": "menu_category menu_category_home"
+            },
+            "text": "Home",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 1,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 1,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 10,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0.045454545454545456,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6182,
+          "rank": 8,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path02.spec.ts",
+            "path03.spec.ts",
+            "path04.spec.ts",
+            "path05.spec.ts",
+            "path06.spec.ts",
+            "path07.spec.ts",
+            "path08.spec.ts",
+            "path09.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path00.spec.ts",
+        "path01.spec.ts",
+        "path02.spec.ts",
+        "path03.spec.ts",
+        "path04.spec.ts",
+        "path05.spec.ts",
+        "path06.spec.ts",
+        "path07.spec.ts",
+        "path08.spec.ts",
+        "path09.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/images/homepage/screenshots/goal.jpg",
+      "candidates": 1,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/images/homepage/screenshots/goal.jpg",
+          "selector": "body > img",
+          "element": {
+            "selector": "body > img",
+            "tag": "img",
+            "attrs": {
+              "src": "http://localhost:3006/images/homepage/screenshots/goal.jpg",
+              "style": "display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": true,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "img",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 0
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0
+          },
+          "score": 0.3,
+          "rank": 1,
+          "testFiles": [
+            "path01.spec.ts",
+            "path05.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path01.spec.ts",
+        "path05.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/images/homepage/screenshots/i18n.jpg",
+      "candidates": 1,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/images/homepage/screenshots/i18n.jpg",
+          "selector": "body > img",
+          "element": {
+            "selector": "body > img",
+            "tag": "img",
+            "attrs": {
+              "src": "http://localhost:3006/images/homepage/screenshots/i18n.jpg",
+              "style": "display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": true,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "img",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 0
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0
+          },
+          "score": 0.3,
+          "rank": 1,
+          "testFiles": [
+            "path01.spec.ts",
+            "path05.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path01.spec.ts",
+        "path05.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/images/homepage/screenshots/transactions.jpg",
+      "candidates": 1,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/images/homepage/screenshots/transactions.jpg",
+          "selector": "body > img",
+          "element": {
+            "selector": "body > img",
+            "tag": "img",
+            "attrs": {
+              "src": "http://localhost:3006/images/homepage/screenshots/transactions.jpg",
+              "style": "display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": true,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "img",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 0
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0
+          },
+          "score": 0.3,
+          "rank": 1,
+          "testFiles": [
+            "path01.spec.ts",
+            "path05.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path01.spec.ts",
+        "path05.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/images/homepage/screenshots/wallets.jpg",
+      "candidates": 1,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/images/homepage/screenshots/wallets.jpg",
+          "selector": "body > img",
+          "element": {
+            "selector": "body > img",
+            "tag": "img",
+            "attrs": {
+              "src": "http://localhost:3006/images/homepage/screenshots/wallets.jpg",
+              "style": "display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": true,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "img",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 0
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0
+          },
+          "score": 0.3,
+          "rank": 1,
+          "testFiles": [
+            "path01.spec.ts",
+            "path05.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path01.spec.ts",
+        "path05.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/plans",
+      "candidates": 80,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/plans",
+          "selector": "#input_username",
+          "element": {
+            "selector": "#input_username",
+            "tag": "input",
+            "attrs": {
+              "id": "input_username",
+              "name": "username",
+              "type": "text",
+              "placeholder": "Username or Email",
+              "class": "form-control"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": true,
+              "implicitRole": "textbox",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 2,
+            "focus": 4,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 50,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 1,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 1,
+          "rank": 1,
+          "testFiles": [
+            "path00.spec.ts",
+            "path03.spec.ts",
+            "path08.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/plans",
+          "selector": "#input_password",
+          "element": {
+            "selector": "#input_password",
+            "tag": "input",
+            "attrs": {
+              "id": "input_password",
+              "name": "password",
+              "type": "password",
+              "placeholder": "Password",
+              "class": "form-control"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": true,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 2,
+            "focus": 2,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 40,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0.8,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.92,
+          "rank": 2,
+          "testFiles": [
+            "path00.spec.ts",
+            "path03.spec.ts",
+            "path08.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/plans",
+          "selector": "#dialog_signin > div > div > div:nth-of-type(1) > button",
+          "element": {
+            "selector": "#dialog_signin > div > div > div:nth-of-type(1) > button",
+            "tag": "button",
+            "attrs": {
+              "type": "button",
+              "class": "close"
+            },
+            "text": "×",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 1,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "button",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 3,
+          "testFiles": [
+            "path00.spec.ts",
+            "path03.spec.ts",
+            "path08.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/plans",
+          "selector": "#footer > div > div > a",
+          "element": {
+            "selector": "#footer > div > div > a",
+            "tag": "a",
+            "attrs": {
+              "href": "https://github.com/jeka-kiselyov/dimeshift"
+            },
+            "text": "View Source on GitHub",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 4,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 4,
+          "testFiles": [
+            "path00.spec.ts",
+            "path03.spec.ts",
+            "path08.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/plans",
+          "selector": "#header > div > div:nth-of-type(1) > a",
+          "element": {
+            "selector": "#header > div > div:nth-of-type(1) > a",
+            "tag": "a",
+            "attrs": {
+              "href": "/",
+              "class": "btn btn-info btn-lg btn-logo"
+            },
+            "text": "$ dimeshift",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 2,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 5,
+          "testFiles": [
+            "path00.spec.ts",
+            "path03.spec.ts",
+            "path08.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/plans",
+          "selector": "#signin_modal_form_submit",
+          "element": {
+            "selector": "#signin_modal_form_submit",
+            "tag": "input",
+            "attrs": {
+              "id": "signin_modal_form_submit",
+              "type": "submit",
+              "class": "btn btn-primary pull-left",
+              "value": "Sign In"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "button",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 6,
+          "testFiles": [
+            "path00.spec.ts",
+            "path03.spec.ts",
+            "path08.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/plans",
+          "selector": "div:nth-of-type(3) > a:nth-of-type(1)",
+          "element": {
+            "selector": "div:nth-of-type(3) > a:nth-of-type(1)",
+            "tag": "a",
+            "attrs": {
+              "href": "http://localhost:3006/user/registration",
+              "class": "btn btn-default btn-sm"
+            },
+            "text": "Register",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 1,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 7,
+          "testFiles": [
+            "path00.spec.ts",
+            "path03.spec.ts",
+            "path08.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/plans",
+          "selector": "div:nth-of-type(3) > a:nth-of-type(2)",
+          "element": {
+            "selector": "div:nth-of-type(3) > a:nth-of-type(2)",
+            "tag": "a",
+            "attrs": {
+              "href": "http://localhost:3006/user/restore",
+              "class": "btn btn-default btn-sm"
+            },
+            "text": "Restore your password",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 3,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 8,
+          "testFiles": [
+            "path00.spec.ts",
+            "path03.spec.ts",
+            "path08.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path00.spec.ts",
+        "path03.spec.ts",
+        "path08.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/profile",
+      "candidates": 80,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/profile",
+          "selector": "#input_username",
+          "element": {
+            "selector": "#input_username",
+            "tag": "input",
+            "attrs": {
+              "id": "input_username",
+              "name": "username",
+              "type": "text",
+              "placeholder": "Username or Email",
+              "class": "form-control"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": true,
+              "implicitRole": "textbox",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 2,
+            "focus": 4,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 50,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 1,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 1,
+          "rank": 1,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/profile",
+          "selector": "#input_password",
+          "element": {
+            "selector": "#input_password",
+            "tag": "input",
+            "attrs": {
+              "id": "input_password",
+              "name": "password",
+              "type": "password",
+              "placeholder": "Password",
+              "class": "form-control"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": true,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 2,
+            "focus": 2,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 40,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0.8,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.92,
+          "rank": 2,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/profile",
+          "selector": "#dialog_signin > div > div > div:nth-of-type(1) > button",
+          "element": {
+            "selector": "#dialog_signin > div > div > div:nth-of-type(1) > button",
+            "tag": "button",
+            "attrs": {
+              "type": "button",
+              "class": "close"
+            },
+            "text": "×",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 1,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "button",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 3,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/profile",
+          "selector": "#footer > div > div > a",
+          "element": {
+            "selector": "#footer > div > div > a",
+            "tag": "a",
+            "attrs": {
+              "href": "https://github.com/jeka-kiselyov/dimeshift"
+            },
+            "text": "View Source on GitHub",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 4,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 4,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/profile",
+          "selector": "#header > div > div:nth-of-type(1) > a",
+          "element": {
+            "selector": "#header > div > div:nth-of-type(1) > a",
+            "tag": "a",
+            "attrs": {
+              "href": "/",
+              "class": "btn btn-info btn-lg btn-logo"
+            },
+            "text": "$ dimeshift",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 2,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 5,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/profile",
+          "selector": "#signin_modal_form_submit",
+          "element": {
+            "selector": "#signin_modal_form_submit",
+            "tag": "input",
+            "attrs": {
+              "id": "signin_modal_form_submit",
+              "type": "submit",
+              "class": "btn btn-primary pull-left",
+              "value": "Sign In"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "button",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 6,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/profile",
+          "selector": "div:nth-of-type(3) > a:nth-of-type(1)",
+          "element": {
+            "selector": "div:nth-of-type(3) > a:nth-of-type(1)",
+            "tag": "a",
+            "attrs": {
+              "href": "http://localhost:3006/user/registration",
+              "class": "btn btn-default btn-sm"
+            },
+            "text": "Register",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 1,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 7,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/profile",
+          "selector": "div:nth-of-type(3) > a:nth-of-type(2)",
+          "element": {
+            "selector": "div:nth-of-type(3) > a:nth-of-type(2)",
+            "tag": "a",
+            "attrs": {
+              "href": "http://localhost:3006/user/restore",
+              "class": "btn btn-default btn-sm"
+            },
+            "text": "Restore your password",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 3,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 8,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path09.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path00.spec.ts",
+        "path04.spec.ts",
+        "path09.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/user/change_language",
+      "candidates": 2,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/user/change_language",
+          "selector": "body > div",
+          "element": {
+            "selector": "body > div",
+            "tag": "div",
+            "attrs": {
+              "class": "json-formatter-container"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 5
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0.25
+          },
+          "score": 0.375,
+          "rank": 1,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path05.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/user/change_language",
+          "selector": "body > pre",
+          "element": {
+            "selector": "body > pre",
+            "tag": "pre",
+            "attrs": {},
+            "text": "{\"code\":\"ResourceNotFound\",\"message\":\"/user/change_language does not exist\"}",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 4,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 0
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0
+          },
+          "score": 0.3,
+          "rank": 2,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path05.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path00.spec.ts",
+        "path01.spec.ts",
+        "path05.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/user/fillprofile",
+      "candidates": 2,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/user/fillprofile",
+          "selector": "body > div",
+          "element": {
+            "selector": "body > div",
+            "tag": "div",
+            "attrs": {
+              "class": "json-formatter-container"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 5
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0.25
+          },
+          "score": 0.375,
+          "rank": 1,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path05.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/user/fillprofile",
+          "selector": "body > pre",
+          "element": {
+            "selector": "body > pre",
+            "tag": "pre",
+            "attrs": {},
+            "text": "{\"code\":\"ResourceNotFound\",\"message\":\"/user/fillprofile does not exist\"}",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 4,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 0
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0
+          },
+          "score": 0.3,
+          "rank": 2,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path05.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path00.spec.ts",
+        "path01.spec.ts",
+        "path05.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/user/logout",
+      "candidates": 2,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/user/logout",
+          "selector": "body > div",
+          "element": {
+            "selector": "body > div",
+            "tag": "div",
+            "attrs": {
+              "class": "json-formatter-container"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 5
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0.25
+          },
+          "score": 0.375,
+          "rank": 1,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path05.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/user/logout",
+          "selector": "body > pre",
+          "element": {
+            "selector": "body > pre",
+            "tag": "pre",
+            "attrs": {},
+            "text": "{\"code\":\"ResourceNotFound\",\"message\":\"/user/logout does not exist\"}",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 4,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 0
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0
+          },
+          "score": 0.3,
+          "rank": 2,
+          "testFiles": [
+            "path00.spec.ts",
+            "path01.spec.ts",
+            "path05.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path00.spec.ts",
+        "path01.spec.ts",
+        "path05.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/user/registration",
+      "candidates": 2,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/user/registration",
+          "selector": "body > div",
+          "element": {
+            "selector": "body > div",
+            "tag": "div",
+            "attrs": {
+              "class": "json-formatter-container"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 5
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0.25
+          },
+          "score": 0.375,
+          "rank": 1,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/user/registration",
+          "selector": "body > pre",
+          "element": {
+            "selector": "body > pre",
+            "tag": "pre",
+            "attrs": {},
+            "text": "{\"code\":\"ResourceNotFound\",\"message\":\"/user/registration does not exist\"}",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 4,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 0
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0
+          },
+          "score": 0.3,
+          "rank": 2,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path09.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path00.spec.ts",
+        "path04.spec.ts",
+        "path09.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/user/restore",
+      "candidates": 2,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/user/restore",
+          "selector": "body > div",
+          "element": {
+            "selector": "body > div",
+            "tag": "div",
+            "attrs": {
+              "class": "json-formatter-container"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 5
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0.25
+          },
+          "score": 0.375,
+          "rank": 1,
+          "testFiles": [
+            "path00.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/user/restore",
+          "selector": "body > pre",
+          "element": {
+            "selector": "body > pre",
+            "tag": "pre",
+            "attrs": {},
+            "text": "{\"code\":\"ResourceNotFound\",\"message\":\"/user/restore does not exist\"}",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 4,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 0
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0
+          },
+          "score": 0.3,
+          "rank": 2,
+          "testFiles": [
+            "path00.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path00.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/user/signin",
+      "candidates": 2,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/user/signin",
+          "selector": "body > div",
+          "element": {
+            "selector": "body > div",
+            "tag": "div",
+            "attrs": {
+              "class": "json-formatter-container"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 5
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0.25
+          },
+          "score": 0.375,
+          "rank": 1,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path05.spec.ts",
+            "path09.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/user/signin",
+          "selector": "body > pre",
+          "element": {
+            "selector": "body > pre",
+            "tag": "pre",
+            "attrs": {},
+            "text": "{\"code\":\"ResourceNotFound\",\"message\":\"/user/signin does not exist\"}",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 4,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 0
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 0
+          },
+          "score": 0.3,
+          "rank": 2,
+          "testFiles": [
+            "path00.spec.ts",
+            "path04.spec.ts",
+            "path05.spec.ts",
+            "path09.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path00.spec.ts",
+        "path04.spec.ts",
+        "path05.spec.ts",
+        "path09.spec.ts"
+      ]
+    },
+    {
+      "pageKey": "http://localhost:3006/wallets",
+      "candidates": 80,
+      "selected": [
+        {
+          "pageKey": "http://localhost:3006/wallets",
+          "selector": "#input_username",
+          "element": {
+            "selector": "#input_username",
+            "tag": "input",
+            "attrs": {
+              "id": "input_username",
+              "name": "username",
+              "type": "text",
+              "placeholder": "Username or Email",
+              "class": "form-control"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": true,
+              "implicitRole": "textbox",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 2,
+            "focus": 4,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 50,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 1,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 1,
+          "rank": 1,
+          "testFiles": [
+            "path00.spec.ts",
+            "path02.spec.ts",
+            "path07.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/wallets",
+          "selector": "#input_password",
+          "element": {
+            "selector": "#input_password",
+            "tag": "input",
+            "attrs": {
+              "id": "input_password",
+              "name": "password",
+              "type": "password",
+              "placeholder": "Password",
+              "class": "form-control"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": true,
+              "implicitRole": null,
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 2,
+            "focus": 2,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 40,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0.8,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.92,
+          "rank": 2,
+          "testFiles": [
+            "path00.spec.ts",
+            "path02.spec.ts",
+            "path07.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/wallets",
+          "selector": "#dialog_signin > div > div > div:nth-of-type(1) > button",
+          "element": {
+            "selector": "#dialog_signin > div > div > div:nth-of-type(1) > button",
+            "tag": "button",
+            "attrs": {
+              "type": "button",
+              "class": "close"
+            },
+            "text": "×",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 1,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "button",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 3,
+          "testFiles": [
+            "path00.spec.ts",
+            "path02.spec.ts",
+            "path07.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/wallets",
+          "selector": "#footer > div > div > a",
+          "element": {
+            "selector": "#footer > div > div > a",
+            "tag": "a",
+            "attrs": {
+              "href": "https://github.com/jeka-kiselyov/dimeshift"
+            },
+            "text": "View Source on GitHub",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 4,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 4,
+          "testFiles": [
+            "path00.spec.ts",
+            "path02.spec.ts",
+            "path07.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/wallets",
+          "selector": "#header > div > div:nth-of-type(1) > a",
+          "element": {
+            "selector": "#header > div > div:nth-of-type(1) > a",
+            "tag": "a",
+            "attrs": {
+              "href": "/",
+              "class": "btn btn-info btn-lg btn-logo"
+            },
+            "text": "$ dimeshift",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 2,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 5,
+          "testFiles": [
+            "path00.spec.ts",
+            "path02.spec.ts",
+            "path07.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/wallets",
+          "selector": "#signin_modal_form_submit",
+          "element": {
+            "selector": "#signin_modal_form_submit",
+            "tag": "input",
+            "attrs": {
+              "id": "signin_modal_form_submit",
+              "type": "submit",
+              "class": "btn btn-primary pull-left",
+              "value": "Sign In"
+            },
+            "text": "",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 0,
+              "childElementCount": 0,
+              "inForm": true,
+              "formSelector": "#signin_modal_form",
+              "formControlCount": 2,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "button",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": false
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 6,
+          "testFiles": [
+            "path00.spec.ts",
+            "path02.spec.ts",
+            "path07.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/wallets",
+          "selector": "div:nth-of-type(3) > a:nth-of-type(1)",
+          "element": {
+            "selector": "div:nth-of-type(3) > a:nth-of-type(1)",
+            "tag": "a",
+            "attrs": {
+              "href": "http://localhost:3006/user/registration",
+              "class": "btn btn-default btn-sm"
+            },
+            "text": "Register",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 1,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 7,
+          "testFiles": [
+            "path00.spec.ts",
+            "path02.spec.ts",
+            "path07.spec.ts"
+          ]
+        },
+        {
+          "pageKey": "http://localhost:3006/wallets",
+          "selector": "div:nth-of-type(3) > a:nth-of-type(2)",
+          "element": {
+            "selector": "div:nth-of-type(3) > a:nth-of-type(2)",
+            "tag": "a",
+            "attrs": {
+              "href": "http://localhost:3006/user/restore",
+              "class": "btn btn-default btn-sm"
+            },
+            "text": "Restore your password",
+            "visibility": {
+              "inViewport": true,
+              "displayed": true,
+              "opaque": true,
+              "nonZeroSize": true
+            },
+            "facts": {
+              "textNodeWords": 3,
+              "childElementCount": 0,
+              "inForm": false,
+              "formSelector": null,
+              "formControlCount": 0,
+              "hasImgDescendant": false,
+              "hasImgWithAlt": false,
+              "associatedLabel": false,
+              "implicitRole": "link",
+              "formHiddenCount": 0,
+              "formReadonlyCount": 0,
+              "isLeaf": true,
+              "inLink": true
+            }
+          },
+          "interactions": {
+            "click": 0,
+            "fill": 0,
+            "focus": 0,
+            "hover": 0
+          },
+          "raw": {
+            "interaction": 0,
+            "visibility": 25,
+            "semantic": 20
+          },
+          "norm": {
+            "interaction": 0,
+            "visibility": 1,
+            "semantic": 1
+          },
+          "score": 0.6,
+          "rank": 8,
+          "testFiles": [
+            "path00.spec.ts",
+            "path02.spec.ts",
+            "path07.spec.ts"
+          ]
+        }
+      ],
+      "testFiles": [
+        "path00.spec.ts",
+        "path02.spec.ts",
+        "path07.spec.ts"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "mutant": {
+        "id": "D0019",
+        "operator": "TIM.wrap.div",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/",
+          "selector": "#input_email",
+          "description": "<input> #input_email (PWE #2, score 0.8182)"
+        },
+        "params": {},
+        "testFiles": [
+          "path00.spec.ts",
+          "path01.spec.ts",
+          "path02.spec.ts",
+          "path03.spec.ts",
+          "path04.spec.ts",
+          "path05.spec.ts",
+          "path06.spec.ts",
+          "path07.spec.ts",
+          "path08.spec.ts",
+          "path09.spec.ts"
+        ]
+      },
+      "status": "SURVIVED",
+      "applied": true,
+      "applications": 6,
+      "durationMs": 85563,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path01",
+          "file": "path01.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path03",
+          "file": "path03.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path04",
+          "file": "path04.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path05",
+          "file": "path05.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path06",
+          "file": "path06.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path08",
+          "file": "path08.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path09",
+          "file": "path09.spec.ts",
+          "status": "expected"
+        }
+      ],
+      "reason": "all tests passed | applied: wrapped in <div>",
+      "gapCategory": "Weak Assertions"
+    },
+    {
+      "mutant": {
+        "id": "D0062",
+        "operator": "EVD.click.delay",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/",
+          "selector": "li:nth-of-type(7) > a",
+          "description": "<a> li:nth-of-type(7) > a (PWE #6, score 0.6909)"
+        },
+        "params": {
+          "minMs": 300,
+          "maxMs": 800
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path01.spec.ts",
+          "path02.spec.ts",
+          "path03.spec.ts",
+          "path04.spec.ts",
+          "path05.spec.ts",
+          "path06.spec.ts",
+          "path07.spec.ts",
+          "path08.spec.ts",
+          "path09.spec.ts"
+        ]
+      },
+      "status": "SURVIVED",
+      "applied": true,
+      "applications": 17,
+      "durationMs": 84284,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path01",
+          "file": "path01.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path03",
+          "file": "path03.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path04",
+          "file": "path04.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path05",
+          "file": "path05.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path06",
+          "file": "path06.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path08",
+          "file": "path08.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path09",
+          "file": "path09.spec.ts",
+          "status": "expected"
+        }
+      ],
+      "reason": "all tests passed | applied: click handling delayed",
+      "gapCategory": "Timing Dependencies"
+    },
+    {
+      "mutant": {
+        "id": "D0121",
+        "operator": "SFM.script.fail",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/",
+          "resourceUrl": "http://localhost:3006/scripts/app/template_manager.js",
+          "description": "script http://localhost:3006/scripts/app/template_manager.js"
+        },
+        "params": {
+          "suffix": ".404.js"
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path01.spec.ts",
+          "path02.spec.ts",
+          "path03.spec.ts",
+          "path04.spec.ts",
+          "path05.spec.ts",
+          "path06.spec.ts",
+          "path07.spec.ts",
+          "path08.spec.ts",
+          "path09.spec.ts"
+        ]
+      },
+      "status": "KILLED",
+      "applied": true,
+      "applications": 20,
+      "durationMs": 31098,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path00|0: title DimeShift | path00|0: controls a:9,button:0,input:0,select:0,textarea:0 | path00|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path01",
+          "file": "path01.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path01|0: title DimeShift | path01|0: controls a:9,button:0,input:0,select:0,textarea:0 | path01|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path02|0: title DimeShift | path02|0: controls a:9,button:0,input:0,select:0,textarea:0 | path02|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path03",
+          "file": "path03.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path03|0: title DimeShift | path03|0: controls a:9,button:0,input:0,select:0,textarea:0 | path03|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path04",
+          "file": "path04.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path04|0: title DimeShift | path04|0: controls a:9,button:0,input:0,select:0,textarea:0 | path04|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path05",
+          "file": "path05.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path05|0: title DimeShift | path05|0: controls a:9,button:0,input:0,select:0,textarea:0 | path05|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path06",
+          "file": "path06.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path06|0: title DimeShift | path06|0: controls a:9,button:0,input:0,select:0,textarea:0 | path06|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path07|0: title DimeShift | path07|0: controls a:9,button:0,input:0,select:0,textarea:0 | path07|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path08",
+          "file": "path08.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path08|0: title DimeShift | path08|0: controls a:9,button:0,input:0,select:0,textarea:0 | path08|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path09",
+          "file": "path09.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path09|0: title DimeShift | path09|0: controls a:9,button:0,input:0,select:0,textarea:0 | path09|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        }
+      ],
+      "reason": "10 test(s) failed: path00; path01; path02 | applied: script request failed: http://localhost:3006/scripts/app/template_manager.js; src invalidated: http://localhost:3006/scripts/app/template_manager.js"
+    },
+    {
+      "mutant": {
+        "id": "D0217",
+        "operator": "TIM.form.reorderFields",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/plans",
+          "selector": "#signin_modal_form",
+          "description": "<input> #signin_modal_form (PWE #1, score 1)"
+        },
+        "params": {},
+        "testFiles": [
+          "path00.spec.ts",
+          "path03.spec.ts",
+          "path08.spec.ts"
+        ]
+      },
+      "status": "SURVIVED",
+      "applied": true,
+      "applications": 4,
+      "durationMs": 36435,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path03",
+          "file": "path03.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path08",
+          "file": "path08.spec.ts",
+          "status": "expected"
+        }
+      ],
+      "reason": "all tests passed | applied: swapped first two form controls",
+      "gapCategory": "Weak Assertions"
+    },
+    {
+      "mutant": {
+        "id": "D0252",
+        "operator": "TIM.wrap.div",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/plans",
+          "selector": "#footer > div > div > a",
+          "description": "<a> #footer > div > div > a (PWE #4, score 0.6)"
+        },
+        "params": {},
+        "testFiles": [
+          "path00.spec.ts",
+          "path03.spec.ts",
+          "path08.spec.ts"
+        ]
+      },
+      "status": "SURVIVED",
+      "applied": true,
+      "applications": 4,
+      "durationMs": 35951,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path03",
+          "file": "path03.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path08",
+          "file": "path08.spec.ts",
+          "status": "expected"
+        }
+      ],
+      "reason": "all tests passed | applied: wrapped in <div>",
+      "gapCategory": "Weak Assertions"
+    },
+    {
+      "mutant": {
+        "id": "D0477",
+        "operator": "SFM.script.fail",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/profile",
+          "resourceUrl": "http://localhost:3006/vendors/jquery/jquery.min.js",
+          "description": "script http://localhost:3006/vendors/jquery/jquery.min.js"
+        },
+        "params": {
+          "suffix": ".404.js"
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path04.spec.ts",
+          "path09.spec.ts"
+        ]
+      },
+      "status": "KILLED",
+      "applied": true,
+      "applications": 3,
+      "durationMs": 9967,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path00|0: title DimeShift | path00|0: controls a:9,button:0,input:0,select:0,textarea:0 | path00|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path04",
+          "file": "path04.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path04|0: title DimeShift | path04|0: controls a:9,button:0,input:0,select:0,textarea:0 | path04|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        },
+        {
+          "title": "path09",
+          "file": "path09.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path09|0: title DimeShift | path09|0: controls a:9,button:0,input:0,select:0,textarea:0 | path09|0: missing text [\"DimeShift – the easiest way to track your expenses\",\"Just move your mouse pointer over and start using wallet right now!\",\"Screenshots\"]"
+        }
+      ],
+      "reason": "3 test(s) failed: path00; path04; path09 | applied: script request failed: http://localhost:3006/vendors/jquery/jquery.min.js"
+    },
+    {
+      "mutant": {
+        "id": "D0479",
+        "operator": "SFM.script.fail",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/profile",
+          "resourceUrl": "http://localhost:3006/vendors/bootstrap/js/button.js",
+          "description": "script http://localhost:3006/vendors/bootstrap/js/button.js"
+        },
+        "params": {
+          "suffix": ".404.js"
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path04.spec.ts",
+          "path09.spec.ts"
+        ]
+      },
+      "status": "SURVIVED",
+      "applied": true,
+      "applications": 19,
+      "durationMs": 45954,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path04",
+          "file": "path04.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path09",
+          "file": "path09.spec.ts",
+          "status": "expected"
+        }
+      ],
+      "reason": "all tests passed | applied: script request failed: http://localhost:3006/vendors/bootstrap/js/button.js; src invalidated: http://localhost:3006/vendors/bootstrap/js/button.js",
+      "gapCategory": "Missing Error Handling"
+    },
+    {
+      "mutant": {
+        "id": "D0501",
+        "operator": "SFM.script.fail",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/profile",
+          "resourceUrl": "http://localhost:3006/scripts/app/abstract/dialog.js",
+          "description": "script http://localhost:3006/scripts/app/abstract/dialog.js"
+        },
+        "params": {
+          "suffix": ".404.js"
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path04.spec.ts",
+          "path09.spec.ts"
+        ]
+      },
+      "status": "KILLED",
+      "applied": true,
+      "applications": 4,
+      "durationMs": 16221,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path00|3: controls a:9,button:0,input:0,select:0,textarea:0 | path00|3: missing text [\"Password\",\"Register Restore your password\",\"Username or Email\"]"
+        },
+        {
+          "title": "path04",
+          "file": "path04.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path04|1: controls a:13,button:0,input:1,select:0,textarea:0 | path04|1: missing text [\"Already a member? Sign In\",\"Email\",\"Password\"]"
+        },
+        {
+          "title": "path09",
+          "file": "path09.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path09|1: controls a:13,button:0,input:1,select:0,textarea:0 | path09|1: missing text [\"Password\",\"Register Restore your password\",\"Username or Email\"]"
+        }
+      ],
+      "reason": "3 test(s) failed: path00; path04; path09 | applied: script request failed: http://localhost:3006/scripts/app/abstract/dialog.js"
+    },
+    {
+      "mutant": {
+        "id": "D0544",
+        "operator": "SFM.script.fail",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/profile",
+          "resourceUrl": "http://localhost:3006/scripts/app/views/tours/wallets.js",
+          "description": "script http://localhost:3006/scripts/app/views/tours/wallets.js"
+        },
+        "params": {
+          "suffix": ".404.js"
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path04.spec.ts",
+          "path09.spec.ts"
+        ]
+      },
+      "status": "SURVIVED",
+      "applied": true,
+      "applications": 19,
+      "durationMs": 46745,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path04",
+          "file": "path04.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path09",
+          "file": "path09.spec.ts",
+          "status": "expected"
+        }
+      ],
+      "reason": "all tests passed | applied: script request failed: http://localhost:3006/scripts/app/views/tours/wallets.js; src invalidated: http://localhost:3006/scripts/app/views/tours/wallets.js",
+      "gapCategory": "Missing Error Handling"
+    },
+    {
+      "mutant": {
+        "id": "D0578",
+        "operator": "SVM.opacity.dim",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/user/fillprofile",
+          "selector": "body > pre",
+          "description": "<pre> body > pre (PWE #2, score 0.3)"
+        },
+        "params": {
+          "opacity": 0.2
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path01.spec.ts",
+          "path05.spec.ts"
+        ]
+      },
+      "status": "SURVIVED",
+      "applied": true,
+      "applications": 3,
+      "durationMs": 52050,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path01",
+          "file": "path01.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path05",
+          "file": "path05.spec.ts",
+          "status": "expected"
+        }
+      ],
+      "reason": "all tests passed | applied: css rule injected for 1 element(s)",
+      "gapCategory": "Weak Assertions"
+    },
+    {
+      "mutant": {
+        "id": "D0582",
+        "operator": "SFM.script.fail",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/user/fillprofile",
+          "description": "scripts on http://localhost:3006/user/fillprofile"
+        },
+        "params": {
+          "suffix": ".404.js"
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path01.spec.ts",
+          "path05.spec.ts"
+        ],
+        "precheckFailed": "no external script on page"
+      },
+      "status": "SKIPPED",
+      "applied": false,
+      "applications": 0,
+      "durationMs": 0,
+      "tests": [],
+      "reason": "no external script on page"
+    },
+    {
+      "mutant": {
+        "id": "D0588",
+        "operator": "TIM.wrap.div",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/user/logout",
+          "selector": "body > div",
+          "description": "<div> body > div (PWE #1, score 0.375)"
+        },
+        "params": {},
+        "testFiles": [
+          "path00.spec.ts",
+          "path01.spec.ts",
+          "path05.spec.ts"
+        ]
+      },
+      "status": "SURVIVED",
+      "applied": true,
+      "applications": 3,
+      "durationMs": 51450,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path01",
+          "file": "path01.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path05",
+          "file": "path05.spec.ts",
+          "status": "expected"
+        }
+      ],
+      "reason": "all tests passed | applied: wrapped in <div>",
+      "gapCategory": "Weak Assertions"
+    },
+    {
+      "mutant": {
+        "id": "D0663",
+        "operator": "SVM.visibility.hide",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/wallets",
+          "selector": "#input_password",
+          "description": "<input> #input_password (PWE #2, score 0.92)"
+        },
+        "params": {},
+        "testFiles": [
+          "path00.spec.ts",
+          "path02.spec.ts",
+          "path07.spec.ts"
+        ]
+      },
+      "status": "KILLED",
+      "applied": true,
+      "applications": 3,
+      "durationMs": 17385,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path00|3: controls a:11,button:1,input:2,select:0,textarea:0"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path02|2: controls a:11,button:1,input:2,select:0,textarea:0"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path07|2: controls a:11,button:1,input:2,select:0,textarea:0"
+        }
+      ],
+      "reason": "3 test(s) failed: path00; path02; path07 | applied: css rule injected for 1 element(s)"
+    },
+    {
+      "mutant": {
+        "id": "D0667",
+        "operator": "FVM.required.toggle",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/wallets",
+          "selector": "#input_password",
+          "description": "<input> #input_password (PWE #2, score 0.92)"
+        },
+        "params": {},
+        "testFiles": [
+          "path00.spec.ts",
+          "path02.spec.ts",
+          "path07.spec.ts"
+        ]
+      },
+      "status": "SURVIVED",
+      "applied": true,
+      "applications": 4,
+      "durationMs": 36511,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "expected"
+        }
+      ],
+      "reason": "all tests passed | applied: required added",
+      "gapCategory": "Weak Assertions"
+    },
+    {
+      "mutant": {
+        "id": "D0777",
+        "operator": "SFM.script.fail",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/wallets",
+          "resourceUrl": "http://localhost:3006/scripts/app/collections/users.js",
+          "description": "script http://localhost:3006/scripts/app/collections/users.js"
+        },
+        "params": {
+          "suffix": ".404.js"
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path02.spec.ts",
+          "path07.spec.ts"
+        ]
+      },
+      "status": "KILLED",
+      "applied": true,
+      "applications": 19,
+      "durationMs": 43812,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: new console errors [\"Failed to load resource: the server responded with a status of # (Not Found)\"]"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: new console errors [\"Failed to load resource: the server responded with a status of # (Not Found)\"]"
+        }
+      ],
+      "reason": "2 test(s) failed: path02; path07 | applied: script request failed: http://localhost:3006/scripts/app/collections/users.js; src invalidated: http://localhost:3006/scripts/app/collections/users.js"
+    },
+    {
+      "mutant": {
+        "id": "D0793",
+        "operator": "SFM.script.fail",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/wallets",
+          "resourceUrl": "http://localhost:3006/scripts/app/views/dialogs/signin.js",
+          "description": "script http://localhost:3006/scripts/app/views/dialogs/signin.js"
+        },
+        "params": {
+          "suffix": ".404.js"
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path02.spec.ts",
+          "path07.spec.ts"
+        ]
+      },
+      "status": "KILLED",
+      "applied": true,
+      "applications": 7,
+      "durationMs": 18218,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path00|3: controls a:9,button:0,input:0,select:0,textarea:0 | path00|3: missing text [\"Password\",\"Register Restore your password\",\"Username or Email\"]"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path02|2: controls a:9,button:0,input:0,select:0,textarea:0 | path02|2: missing text [\"Password\",\"Register Restore your password\",\"Username or Email\"]"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: path07|1: controls a:13,button:0,input:1,select:0,textarea:0 | path07|1: missing text [\"Password\",\"Register Restore your password\",\"Username or Email\"]"
+        }
+      ],
+      "reason": "3 test(s) failed: path00; path02; path07 | applied: script request failed: http://localhost:3006/scripts/app/views/dialogs/signin.js; src invalidated: http://localhost:3006/scripts/app/views/dialogs/signin.js"
+    },
+    {
+      "mutant": {
+        "id": "D0799",
+        "operator": "SFM.script.fail",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/wallets",
+          "resourceUrl": "http://localhost:3006/scripts/app/views/parts/transactions.js",
+          "description": "script http://localhost:3006/scripts/app/views/parts/transactions.js"
+        },
+        "params": {
+          "suffix": ".404.js"
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path02.spec.ts",
+          "path07.spec.ts"
+        ]
+      },
+      "status": "KILLED",
+      "applied": true,
+      "applications": 19,
+      "durationMs": 43922,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: new console errors [\"Failed to load resource: the server responded with a status of # (Not Found)\"]"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: new console errors [\"Failed to load resource: the server responded with a status of # (Not Found)\"]"
+        }
+      ],
+      "reason": "2 test(s) failed: path02; path07 | applied: script request failed: http://localhost:3006/scripts/app/views/parts/transactions.js; src invalidated: http://localhost:3006/scripts/app/views/parts/transactions.js"
+    },
+    {
+      "mutant": {
+        "id": "D0807",
+        "operator": "SFM.script.fail",
+        "layer": "dom",
+        "target": {
+          "kind": "dom",
+          "pageKey": "http://localhost:3006/wallets",
+          "resourceUrl": "http://localhost:3006/scripts/app/views/pages/update_password.js",
+          "description": "script http://localhost:3006/scripts/app/views/pages/update_password.js"
+        },
+        "params": {
+          "suffix": ".404.js"
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path02.spec.ts",
+          "path07.spec.ts"
+        ]
+      },
+      "status": "KILLED",
+      "applied": true,
+      "applications": 19,
+      "durationMs": 43771,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "expected"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: new console errors [\"Failed to load resource: the server responded with a status of # (Not Found)\"]"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: new console errors [\"Failed to load resource: the server responded with a status of # (Not Found)\"]"
+        }
+      ],
+      "reason": "2 test(s) failed: path02; path07 | applied: script request failed: http://localhost:3006/scripts/app/views/pages/update_password.js; src invalidated: http://localhost:3006/scripts/app/views/pages/update_password.js"
+    },
+    {
+      "mutant": {
+        "id": "N0116",
+        "operator": "NSO.status.override",
+        "layer": "network",
+        "target": {
+          "kind": "network",
+          "endpoint": "GET http://localhost:3006/jstemplates/pages/wallets/index",
+          "method": "GET",
+          "urlBase": "http://localhost:3006/jstemplates/pages/wallets/index",
+          "description": "GET http://localhost:3006/jstemplates/pages/wallets/index [xhr]"
+        },
+        "params": {
+          "status": 500
+        },
+        "testFiles": [
+          "path00.spec.ts",
+          "path02.spec.ts",
+          "path07.spec.ts"
+        ]
+      },
+      "status": "KILLED",
+      "applied": true,
+      "applications": 4,
+      "durationMs": 44588,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: new HTTP failures [\"GET /jstemplates/pages/wallets/index 500\"]"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: new HTTP failures [\"GET /jstemplates/pages/wallets/index 500\"]"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "unexpected",
+          "error": "Error: oracle: new HTTP failures [\"GET /jstemplates/pages/wallets/index 500\"]"
+        }
+      ],
+      "reason": "3 test(s) failed: path00; path02; path07 | applied: status 200 -> 500"
+    },
+    {
+      "mutant": {
+        "id": "N0218",
+        "operator": "NLT.timeout.inject",
+        "layer": "network",
+        "target": {
+          "kind": "network",
+          "endpoint": "GET http://localhost:3006/wallets",
+          "method": "GET",
+          "urlBase": "http://localhost:3006/wallets",
+          "description": "GET http://localhost:3006/wallets [document]"
+        },
+        "params": {},
+        "testFiles": [
+          "path00.spec.ts",
+          "path02.spec.ts",
+          "path07.spec.ts"
+        ]
+      },
+      "status": "KILLED",
+      "applied": true,
+      "applications": 3,
+      "durationMs": 17623,
+      "tests": [
+        {
+          "title": "path00",
+          "file": "path00.spec.ts",
+          "status": "unexpected",
+          "error": "Error: page.goto: net::ERR_TIMED_OUT at http://localhost:3006/wallets\nCall log:\n  - navigating to \"http://localhost:3006/wallets\", waiting until \"load\"\n"
+        },
+        {
+          "title": "path02",
+          "file": "path02.spec.ts",
+          "status": "unexpected",
+          "error": "Error: page.goto: net::ERR_TIMED_OUT at http://localhost:3006/wallets\nCall log:\n  - navigating to \"http://localhost:3006/wallets\", waiting until \"load\"\n"
+        },
+        {
+          "title": "path07",
+          "file": "path07.spec.ts",
+          "status": "unexpected",
+          "error": "Error: page.goto: net::ERR_TIMED_OUT at http://localhost:3006/wallets\nCall log:\n  - navigating to \"http://localhost:3006/wallets\", waiting until \"load\"\n"
+        }
+      ],
+      "reason": "3 test(s) failed: path00; path02; path07 | applied: aborted (timedout)"
+    }
+  ]
+}

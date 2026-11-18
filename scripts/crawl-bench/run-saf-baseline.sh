@@ -76,4 +76,4 @@ if [ ! -f "$PYTHON_SCRIPT" ]; then
 fi
 
 # Run the Python script with arguments
-python "$PYTHON_SCRIPT" --appname "$APPNAME" --method "$METHOD" --setting "$SETTING"
+exec python "$PYTHON_SCRIPT" --appname "$APPNAME" --method "$METHOD" --setting "$SETTING"
